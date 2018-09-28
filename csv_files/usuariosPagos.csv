@@ -1,150 +1,150 @@
-id_usuario1,apellido1,nombre1,correo1,sexo1,id_pagos,monto,id_usuario2,apellido2,nombre2,correo2,sexo2
-1,AGUILLÓN,JUAN JOSÉ ARTURO,jjaguillon@uc.cl,M,0,68350,143,S/A,Shop 'n Save,parents@yahoo.ca,No Aplica
-0,ABUSLEME,RAFAEL ANTONIO,raabusleme@uc.cl,M,1,68350,145,S/A,Latina Pizza,hamilton@hotmail.com,No Aplica
-8,ARELLANO,PAULA FABIOLA,pfarellano@uc.cl,M,2,28812,141,S/A,Tom Bradley Airport,burns@msn.com,No Aplica
-7,APABLAZA,FELIPE EDUARDO,feapablaza@uc.cl,F,3,68350,145,S/A,Latina Pizza,hamilton@hotmail.com,No Aplica
-14,BARRÍA,FELIPE RAÚL,frbarria@uc.cl,M,4,60787,159,S/A,Remember When,msusa@live.com,No Aplica
-11,BAEZA,IGNACIA,ibaeza1@uc.cl,F,5,48667,153,S/A,Luigi's Pizzeria,mcrawfor@sbcglobal.net,No Aplica
-0,ABUSLEME,RAFAEL ANTONIO,raabusleme@uc.cl,M,6,90754,149,S/A,Pierogies Plus,ullman@optonline.net,No Aplica
-8,ARELLANO,PAULA FABIOLA,pfarellano@uc.cl,M,7,60787,150,S/A,Marge's Place,wkrebs@att.net,No Aplica
-15,BARRIENTOS,FELIPE ANTONIO,fnbarrientos@uc.cl,M,8,68350,145,S/A,Latina Pizza,hamilton@hotmail.com,No Aplica
-0,ABUSLEME,RAFAEL ANTONIO,raabusleme@uc.cl,M,9,48667,151,S/A,Applebee's,nullchar@verizon.net,No Aplica
-18,BERRIOS,FELIPE ALBERTO,faberrios@uc.cl,M,10,94563,154,S/A,Donald's,gslondon@att.net,No Aplica
-1,AGUILLÓN,JUAN JOSÉ ARTURO,jjaguillon@uc.cl,M,11,38452,146,S/A,Bellisario Pizza Shop,jimxugle@live.com,No Aplica
-19,BUGMANN,JOAQUÍN ALBERTO,jabugmann@uc.cl,M,12,68037,141,S/A,Tom Bradley Airport,burns@msn.com,No Aplica
-0,ABUSLEME,RAFAEL ANTONIO,raabusleme@uc.cl,M,13,48667,155,S/A,China Sea Chinese Restaurant,matloff@verizon.net,No Aplica
-8,ARELLANO,PAULA FABIOLA,pfarellano@uc.cl,M,14,48667,151,S/A,Applebee's,nullchar@verizon.net,No Aplica
-16,BENGOA,JOSEFINA,jbengoa1@uc.cl,F,15,60787,159,S/A,Remember When,msusa@live.com,No Aplica
-16,BENGOA,JOSEFINA,jbengoa1@uc.cl,F,16,60787,159,S/A,Remember When,msusa@live.com,No Aplica
-7,APABLAZA,FELIPE EDUARDO,feapablaza@uc.cl,F,17,48667,160,S/A,Pistella Beer Distributors,staikos@msn.com,No Aplica
-4,ÁLVAREZ,TOMÁS,talvarez2@uc.cl,M,18,48667,147,S/A,Hunan Wok Chinese Restaurant,moonlapse@outlook.com,No Aplica
-17,BERRÍOS,CAMILO IGNACIO,ciberrios@uc.cl,M,19,38452,146,S/A,Bellisario Pizza Shop,jimxugle@live.com,No Aplica
-5,ALVAREZ,AUGUSTO ALEJANDRO,aaalvarez@uc.cl,M,20,68350,146,S/A,Bellisario Pizza Shop,jimxugle@live.com,No Aplica
-4,ÁLVAREZ,TOMÁS,talvarez2@uc.cl,M,21,38452,148,S/A,Minerva Bakery,delpino@optonline.net,No Aplica
-30,CUCUMIDES,TAMARA ALEXANDRA,tacucumides@uc.cl,F,22,14737,157,S/A,Star Nails,dobey@optonline.net,No Aplica
-83,OLIDEN,NORMAN ANDRES,naoliden@uc.cl,M,23,94563,154,S/A,Donald's,gslondon@att.net,No Aplica
-51,HANUCH,RODRIGO IGNACIO,rihanuch@uc.cl,M,24,48667,151,S/A,Applebee's,nullchar@verizon.net,No Aplica
-73,MELÍN,VICENTE TOMÁS,vtmelin@uc.cl,M,25,48667,147,S/A,Hunan Wok Chinese Restaurant,moonlapse@outlook.com,No Aplica
-38,EICHHOLZ,JOAQUIN,jeichholz3@uc.cl,M,26,1000,142,S/A,Metro,brainless@live.com,No Aplica
-55,ILABACA,CRISTOBAL,cilabaca1@uc.cl,M,27,68350,146,S/A,Bellisario Pizza Shop,jimxugle@live.com,No Aplica
-108,TRAMON,JAVIER OMAR,jotramon@uc.cl,M,28,34831,157,S/A,Star Nails,dobey@optonline.net,No Aplica
-118,ZUPEUC,DANIEL,dzupeuc@uc.cl,M,29,3565,142,S/A,Metro,brainless@live.com,No Aplica
-9,AVALOS,ANDRES EMILIO,aeavalos@uc.cl,M,30,69017,149,S/A,Pierogies Plus,ullman@optonline.net,No Aplica
-81,NESTLER,JUAN JOSÉ,jjnestler@uc.cl,M,31,14737,157,S/A,Star Nails,dobey@optonline.net,No Aplica
-3,ÁLVAREZ,VALENTINA JAVIERA,vjalvarez@uc.cl,F,32,38452,152,S/A,R & B's Pizza Place,monkeydo@optonline.net,No Aplica
-75,MIDDLETON,JAIME ANDRES,jamiddleton@uc.cl,M,33,68350,143,S/A,Shop 'n Save,parents@yahoo.ca,No Aplica
-19,BUGMANN,JOAQUÍN ALBERTO,jabugmann@uc.cl,M,34,48667,155,S/A,China Sea Chinese Restaurant,matloff@verizon.net,No Aplica
-52,HARCHA,JORGE ESTEBAN,jeharcha@uc.cl,M,35,48667,160,S/A,Pistella Beer Distributors,staikos@msn.com,No Aplica
-39,ESCUDERO,MARCELO IGNACIO,miescudero@uc.cl,M,36,58056,154,S/A,Donald's,gslondon@att.net,No Aplica
-80,MUSSUTO,VITO ARCANGELO,vamussuto@uc.cl,M,37,38452,146,S/A,Bellisario Pizza Shop,jimxugle@live.com,No Aplica
-32,DE DIEGO,FERNANDO ANTONIO,fadediego@uc.cl,M,38,34831,157,S/A,Star Nails,dobey@optonline.net,No Aplica
-14,BARRÍA,FELIPE RAÚL,frbarria@uc.cl,M,39,48667,158,S/A,Vivo,crypt@comcast.net,No Aplica
-102,SÁNCHEZ,MARÍA IGNACIA,mcsanchez@uc.cl,F,40,60787,150,S/A,Marge's Place,wkrebs@att.net,No Aplica
-78,MOLINA,JEREMÍAS ANDRÉS,jamolina3@uc.cl,M,41,38452,148,S/A,Minerva Bakery,delpino@optonline.net,No Aplica
-0,ABUSLEME,RAFAEL ANTONIO,raabusleme@uc.cl,M,42,31084,156,S/A,Avalon Motel,geekgrl@hotmail.com,No Aplica
-62,KREBS,AGUSTIN,akrebs2@uc.cl,M,43,51703,149,S/A,Pierogies Plus,ullman@optonline.net,No Aplica
-6,ANDRADE,KENZO,kandrade@uc.cl,M,44,31084,156,S/A,Avalon Motel,geekgrl@hotmail.com,No Aplica
-60,JUAREZ,VICENTE IGNACIO,vijuarez@uc.cl,M,45,48667,155,S/A,China Sea Chinese Restaurant,matloff@verizon.net,No Aplica
-80,MUSSUTO,VITO ARCANGELO,vamussuto@uc.cl,M,46,48667,155,S/A,China Sea Chinese Restaurant,matloff@verizon.net,No Aplica
-36,DURAN,FERNANDA ROCIO,frduran@uc.cl,F,47,34831,157,S/A,Star Nails,dobey@optonline.net,No Aplica
-67,MARAMBIO,VÍCTOR ARIEL,vamarambio@uc.cl,M,48,68350,153,S/A,Luigi's Pizzeria,mcrawfor@sbcglobal.net,No Aplica
-31,DARRITCHON,DANIEL EDUARDO,dedarritchon@uc.cl,M,49,68037,141,S/A,Tom Bradley Airport,burns@msn.com,No Aplica
-1,AGUILLÓN,JUAN JOSÉ ARTURO,jjaguillon@uc.cl,M,50,30538,140,S/A,Hoyts Cinema,sisyphus@me.com,No Aplica
-90,POBLETE,SEBASTIÁN IGNACIO,sipoblete@uc.cl,M,51,3900400,136,S/A,Loft,catalog@gmail.com,No Aplica
-33,DEL REAL,BENJAMÍN IGNACIO,bidelreal@uc.cl,M,52,4268961,123,S/A,Cindy Esser's Floral Shop,denism@icloud.com,No Aplica
-11,BAEZA,IGNACIA,ibaeza1@uc.cl,F,53,859600,139,S/A,Rapa Nui,mddallara@yahoo.com,No Aplica
-87,PARRAGUEZ,NICOLÁS ALEJANDRO,nlparraguez@uc.cl,M,54,697085,123,S/A,Cindy Esser's Floral Shop,denism@icloud.com,No Aplica
-23,CARRASCO,DANIEL ROBERTO,drcarrasco@uc.cl,M,55,3656770,123,S/A,Cindy Esser's Floral Shop,denism@icloud.com,No Aplica
-52,HARCHA,JORGE ESTEBAN,jeharcha@uc.cl,M,56,820933,132,S/A,Nike,iapetus@sbcglobal.net,No Aplica
-67,MARAMBIO,VÍCTOR ARIEL,vamarambio@uc.cl,M,57,3497780,134,S/A,Apple,scotfl@gmail.com,No Aplica
-29,CONTRERAS,IGNACIO,icontreras1@uc.cl,M,58,3144288,136,S/A,Loft,catalog@gmail.com,No Aplica
-13,BAO,JAVIERA BELÉN,jbbao@uc.cl,F,59,4779167,135,S/A,Jumbo,sekiya@yahoo.ca,No Aplica
-78,MOLINA,JEREMÍAS ANDRÉS,jamolina3@uc.cl,M,60,1161615,124,S/A,Red White & Blue Thrift Store,symbolic@yahoo.ca,No Aplica
-84,OLIVARES,LEONARDO ENRIQUE,leolivares@uc.cl,M,61,777726,132,S/A,Nike,iapetus@sbcglobal.net,No Aplica
-48,GARRIDO,NICOLÁS JORGE,njgarrido@uc.cl,M,62,3660692,122,S/A,American Thrift Center,pajas@comcast.net,No Aplica
-1,AGUILLÓN,JUAN JOSÉ ARTURO,jjaguillon@uc.cl,M,63,3835878,123,S/A,Cindy Esser's Floral Shop,denism@icloud.com,No Aplica
-79,MORAGA,JUAN PABLO,jomoraga@uc.cl,M,64,2915583,122,S/A,American Thrift Center,pajas@comcast.net,No Aplica
-29,CONTRERAS,IGNACIO,icontreras1@uc.cl,M,65,2585451,135,S/A,Jumbo,sekiya@yahoo.ca,No Aplica
-6,ANDRADE,KENZO,kandrade@uc.cl,M,66,3347008,129,S/A,Adidas,martyloo@hotmail.com,No Aplica
-28,CONCHA,DANIELA ALEJANDRA,daconcha@uc.cl,F,67,2909767,130,S/A,Porto Fino,esbeck@msn.com,No Aplica
-78,MOLINA,JEREMÍAS ANDRÉS,jamolina3@uc.cl,M,68,1883700,124,S/A,Red White & Blue Thrift Store,symbolic@yahoo.ca,No Aplica
-107,TORRES,DUNKAN NICOLÁS,dntorres1@uc.cl,M,69,1943722,124,S/A,Red White & Blue Thrift Store,symbolic@yahoo.ca,No Aplica
-63,LEPE,CARLA DANIELA,cdlepe@uc.cl,F,70,2548000,127,S/A,Homecenter,mhassel@mac.com,No Aplica
-13,BAO,JAVIERA BELÉN,jbbao@uc.cl,F,71,723168,125,S/A,Paul's Clock Repair,dkrishna@msn.com,No Aplica
-57,IRARRAZAVAL,ALFONSO JUAN DE DIOS,auirarrazaval@uc.cl,M,72,79504,137,S/A,North Face,chaki@msn.com,No Aplica
-56,INOSTROZA,JAVIERA MONSERRAT,jminostroza@uc.cl,F,73,704000,134,S/A,Apple,scotfl@gmail.com,No Aplica
-21,CAMPENY,AGUSTÍN RICARDO,arcampeny@uc.cl,M,74,3320400,128,S/A,Casa Ideas,giafly@sbcglobal.net,No Aplica
-43,FIELDHOUSE,IAN,ifieldhouse@uc.cl,M,75,1915095,124,S/A,Red White & Blue Thrift Store,symbolic@yahoo.ca,No Aplica
-8,ARELLANO,PAULA FABIOLA,pfarellano@uc.cl,M,76,3511276,122,S/A,American Thrift Center,pajas@comcast.net,No Aplica
-10,AYANCAN,BENJAMIN EDUARDO,beayancan@uc.cl,M,77,5854700,120,S/A,Dick's Sporting Goods,ryanvm@aol.com,No Aplica
-94,QUIROGA,GONZALO TOMAS,gtquiroga@uc.cl,M,78,5087680,134,S/A,Apple,scotfl@gmail.com,No Aplica
-32,DE DIEGO,FERNANDO ANTONIO,fadediego@uc.cl,M,79,984120,123,S/A,Cindy Esser's Floral Shop,denism@icloud.com,No Aplica
-117,ZÚÑIGA,SAMUEL EMILIO,sezuniga1@uc.cl,M,80,3610250,119,S/A,Old Navy,jonadab@sbcglobal.net,No Aplica
-111,VILLALOBOS,TIEN,tvillalobos1@uc.cl,M,81,9558000,127,S/A,Homecenter,mhassel@mac.com,No Aplica
-72,MEDINA,WILLIAMS ALEJANDRO,wamedina@uc.cl,M,82,1135592,129,S/A,Adidas,martyloo@hotmail.com,No Aplica
-36,DURAN,FERNANDA ROCIO,frduran@uc.cl,F,83,624064,136,S/A,Loft,catalog@gmail.com,No Aplica
-46,GABLER,MATÍAS ANDRÉS,mngabler@uc.cl,M,84,1820000,127,S/A,Homecenter,mhassel@mac.com,No Aplica
-36,DURAN,FERNANDA ROCIO,frduran@uc.cl,F,85,1795187,120,S/A,Dick's Sporting Goods,ryanvm@aol.com,No Aplica
-4,ÁLVAREZ,TOMÁS,talvarez2@uc.cl,M,86,214571,139,S/A,Rapa Nui,mddallara@yahoo.com,No Aplica
-79,MORAGA,JUAN PABLO,jomoraga@uc.cl,M,87,1613736,129,S/A,Adidas,martyloo@hotmail.com,No Aplica
-106,TALADRIZ,FEDERICO ANDRES,fntaladriz@uc.cl,M,88,1958675,135,S/A,Jumbo,sekiya@yahoo.ca,No Aplica
-15,BARRIENTOS,FELIPE ANTONIO,fnbarrientos@uc.cl,M,89,1671381,123,S/A,Cindy Esser's Floral Shop,denism@icloud.com,No Aplica
-58,JIMÉNEZ,FELIPE CARLOS,fcjimenez@uc.cl,M,90,5882630,123,S/A,Cindy Esser's Floral Shop,denism@icloud.com,No Aplica
-109,VALENZUELA,TOMÁS PATRICIO,tpvalenzuela@uc.cl,M,91,1411712,138,S/A,Assoto,alfred@hotmail.com,No Aplica
-13,BAO,JAVIERA BELÉN,jbbao@uc.cl,F,92,3144288,136,S/A,Loft,catalog@gmail.com,No Aplica
-109,VALENZUELA,TOMÁS PATRICIO,tpvalenzuela@uc.cl,M,93,3356432,122,S/A,American Thrift Center,pajas@comcast.net,No Aplica
-10,AYANCAN,BENJAMIN EDUARDO,beayancan@uc.cl,M,94,3718848,128,S/A,Casa Ideas,giafly@sbcglobal.net,No Aplica
-82,OLEA,PABLO IGNACIO,pgolea@uc.cl,M,95,1722107,130,S/A,Porto Fino,esbeck@msn.com,No Aplica
-84,OLIVARES,LEONARDO ENRIQUE,leolivares@uc.cl,M,96,309345,123,S/A,Cindy Esser's Floral Shop,denism@icloud.com,No Aplica
-8,ARELLANO,PAULA FABIOLA,pfarellano@uc.cl,M,97,712462,135,S/A,Jumbo,sekiya@yahoo.ca,No Aplica
-22,CAROCA,DIEGO ANTONIO,dncaroca@uc.cl,M,98,2086077,127,S/A,Homecenter,mhassel@mac.com,No Aplica
-85,OPASO,JOSE MANUEL,jmopaso@uc.cl,M,99,2050972,130,S/A,Porto Fino,esbeck@msn.com,No Aplica
-79,MORAGA,JUAN PABLO,jomoraga@uc.cl,M,100,1444768,131,S/A,Paddy's House,frostman@yahoo.com,No Aplica
-27,COBO,ANTONIA SOFIA,ascobo@uc.cl,F,101,3714180,123,S/A,Cindy Esser's Floral Shop,denism@icloud.com,No Aplica
-71,MARTINEZ,RAIMUNDO,rmartinez7@uc.cl,M,102,2005192,134,S/A,Apple,scotfl@gmail.com,No Aplica
-43,FIELDHOUSE,IAN,ifieldhouse@uc.cl,M,103,7112704,131,S/A,Paddy's House,frostman@yahoo.com,No Aplica
-97,RICKE,SEBASTIAN,sricke@uc.cl,M,104,2582448,131,S/A,Paddy's House,frostman@yahoo.com,No Aplica
-98,RODRÍGUEZ,PABLO IGNACIO,pcrodriguez@uc.cl,M,105,552600,139,S/A,Rapa Nui,mddallara@yahoo.com,No Aplica
-79,MORAGA,JUAN PABLO,jomoraga@uc.cl,M,106,723072,120,S/A,Dick's Sporting Goods,ryanvm@aol.com,No Aplica
-57,IRARRAZAVAL,ALFONSO JUAN DE DIOS,auirarrazaval@uc.cl,M,107,1852808,129,S/A,Adidas,martyloo@hotmail.com,No Aplica
-97,RICKE,SEBASTIAN,sricke@uc.cl,M,108,495224,120,S/A,Dick's Sporting Goods,ryanvm@aol.com,No Aplica
-112,WALLACE,THOMAS,twallace@uc.cl,M,109,3047339,121,S/A,Big Bang Bicycles,mjewell@optonline.net,No Aplica
-102,SÁNCHEZ,MARÍA IGNACIA,mcsanchez@uc.cl,F,110,4602540,132,S/A,Nike,iapetus@sbcglobal.net,No Aplica
-90,POBLETE,SEBASTIÁN IGNACIO,sipoblete@uc.cl,M,111,3555982,138,S/A,Assoto,alfred@hotmail.com,No Aplica
-22,CAROCA,DIEGO ANTONIO,dncaroca@uc.cl,M,112,1691004,135,S/A,Jumbo,sekiya@yahoo.ca,No Aplica
-68,MARDONES,MAXIMILIANO ANDRES,mnmardones@uc.cl,M,113,1733272,129,S/A,Adidas,martyloo@hotmail.com,No Aplica
-90,POBLETE,SEBASTIÁN IGNACIO,sipoblete@uc.cl,M,114,306836,132,S/A,Nike,iapetus@sbcglobal.net,No Aplica
-63,LEPE,CARLA DANIELA,cdlepe@uc.cl,F,115,2629792,129,S/A,Adidas,martyloo@hotmail.com,No Aplica
-14,BARRÍA,FELIPE RAÚL,frbarria@uc.cl,M,116,3144288,136,S/A,Loft,catalog@gmail.com,No Aplica
-52,HARCHA,JORGE ESTEBAN,jeharcha@uc.cl,M,117,1777788,125,S/A,Paul's Clock Repair,dkrishna@msn.com,No Aplica
-82,OLEA,PABLO IGNACIO,pgolea@uc.cl,M,118,2638986,125,S/A,Paul's Clock Repair,dkrishna@msn.com,No Aplica
-84,OLIVARES,LEONARDO ENRIQUE,leolivares@uc.cl,M,119,2933834,137,S/A,North Face,chaki@msn.com,No Aplica
-77,MOLINA,DIEGO,dmolina2@uc.cl,M,120,410050,123,S/A,Cindy Esser's Floral Shop,denism@icloud.com,No Aplica
-97,RICKE,SEBASTIAN,sricke@uc.cl,M,121,3575061,122,S/A,American Thrift Center,pajas@comcast.net,No Aplica
-9,AVALOS,ANDRES EMILIO,aeavalos@uc.cl,M,122,603930,135,S/A,Jumbo,sekiya@yahoo.ca,No Aplica
-92,POTIN,PHILIPPE ANDRE,papotin@uc.cl,M,123,1307708,119,S/A,Old Navy,jonadab@sbcglobal.net,No Aplica
-110,VELOZO,SEBASTIAN ANDRES,savelozo@uc.cl,M,124,685722,137,S/A,North Face,chaki@msn.com,No Aplica
-54,HERREROS,CRISTOBAL EDUARDO,ceherreros@uc.cl,M,125,480330,131,S/A,Paddy's House,frostman@yahoo.com,No Aplica
-115,YOMA,DINKO FERNANDO,dfyoma@uc.cl,M,126,4398310,125,S/A,Paul's Clock Repair,dkrishna@msn.com,No Aplica
-62,KREBS,AGUSTIN,akrebs2@uc.cl,M,127,1166600,139,S/A,Rapa Nui,mddallara@yahoo.com,No Aplica
-9,AVALOS,ANDRES EMILIO,aeavalos@uc.cl,M,128,1140598,138,S/A,Assoto,alfred@hotmail.com,No Aplica
-105,SIEGEL,JAN PAUL,jasiegel@uc.cl,M,129,2306944,138,S/A,Assoto,alfred@hotmail.com,No Aplica
-91,POBLETE,CRISTÓBAL MARTÍN,cmpoblete@uc.cl,M,130,2494086,130,S/A,Porto Fino,esbeck@msn.com,No Aplica
-114,WIELANDT,JOSE MANUEL,jmwielandt@uc.cl,M,131,982400,139,S/A,Rapa Nui,mddallara@yahoo.com,No Aplica
-101,SALVADORES,TOMAS IGNACIO,tisalvadores@uc.cl,M,132,3918072,128,S/A,Casa Ideas,giafly@sbcglobal.net,No Aplica
-87,PARRAGUEZ,NICOLÁS ALEJANDRO,nlparraguez@uc.cl,M,133,3095460,131,S/A,Paddy's House,frostman@yahoo.com,No Aplica
-41,EVERKE,SARAH VIRGINIA,sveverke@uc.cl,F,134,873828,125,S/A,Paul's Clock Repair,dkrishna@msn.com,No Aplica
-103,SCHILLING,RICARDO ESTEBAN,reschilling@uc.cl,M,135,283030,137,S/A,North Face,chaki@msn.com,No Aplica
-114,WIELANDT,JOSE MANUEL,jmwielandt@uc.cl,M,136,1231903,121,S/A,Big Bang Bicycles,mjewell@optonline.net,No Aplica
-111,VILLALOBOS,TIEN,tvillalobos1@uc.cl,M,137,907718,121,S/A,Big Bang Bicycles,mjewell@optonline.net,No Aplica
-21,CAMPENY,AGUSTÍN RICARDO,arcampeny@uc.cl,M,138,2617998,119,S/A,Old Navy,jonadab@sbcglobal.net,No Aplica
-65,LIRA,VICENTE JOSE,vjlira@uc.cl,M,139,4279242,121,S/A,Big Bang Bicycles,mjewell@optonline.net,No Aplica
-89,PLAZA DE LOS REYES,MARIA IGNACIA,miplazadelosreyes@uc.cl,F,140,45450,128,S/A,Casa Ideas,giafly@sbcglobal.net,No Aplica
-59,JOUBLAN,JEAN PAUL ANDRE,jpjoublan@uc.cl,M,141,4769700,123,S/A,Cindy Esser's Floral Shop,denism@icloud.com,No Aplica
-7,APABLAZA,FELIPE EDUARDO,feapablaza@uc.cl,F,142,1161864,132,S/A,Nike,iapetus@sbcglobal.net,No Aplica
-78,MOLINA,JEREMÍAS ANDRÉS,jamolina3@uc.cl,M,143,3586080,129,S/A,Adidas,martyloo@hotmail.com,No Aplica
-108,TRAMON,JAVIER OMAR,jotramon@uc.cl,M,144,1906576,134,S/A,Apple,scotfl@gmail.com,No Aplica
-116,ZENTENO,MATÍAS ALEJANDRO,mlzenteno@uc.cl,M,145,872222,138,S/A,Assoto,alfred@hotmail.com,No Aplica
-22,CAROCA,DIEGO ANTONIO,dncaroca@uc.cl,M,146,4538590,121,S/A,Big Bang Bicycles,mjewell@optonline.net,No Aplica
-23,CARRASCO,DANIEL ROBERTO,drcarrasco@uc.cl,M,147,34432,138,S/A,Assoto,alfred@hotmail.com,No Aplica
-85,OPASO,JOSE MANUEL,jmopaso@uc.cl,M,148,334178,130,S/A,Porto Fino,esbeck@msn.com,No Aplica
+id_usuario1,apellido1,nombre1,correo1,sexo1,id_pagos,monto,id_usuario2,apellido2,nombre2,correo2,sexo2,fecha_transaccion
+1,AGUILLÓN,JUAN JOSÉ ARTURO,jjaguillon@uc.cl,M,0,68350,143,S/A,Shop 'n Save,parents@yahoo.ca,No Aplica,4/17/2018
+0,ABUSLEME,RAFAEL ANTONIO,raabusleme@uc.cl,M,1,68350,145,S/A,Latina Pizza,hamilton@hotmail.com,No Aplica,4/11/2018
+8,ARELLANO,PAULA FABIOLA,pfarellano@uc.cl,M,2,28812,141,S/A,Tom Bradley Airport,burns@msn.com,No Aplica,5/10/2018
+7,APABLAZA,FELIPE EDUARDO,feapablaza@uc.cl,F,3,68350,145,S/A,Latina Pizza,hamilton@hotmail.com,No Aplica,3/22/2018
+14,BARRÍA,FELIPE RAÚL,frbarria@uc.cl,M,4,60787,159,S/A,Remember When,msusa@live.com,No Aplica,3/23/2018
+11,BAEZA,IGNACIA,ibaeza1@uc.cl,F,5,48667,153,S/A,Luigi's Pizzeria,mcrawfor@sbcglobal.net,No Aplica,4/14/2018
+0,ABUSLEME,RAFAEL ANTONIO,raabusleme@uc.cl,M,6,90754,149,S/A,Pierogies Plus,ullman@optonline.net,No Aplica,4/13/2018
+8,ARELLANO,PAULA FABIOLA,pfarellano@uc.cl,M,7,60787,150,S/A,Marge's Place,wkrebs@att.net,No Aplica,4/16/2018
+15,BARRIENTOS,FELIPE ANTONIO,fnbarrientos@uc.cl,M,8,68350,145,S/A,Latina Pizza,hamilton@hotmail.com,No Aplica,4/21/2018
+0,ABUSLEME,RAFAEL ANTONIO,raabusleme@uc.cl,M,9,48667,151,S/A,Applebee's,nullchar@verizon.net,No Aplica,4/16/2018
+18,BERRIOS,FELIPE ALBERTO,faberrios@uc.cl,M,10,94563,154,S/A,Donald's,gslondon@att.net,No Aplica,4/4/2018
+1,AGUILLÓN,JUAN JOSÉ ARTURO,jjaguillon@uc.cl,M,11,38452,146,S/A,Bellisario Pizza Shop,jimxugle@live.com,No Aplica,3/10/2018
+19,BUGMANN,JOAQUÍN ALBERTO,jabugmann@uc.cl,M,12,68037,141,S/A,Tom Bradley Airport,burns@msn.com,No Aplica,5/20/2018
+0,ABUSLEME,RAFAEL ANTONIO,raabusleme@uc.cl,M,13,48667,155,S/A,China Sea Chinese Restaurant,matloff@verizon.net,No Aplica,4/5/2018
+8,ARELLANO,PAULA FABIOLA,pfarellano@uc.cl,M,14,48667,151,S/A,Applebee's,nullchar@verizon.net,No Aplica,4/2/2018
+16,BENGOA,JOSEFINA,jbengoa1@uc.cl,F,15,60787,159,S/A,Remember When,msusa@live.com,No Aplica,4/30/2018
+16,BENGOA,JOSEFINA,jbengoa1@uc.cl,F,16,60787,159,S/A,Remember When,msusa@live.com,No Aplica,5/18/2018
+7,APABLAZA,FELIPE EDUARDO,feapablaza@uc.cl,F,17,48667,160,S/A,Pistella Beer Distributors,staikos@msn.com,No Aplica,4/5/2018
+4,ÁLVAREZ,TOMÁS,talvarez2@uc.cl,M,18,48667,147,S/A,Hunan Wok Chinese Restaurant,moonlapse@outlook.com,No Aplica,4/2/2018
+17,BERRÍOS,CAMILO IGNACIO,ciberrios@uc.cl,M,19,38452,146,S/A,Bellisario Pizza Shop,jimxugle@live.com,No Aplica,5/5/2018
+5,ALVAREZ,AUGUSTO ALEJANDRO,aaalvarez@uc.cl,M,20,68350,146,S/A,Bellisario Pizza Shop,jimxugle@live.com,No Aplica,4/5/2018
+4,ÁLVAREZ,TOMÁS,talvarez2@uc.cl,M,21,38452,148,S/A,Minerva Bakery,delpino@optonline.net,No Aplica,5/6/2018
+30,CUCUMIDES,TAMARA ALEXANDRA,tacucumides@uc.cl,F,22,14737,157,S/A,Star Nails,dobey@optonline.net,No Aplica,3/1/2018
+83,OLIDEN,NORMAN ANDRES,naoliden@uc.cl,M,23,94563,154,S/A,Donald's,gslondon@att.net,No Aplica,5/28/2018
+51,HANUCH,RODRIGO IGNACIO,rihanuch@uc.cl,M,24,48667,151,S/A,Applebee's,nullchar@verizon.net,No Aplica,4/21/2018
+73,MELÍN,VICENTE TOMÁS,vtmelin@uc.cl,M,25,48667,147,S/A,Hunan Wok Chinese Restaurant,moonlapse@outlook.com,No Aplica,5/3/2018
+38,EICHHOLZ,JOAQUIN,jeichholz3@uc.cl,M,26,1000,142,S/A,Metro,brainless@live.com,No Aplica,5/1/2018
+55,ILABACA,CRISTOBAL,cilabaca1@uc.cl,M,27,68350,146,S/A,Bellisario Pizza Shop,jimxugle@live.com,No Aplica,3/14/2018
+108,TRAMON,JAVIER OMAR,jotramon@uc.cl,M,28,34831,157,S/A,Star Nails,dobey@optonline.net,No Aplica,3/3/2018
+118,ZUPEUC,DANIEL,dzupeuc@uc.cl,M,29,3565,142,S/A,Metro,brainless@live.com,No Aplica,5/22/2018
+9,AVALOS,ANDRES EMILIO,aeavalos@uc.cl,M,30,69017,149,S/A,Pierogies Plus,ullman@optonline.net,No Aplica,3/6/2018
+81,NESTLER,JUAN JOSÉ,jjnestler@uc.cl,M,31,14737,157,S/A,Star Nails,dobey@optonline.net,No Aplica,5/30/2018
+3,ÁLVAREZ,VALENTINA JAVIERA,vjalvarez@uc.cl,F,32,38452,152,S/A,R & B's Pizza Place,monkeydo@optonline.net,No Aplica,3/23/2018
+75,MIDDLETON,JAIME ANDRES,jamiddleton@uc.cl,M,33,68350,143,S/A,Shop 'n Save,parents@yahoo.ca,No Aplica,3/12/2018
+19,BUGMANN,JOAQUÍN ALBERTO,jabugmann@uc.cl,M,34,48667,155,S/A,China Sea Chinese Restaurant,matloff@verizon.net,No Aplica,5/23/2018
+52,HARCHA,JORGE ESTEBAN,jeharcha@uc.cl,M,35,48667,160,S/A,Pistella Beer Distributors,staikos@msn.com,No Aplica,5/30/2018
+39,ESCUDERO,MARCELO IGNACIO,miescudero@uc.cl,M,36,58056,154,S/A,Donald's,gslondon@att.net,No Aplica,5/18/2018
+80,MUSSUTO,VITO ARCANGELO,vamussuto@uc.cl,M,37,38452,146,S/A,Bellisario Pizza Shop,jimxugle@live.com,No Aplica,4/28/2018
+32,DE DIEGO,FERNANDO ANTONIO,fadediego@uc.cl,M,38,34831,157,S/A,Star Nails,dobey@optonline.net,No Aplica,3/3/2018
+14,BARRÍA,FELIPE RAÚL,frbarria@uc.cl,M,39,48667,158,S/A,Vivo,crypt@comcast.net,No Aplica,4/15/2018
+102,SÁNCHEZ,MARÍA IGNACIA,mcsanchez@uc.cl,F,40,60787,150,S/A,Marge's Place,wkrebs@att.net,No Aplica,3/30/2018
+78,MOLINA,JEREMÍAS ANDRÉS,jamolina3@uc.cl,M,41,38452,148,S/A,Minerva Bakery,delpino@optonline.net,No Aplica,5/29/2018
+0,ABUSLEME,RAFAEL ANTONIO,raabusleme@uc.cl,M,42,31084,156,S/A,Avalon Motel,geekgrl@hotmail.com,No Aplica,3/12/2018
+62,KREBS,AGUSTIN,akrebs2@uc.cl,M,43,51703,149,S/A,Pierogies Plus,ullman@optonline.net,No Aplica,3/20/2018
+6,ANDRADE,KENZO,kandrade@uc.cl,M,44,31084,156,S/A,Avalon Motel,geekgrl@hotmail.com,No Aplica,4/4/2018
+60,JUAREZ,VICENTE IGNACIO,vijuarez@uc.cl,M,45,48667,155,S/A,China Sea Chinese Restaurant,matloff@verizon.net,No Aplica,3/24/2018
+80,MUSSUTO,VITO ARCANGELO,vamussuto@uc.cl,M,46,48667,155,S/A,China Sea Chinese Restaurant,matloff@verizon.net,No Aplica,3/11/2018
+36,DURAN,FERNANDA ROCIO,frduran@uc.cl,F,47,34831,157,S/A,Star Nails,dobey@optonline.net,No Aplica,4/15/2018
+67,MARAMBIO,VÍCTOR ARIEL,vamarambio@uc.cl,M,48,68350,153,S/A,Luigi's Pizzeria,mcrawfor@sbcglobal.net,No Aplica,5/15/2018
+31,DARRITCHON,DANIEL EDUARDO,dedarritchon@uc.cl,M,49,68037,141,S/A,Tom Bradley Airport,burns@msn.com,No Aplica,3/6/2018
+1,AGUILLÓN,JUAN JOSÉ ARTURO,jjaguillon@uc.cl,M,50,30538,140,S/A,Hoyts Cinema,sisyphus@me.com,No Aplica,4/28/2018
+90,POBLETE,SEBASTIÁN IGNACIO,sipoblete@uc.cl,M,51,3900400,136,S/A,Loft,catalog@gmail.com,No Aplica,3/31/2018
+33,DEL REAL,BENJAMÍN IGNACIO,bidelreal@uc.cl,M,52,4268961,123,S/A,Cindy Esser's Floral Shop,denism@icloud.com,No Aplica,4/7/2018
+11,BAEZA,IGNACIA,ibaeza1@uc.cl,F,53,859600,139,S/A,Rapa Nui,mddallara@yahoo.com,No Aplica,3/10/2018
+87,PARRAGUEZ,NICOLÁS ALEJANDRO,nlparraguez@uc.cl,M,54,697085,123,S/A,Cindy Esser's Floral Shop,denism@icloud.com,No Aplica,5/16/2018
+23,CARRASCO,DANIEL ROBERTO,drcarrasco@uc.cl,M,55,3656770,123,S/A,Cindy Esser's Floral Shop,denism@icloud.com,No Aplica,5/10/2018
+52,HARCHA,JORGE ESTEBAN,jeharcha@uc.cl,M,56,820933,132,S/A,Nike,iapetus@sbcglobal.net,No Aplica,4/27/2018
+67,MARAMBIO,VÍCTOR ARIEL,vamarambio@uc.cl,M,57,3497780,134,S/A,Apple,scotfl@gmail.com,No Aplica,3/25/2018
+29,CONTRERAS,IGNACIO,icontreras1@uc.cl,M,58,3144288,136,S/A,Loft,catalog@gmail.com,No Aplica,5/20/2018
+13,BAO,JAVIERA BELÉN,jbbao@uc.cl,F,59,4779167,135,S/A,Jumbo,sekiya@yahoo.ca,No Aplica,3/25/2018
+78,MOLINA,JEREMÍAS ANDRÉS,jamolina3@uc.cl,M,60,1161615,124,S/A,Red White & Blue Thrift Store,symbolic@yahoo.ca,No Aplica,4/1/2018
+84,OLIVARES,LEONARDO ENRIQUE,leolivares@uc.cl,M,61,777726,132,S/A,Nike,iapetus@sbcglobal.net,No Aplica,3/23/2018
+48,GARRIDO,NICOLÁS JORGE,njgarrido@uc.cl,M,62,3660692,122,S/A,American Thrift Center,pajas@comcast.net,No Aplica,5/15/2018
+1,AGUILLÓN,JUAN JOSÉ ARTURO,jjaguillon@uc.cl,M,63,3835878,123,S/A,Cindy Esser's Floral Shop,denism@icloud.com,No Aplica,3/2/2018
+79,MORAGA,JUAN PABLO,jomoraga@uc.cl,M,64,2915583,122,S/A,American Thrift Center,pajas@comcast.net,No Aplica,4/15/2018
+29,CONTRERAS,IGNACIO,icontreras1@uc.cl,M,65,2585451,135,S/A,Jumbo,sekiya@yahoo.ca,No Aplica,5/4/2018
+6,ANDRADE,KENZO,kandrade@uc.cl,M,66,3347008,129,S/A,Adidas,martyloo@hotmail.com,No Aplica,3/5/2018
+28,CONCHA,DANIELA ALEJANDRA,daconcha@uc.cl,F,67,2909767,130,S/A,Porto Fino,esbeck@msn.com,No Aplica,5/12/2018
+78,MOLINA,JEREMÍAS ANDRÉS,jamolina3@uc.cl,M,68,1883700,124,S/A,Red White & Blue Thrift Store,symbolic@yahoo.ca,No Aplica,3/30/2018
+107,TORRES,DUNKAN NICOLÁS,dntorres1@uc.cl,M,69,1943722,124,S/A,Red White & Blue Thrift Store,symbolic@yahoo.ca,No Aplica,3/30/2018
+63,LEPE,CARLA DANIELA,cdlepe@uc.cl,F,70,2548000,127,S/A,Homecenter,mhassel@mac.com,No Aplica,3/30/2018
+13,BAO,JAVIERA BELÉN,jbbao@uc.cl,F,71,723168,125,S/A,Paul's Clock Repair,dkrishna@msn.com,No Aplica,5/19/2018
+57,IRARRAZAVAL,ALFONSO JUAN DE DIOS,auirarrazaval@uc.cl,M,72,79504,137,S/A,North Face,chaki@msn.com,No Aplica,3/30/2018
+56,INOSTROZA,JAVIERA MONSERRAT,jminostroza@uc.cl,F,73,704000,134,S/A,Apple,scotfl@gmail.com,No Aplica,3/27/2018
+21,CAMPENY,AGUSTÍN RICARDO,arcampeny@uc.cl,M,74,3320400,128,S/A,Casa Ideas,giafly@sbcglobal.net,No Aplica,3/31/2018
+43,FIELDHOUSE,IAN,ifieldhouse@uc.cl,M,75,1915095,124,S/A,Red White & Blue Thrift Store,symbolic@yahoo.ca,No Aplica,4/25/2018
+8,ARELLANO,PAULA FABIOLA,pfarellano@uc.cl,M,76,3511276,122,S/A,American Thrift Center,pajas@comcast.net,No Aplica,3/24/2018
+10,AYANCAN,BENJAMIN EDUARDO,beayancan@uc.cl,M,77,5854700,120,S/A,Dick's Sporting Goods,ryanvm@aol.com,No Aplica,5/20/2018
+94,QUIROGA,GONZALO TOMAS,gtquiroga@uc.cl,M,78,5087680,134,S/A,Apple,scotfl@gmail.com,No Aplica,4/5/2018
+32,DE DIEGO,FERNANDO ANTONIO,fadediego@uc.cl,M,79,984120,123,S/A,Cindy Esser's Floral Shop,denism@icloud.com,No Aplica,3/29/2018
+117,ZÚÑIGA,SAMUEL EMILIO,sezuniga1@uc.cl,M,80,3610250,119,S/A,Old Navy,jonadab@sbcglobal.net,No Aplica,4/21/2018
+111,VILLALOBOS,TIEN,tvillalobos1@uc.cl,M,81,9558000,127,S/A,Homecenter,mhassel@mac.com,No Aplica,4/23/2018
+72,MEDINA,WILLIAMS ALEJANDRO,wamedina@uc.cl,M,82,1135592,129,S/A,Adidas,martyloo@hotmail.com,No Aplica,5/11/2018
+36,DURAN,FERNANDA ROCIO,frduran@uc.cl,F,83,624064,136,S/A,Loft,catalog@gmail.com,No Aplica,4/30/2018
+46,GABLER,MATÍAS ANDRÉS,mngabler@uc.cl,M,84,1820000,127,S/A,Homecenter,mhassel@mac.com,No Aplica,3/25/2018
+36,DURAN,FERNANDA ROCIO,frduran@uc.cl,F,85,1795187,120,S/A,Dick's Sporting Goods,ryanvm@aol.com,No Aplica,5/16/2018
+4,ÁLVAREZ,TOMÁS,talvarez2@uc.cl,M,86,214571,139,S/A,Rapa Nui,mddallara@yahoo.com,No Aplica,3/14/2018
+79,MORAGA,JUAN PABLO,jomoraga@uc.cl,M,87,1613736,129,S/A,Adidas,martyloo@hotmail.com,No Aplica,3/25/2018
+106,TALADRIZ,FEDERICO ANDRES,fntaladriz@uc.cl,M,88,1958675,135,S/A,Jumbo,sekiya@yahoo.ca,No Aplica,4/26/2018
+15,BARRIENTOS,FELIPE ANTONIO,fnbarrientos@uc.cl,M,89,1671381,123,S/A,Cindy Esser's Floral Shop,denism@icloud.com,No Aplica,6/1/2018
+58,JIMÉNEZ,FELIPE CARLOS,fcjimenez@uc.cl,M,90,5882630,123,S/A,Cindy Esser's Floral Shop,denism@icloud.com,No Aplica,3/23/2018
+109,VALENZUELA,TOMÁS PATRICIO,tpvalenzuela@uc.cl,M,91,1411712,138,S/A,Assoto,alfred@hotmail.com,No Aplica,4/5/2018
+13,BAO,JAVIERA BELÉN,jbbao@uc.cl,F,92,3144288,136,S/A,Loft,catalog@gmail.com,No Aplica,5/27/2018
+109,VALENZUELA,TOMÁS PATRICIO,tpvalenzuela@uc.cl,M,93,3356432,122,S/A,American Thrift Center,pajas@comcast.net,No Aplica,5/8/2018
+10,AYANCAN,BENJAMIN EDUARDO,beayancan@uc.cl,M,94,3718848,128,S/A,Casa Ideas,giafly@sbcglobal.net,No Aplica,5/31/2018
+82,OLEA,PABLO IGNACIO,pgolea@uc.cl,M,95,1722107,130,S/A,Porto Fino,esbeck@msn.com,No Aplica,4/1/2018
+84,OLIVARES,LEONARDO ENRIQUE,leolivares@uc.cl,M,96,309345,123,S/A,Cindy Esser's Floral Shop,denism@icloud.com,No Aplica,4/25/2018
+8,ARELLANO,PAULA FABIOLA,pfarellano@uc.cl,M,97,712462,135,S/A,Jumbo,sekiya@yahoo.ca,No Aplica,3/27/2018
+22,CAROCA,DIEGO ANTONIO,dncaroca@uc.cl,M,98,2086077,127,S/A,Homecenter,mhassel@mac.com,No Aplica,5/19/2018
+85,OPASO,JOSE MANUEL,jmopaso@uc.cl,M,99,2050972,130,S/A,Porto Fino,esbeck@msn.com,No Aplica,4/30/2018
+79,MORAGA,JUAN PABLO,jomoraga@uc.cl,M,100,1444768,131,S/A,Paddy's House,frostman@yahoo.com,No Aplica,3/15/2018
+27,COBO,ANTONIA SOFIA,ascobo@uc.cl,F,101,3714180,123,S/A,Cindy Esser's Floral Shop,denism@icloud.com,No Aplica,3/14/2018
+71,MARTINEZ,RAIMUNDO,rmartinez7@uc.cl,M,102,2005192,134,S/A,Apple,scotfl@gmail.com,No Aplica,5/24/2018
+43,FIELDHOUSE,IAN,ifieldhouse@uc.cl,M,103,7112704,131,S/A,Paddy's House,frostman@yahoo.com,No Aplica,4/20/2018
+97,RICKE,SEBASTIAN,sricke@uc.cl,M,104,2582448,131,S/A,Paddy's House,frostman@yahoo.com,No Aplica,3/9/2018
+98,RODRÍGUEZ,PABLO IGNACIO,pcrodriguez@uc.cl,M,105,552600,139,S/A,Rapa Nui,mddallara@yahoo.com,No Aplica,3/20/2018
+79,MORAGA,JUAN PABLO,jomoraga@uc.cl,M,106,723072,120,S/A,Dick's Sporting Goods,ryanvm@aol.com,No Aplica,5/21/2018
+57,IRARRAZAVAL,ALFONSO JUAN DE DIOS,auirarrazaval@uc.cl,M,107,1852808,129,S/A,Adidas,martyloo@hotmail.com,No Aplica,4/13/2018
+97,RICKE,SEBASTIAN,sricke@uc.cl,M,108,495224,120,S/A,Dick's Sporting Goods,ryanvm@aol.com,No Aplica,4/28/2018
+112,WALLACE,THOMAS,twallace@uc.cl,M,109,3047339,121,S/A,Big Bang Bicycles,mjewell@optonline.net,No Aplica,4/24/2018
+102,SÁNCHEZ,MARÍA IGNACIA,mcsanchez@uc.cl,F,110,4602540,132,S/A,Nike,iapetus@sbcglobal.net,No Aplica,4/12/2018
+90,POBLETE,SEBASTIÁN IGNACIO,sipoblete@uc.cl,M,111,3555982,138,S/A,Assoto,alfred@hotmail.com,No Aplica,4/13/2018
+22,CAROCA,DIEGO ANTONIO,dncaroca@uc.cl,M,112,1691004,135,S/A,Jumbo,sekiya@yahoo.ca,No Aplica,5/23/2018
+68,MARDONES,MAXIMILIANO ANDRES,mnmardones@uc.cl,M,113,1733272,129,S/A,Adidas,martyloo@hotmail.com,No Aplica,4/25/2018
+90,POBLETE,SEBASTIÁN IGNACIO,sipoblete@uc.cl,M,114,306836,132,S/A,Nike,iapetus@sbcglobal.net,No Aplica,5/13/2018
+63,LEPE,CARLA DANIELA,cdlepe@uc.cl,F,115,2629792,129,S/A,Adidas,martyloo@hotmail.com,No Aplica,3/4/2018
+14,BARRÍA,FELIPE RAÚL,frbarria@uc.cl,M,116,3144288,136,S/A,Loft,catalog@gmail.com,No Aplica,4/19/2018
+52,HARCHA,JORGE ESTEBAN,jeharcha@uc.cl,M,117,1777788,125,S/A,Paul's Clock Repair,dkrishna@msn.com,No Aplica,3/5/2018
+82,OLEA,PABLO IGNACIO,pgolea@uc.cl,M,118,2638986,125,S/A,Paul's Clock Repair,dkrishna@msn.com,No Aplica,5/26/2018
+84,OLIVARES,LEONARDO ENRIQUE,leolivares@uc.cl,M,119,2933834,137,S/A,North Face,chaki@msn.com,No Aplica,5/4/2018
+77,MOLINA,DIEGO,dmolina2@uc.cl,M,120,410050,123,S/A,Cindy Esser's Floral Shop,denism@icloud.com,No Aplica,4/11/2018
+97,RICKE,SEBASTIAN,sricke@uc.cl,M,121,3575061,122,S/A,American Thrift Center,pajas@comcast.net,No Aplica,3/18/2018
+9,AVALOS,ANDRES EMILIO,aeavalos@uc.cl,M,122,603930,135,S/A,Jumbo,sekiya@yahoo.ca,No Aplica,4/25/2018
+92,POTIN,PHILIPPE ANDRE,papotin@uc.cl,M,123,1307708,119,S/A,Old Navy,jonadab@sbcglobal.net,No Aplica,3/31/2018
+110,VELOZO,SEBASTIAN ANDRES,savelozo@uc.cl,M,124,685722,137,S/A,North Face,chaki@msn.com,No Aplica,6/1/2018
+54,HERREROS,CRISTOBAL EDUARDO,ceherreros@uc.cl,M,125,480330,131,S/A,Paddy's House,frostman@yahoo.com,No Aplica,5/20/2018
+115,YOMA,DINKO FERNANDO,dfyoma@uc.cl,M,126,4398310,125,S/A,Paul's Clock Repair,dkrishna@msn.com,No Aplica,3/31/2018
+62,KREBS,AGUSTIN,akrebs2@uc.cl,M,127,1166600,139,S/A,Rapa Nui,mddallara@yahoo.com,No Aplica,4/5/2018
+9,AVALOS,ANDRES EMILIO,aeavalos@uc.cl,M,128,1140598,138,S/A,Assoto,alfred@hotmail.com,No Aplica,4/10/2018
+105,SIEGEL,JAN PAUL,jasiegel@uc.cl,M,129,2306944,138,S/A,Assoto,alfred@hotmail.com,No Aplica,5/24/2018
+91,POBLETE,CRISTÓBAL MARTÍN,cmpoblete@uc.cl,M,130,2494086,130,S/A,Porto Fino,esbeck@msn.com,No Aplica,4/7/2018
+114,WIELANDT,JOSE MANUEL,jmwielandt@uc.cl,M,131,982400,139,S/A,Rapa Nui,mddallara@yahoo.com,No Aplica,4/27/2018
+101,SALVADORES,TOMAS IGNACIO,tisalvadores@uc.cl,M,132,3918072,128,S/A,Casa Ideas,giafly@sbcglobal.net,No Aplica,5/19/2018
+87,PARRAGUEZ,NICOLÁS ALEJANDRO,nlparraguez@uc.cl,M,133,3095460,131,S/A,Paddy's House,frostman@yahoo.com,No Aplica,3/2/2018
+41,EVERKE,SARAH VIRGINIA,sveverke@uc.cl,F,134,873828,125,S/A,Paul's Clock Repair,dkrishna@msn.com,No Aplica,4/13/2018
+103,SCHILLING,RICARDO ESTEBAN,reschilling@uc.cl,M,135,283030,137,S/A,North Face,chaki@msn.com,No Aplica,3/21/2018
+114,WIELANDT,JOSE MANUEL,jmwielandt@uc.cl,M,136,1231903,121,S/A,Big Bang Bicycles,mjewell@optonline.net,No Aplica,5/11/2018
+111,VILLALOBOS,TIEN,tvillalobos1@uc.cl,M,137,907718,121,S/A,Big Bang Bicycles,mjewell@optonline.net,No Aplica,4/21/2018
+21,CAMPENY,AGUSTÍN RICARDO,arcampeny@uc.cl,M,138,2617998,119,S/A,Old Navy,jonadab@sbcglobal.net,No Aplica,5/24/2018
+65,LIRA,VICENTE JOSE,vjlira@uc.cl,M,139,4279242,121,S/A,Big Bang Bicycles,mjewell@optonline.net,No Aplica,5/18/2018
+89,PLAZA DE LOS REYES,MARIA IGNACIA,miplazadelosreyes@uc.cl,F,140,45450,128,S/A,Casa Ideas,giafly@sbcglobal.net,No Aplica,4/26/2018
+59,JOUBLAN,JEAN PAUL ANDRE,jpjoublan@uc.cl,M,141,4769700,123,S/A,Cindy Esser's Floral Shop,denism@icloud.com,No Aplica,4/27/2018
+7,APABLAZA,FELIPE EDUARDO,feapablaza@uc.cl,F,142,1161864,132,S/A,Nike,iapetus@sbcglobal.net,No Aplica,5/14/2018
+78,MOLINA,JEREMÍAS ANDRÉS,jamolina3@uc.cl,M,143,3586080,129,S/A,Adidas,martyloo@hotmail.com,No Aplica,5/21/2018
+108,TRAMON,JAVIER OMAR,jotramon@uc.cl,M,144,1906576,134,S/A,Apple,scotfl@gmail.com,No Aplica,5/14/2018
+116,ZENTENO,MATÍAS ALEJANDRO,mlzenteno@uc.cl,M,145,872222,138,S/A,Assoto,alfred@hotmail.com,No Aplica,3/26/2018
+22,CAROCA,DIEGO ANTONIO,dncaroca@uc.cl,M,146,4538590,121,S/A,Big Bang Bicycles,mjewell@optonline.net,No Aplica,4/25/2018
+23,CARRASCO,DANIEL ROBERTO,drcarrasco@uc.cl,M,147,34432,138,S/A,Assoto,alfred@hotmail.com,No Aplica,3/11/2018
+85,OPASO,JOSE MANUEL,jmopaso@uc.cl,M,148,334178,130,S/A,Porto Fino,esbeck@msn.com,No Aplica,3/21/2018
