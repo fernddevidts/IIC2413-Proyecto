@@ -1,3 +1,4 @@
+id_seguro,nombre,descripcion
 0,"Seguro de Vida","Otorga una indemnización a los beneficiarios, en caso de fallecimiento del asegurado por una causa cubierta en la póliza."
 1,"Seguros de vida con ahorro (SVA)","Otorga una indemnización a los beneficiarios, en caso de fallecimiento del asegurado por una causa cubierta en la póliza y permite el ahorro de una suma de dinero."
 2,"Seguro de Vida con Ahorro Previsional Voluntario (APV o APVC)","Otorga una indemnización a los beneficiarios, en caso de fallecimiento del asegurado por una causa cubierta en la póliza y permite el ahorro de una suma de dinero asociado al sistema previsional."
