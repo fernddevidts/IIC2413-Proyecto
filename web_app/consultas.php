@@ -12,6 +12,9 @@
 
     <!-- Stylesheet -->
     <link href="index.css" rel="stylesheet">
+    <link href="consultas.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,600|Lato:400,900" rel="stylesheet">
+
 
 
     <title>NebCoin Bank</title>
@@ -19,23 +22,58 @@
 
 	<body>
 		<?php include 'partials/nav.php'; ?>
-		 <?php
+		<div class="container">
+			<h2>Aquí puedes realizar consultas a la base de datos de NebCoin Bank</h2>
+		</div>
+		<div class="container">
+			<p>Pagos realizados en una fecha específica</p>
+			<div class="row">
+				<form action="consultas/consulta_fecha.php" method="post">
+					<div class="form-group">
+						<label for="consultaFecha">Fecha</label>
+						<input type="text" name="fecha" class="form-control" id="inputFecha">
+					</div>
+					<button type="submit" class="btn btn-primary">Consultar</button>
+				</form>
+			</div>
 
-		    require("config/conexion.php"); #Llama a conexión, crea el objeto PDO y obtiene la variable $db
-		    $query = "SELECT * FROM abonos";
-		    $result = $db -> prepare($query);
-		    $result -> execute();
-		    $dataCollected = $result -> fetchAll(); #Obtiene todos los resultados de la consulta en forma de un arreglo
-		    #print_r($dataCollected); #si quieren ver el arreglo de la consulta usar print_r($array);
-		    ?>
+			<p>Todos los abonos</p>
+			<div class="row">
 
-		    <table><tr> <th>var1</th> <th>var2</th> <th>var3</th> </tr>
+				<form action="consultas/consulta_abonos.php" method="post">
+					<button type="submit" class="btn btn-primary">Consultar Abonos</button>
+				</form>
+			</div>
 
-		    <?php
-		    foreach ($dataCollected as $p) {
-		      echo "<tr> <th>$p[0]</th> <th>$p[1]</th> <th>$p[2]</th> </tr>";
-    }
-		?>
+			<p>Seguro más adquirido</p>
+			<div class="row">
+
+				<form action="consultas/consulta_seguro.php" method="post">
+					<button type="submit" class="btn btn-primary">Consultar Seguros</button>
+				</form>
+			</div>
+
+			<p>Persona que más ha pagado</p>
+			<div class="row">
+
+				<form action="consultas/consulta_mayor_pago.php" method="post">
+					<button type="submit" class="btn btn-primary">Consultar Mayor Pago</button>
+				</form>
+			</div>
+
+			<p>Monto no pagado para una transacción específica</p>
+			<div class="row">
+				<form action="consultas/consulta_transaccion_nopagado.php" method="post">
+					<div class="form-group">
+						<label for="consultaFecha">ID Transacción</label>
+						<input type="text" name="id_transaccion" class="form-control" id="inputIdTransaccion">
+					</div>
+					<button type="submit" class="btn btn-primary">Consultar</button>
+				</form>
+			</div>
+
+
+	</div>
 
 	</body>
 
