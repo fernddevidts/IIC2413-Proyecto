@@ -34,23 +34,26 @@
 					catch(PDOException $e) {
 					echo $e->getMessage();
 					}
+					echo "</div>";
 
 
-					/*$query = "SELECT S.id_seguro, S.nombre FROM Seguros S, (SELECT Suma.id_seguro, MAX(Suma.total) FROM (SELECT US.id_seguro, COUNT(*) AS total FROM usuarioseguro US GROUP BY US.id_seguro) AS Suma) AS Final WHERE S.id_seguro = Final.id_seguro;";
+					echo "<div class='row'>";
+
+					$query = "SELECT P2.monto FROM (SELECT CP.id_pago, SUM(CP.monto) AS monto FROM cuotapago CP, (SELECT id_cuota FROM cuotas WHERE pagado = 'f') AS C2 WHERE CP.id_cuota = C2.id_cuota GROUP BY CP.id_pago) AS P2 WHERE P2.id_pago = $transaccion;";
 
 					$result = $db -> prepare($query);
 					$result -> execute();
 
-					$transacciones = $result -> fetchAll();
-						echo "<table><tr><th>ID Pago</th><th>Monto</th><th>Nombre</th><th>Apellido</th><th>Nombre Empresa</th></tr>";
-					foreach ($transacciones as $transaccion) {
-						echo "<tr><td>$transaccion[0]</td><td>$transaccion[1]</td><td>$transaccion[2]</td><td>$transaccion[3]</td><td>$transaccion[4]</td></tr>";
-					}
-					echo "</table>";*/
+					$montos = $result -> fetchAll();
 
+
+					foreach ($montos as $monto) {
+						echo "<h3>$ $monto[0]</h3>";
+					}
+					
+					echo "</div>";
 
 				?>
-			</div>
 
 			<div class="row">
 				<form action="../consultas.php" method="post">
@@ -60,5 +63,10 @@
 		</div>
 
 	</body>
+
+	<div id="footer">
+		<?php include '../partials/footer.php'; ?>
+	</div>
+
 
 </html>

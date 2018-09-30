@@ -45,7 +45,6 @@ td {
     font-weight: 600;
 }
 
-.row {
-	margin-bottom: 20px;
-	margin-top: 20px;
+.top-buffer {
+	margin-top: 50px;
 }

@@ -7,11 +7,16 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
 
 
 
     <!-- Stylesheet -->
     <link href="index.css" rel="stylesheet">
+    <link href="hexagonos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,600|Lato:400,900" rel="stylesheet">
+
 
 
     <title>NebCoin Bank</title>
@@ -19,6 +24,31 @@
 
 	<body>
 		<?php include 'partials/nav.php'; ?>
+
+		<div class="container">
+			<div class="row justify-content-center top-buffer">
+				<h2>NebCoin Bank</h2>
+			</div>
+			<div class="row justify-content-center">
+				<img src="imgs/hexagons.png" width="50%" height="50%">
+			</div>
+			<div class="row justify-content-center top-buffer">
+				<h3>Some Stats</h3>
+			</div>
+		</div>
+
+<!-- 		<div class="container">
+			<div class="row justify-content-center">
+			    <div id="hexagonos"></div>
+
+				<script> 
+					$("#hexagonos").load("hexagonos.html"); 
+			    </script> 
+			</div>
+
+		</div> -->
+
+
 
 <!-- 		<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
 			  <ol class="carousel-indicators">
@@ -49,7 +79,7 @@
 		
 	</body>
 
-	<footer class="footer">
+	<div id="footer">
 		<?php include 'partials/footer.php'; ?>
-	</footer>
+	</div>
 </html>

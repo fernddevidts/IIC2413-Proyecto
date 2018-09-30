@@ -11,7 +11,6 @@
 
 
     <!-- Stylesheet -->
-    <link href="index.css" rel="stylesheet">
     <link href="consultas.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,600|Lato:400,900" rel="stylesheet">
 
@@ -23,53 +22,84 @@
 	<body>
 		<?php include 'partials/nav.php'; ?>
 		<div class="container">
-			<h2>Aquí puedes realizar consultas a la base de datos de NebCoin Bank</h2>
-		</div>
-		<div class="container">
-			<p>Pagos realizados en una fecha específica</p>
+
+			<div class="row top-buffer">
+				<h2>Aquí puedes realizar consultas a la base de datos de NebCoin Bank</h2>
+			</div>
+
+			<div class="row top-buffer">
+				<div class="col">
+					<p>Pagos realizados en una fecha específica</p>
+				</div>
+			</div>
+
 			<div class="row">
 				<form action="consultas/consulta_fecha.php" method="post">
-					<div class="form-group">
-						<label for="consultaFecha">Fecha</label>
-						<input type="text" name="fecha" class="form-control" id="inputFecha">
+					<div class="col">
+						<div class="form-group">
+							<label for="consultaFecha">Fecha</label>
+							<input type="text" name="fecha" class="form-control" id="inputFecha">
+						</div>
+
+						<button type="submit" class="btn btn-primary">Consultar</button>
 					</div>
-					<button type="submit" class="btn btn-primary">Consultar</button>
-				</form>
+					</form>
 			</div>
 
-			<p>Todos los abonos</p>
-			<div class="row">
 
-				<form action="consultas/consulta_abonos.php" method="post">
-					<button type="submit" class="btn btn-primary">Consultar Abonos</button>
-				</form>
+			<div class="row top-buffer">
+				<div class="col">
+					<p>Monto no pagado para una transacción específica</p>
+				</div>
 			</div>
 
-			<p>Seguro más adquirido</p>
-			<div class="row">
-
-				<form action="consultas/consulta_seguro.php" method="post">
-					<button type="submit" class="btn btn-primary">Consultar Seguros</button>
-				</form>
-			</div>
-
-			<p>Persona que más ha pagado</p>
-			<div class="row">
-
-				<form action="consultas/consulta_mayor_pago.php" method="post">
-					<button type="submit" class="btn btn-primary">Consultar Mayor Pago</button>
-				</form>
-			</div>
-
-			<p>Monto no pagado para una transacción específica</p>
 			<div class="row">
 				<form action="consultas/consulta_transaccion_nopagado.php" method="post">
-					<div class="form-group">
-						<label for="consultaFecha">ID Transacción</label>
-						<input type="text" name="id_transaccion" class="form-control" id="inputIdTransaccion">
+					<div class="col">
+						<div class="form-group">
+							<label for="consultaFecha">ID Transacción</label>
+							<input type="text" name="id_transaccion" class="form-control" id="inputIdTransaccion">
+						</div>
+
+						<button type="submit" class="btn btn-primary">Consultar</button>
 					</div>
-					<button type="submit" class="btn btn-primary">Consultar</button>
 				</form>
+			</div>
+
+
+			<div class="row top-buffer">
+				<div class="col-3">
+					<p>Todos los abonos</p>
+				</div>
+				<div class="col">
+					<form action="consultas/consulta_abonos.php" method="post">
+						<button type="submit" class="btn btn-primary">Consultar</button>
+					</form>
+				</div>
+			</div>
+
+
+			<div class="row top-buffer">
+				<div class="col-3">
+					<p>Seguro más adquirido</p>
+				</div>
+				<div class="col">
+					<form action="consultas/consulta_seguro.php" method="post">
+						<button type="submit" class="btn btn-primary">Consultar</button>
+					</form>
+				</div>
+			</div>
+
+
+			<div class="row top-buffer">
+				<div class="col-3">
+					<p>Persona que más ha pagado</p>
+				</div>
+				<div class="col">
+					<form action="consultas/consulta_mayor_pago.php" method="post">
+						<button type="submit" class="btn btn-primary">Consultar</button>
+					</form>
+				</div>
 			</div>
 
 
@@ -77,7 +107,7 @@
 
 	</body>
 
-	<footer class="footer">
+	<div id="footer">
 		<?php include 'partials/footer.php'; ?>
-	</footer>
+	</div>
 </html>

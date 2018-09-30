@@ -19,7 +19,7 @@
         <a class="nav-link" id="home-pill" href="/~grupo11/web_app/index.php" role="tab" onclick="selected()">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" id="consultas-pill" href="/~grupo11/web_app/consultas.php" role="tab">Consultas</a>
+        <a class="nav-link" id="consultas-pill" href="/~grupo11/web_app/consultas.php" role="tab" onclick="selected()">Consultas</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" id="contacto-pill" href="#contacto" role="tab">Contacto</a>

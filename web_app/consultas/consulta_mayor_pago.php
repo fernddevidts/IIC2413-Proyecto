@@ -59,4 +59,8 @@
 
 	</body>
 
+	<div id="footer">
+		<?php include '../partials/footer.php'; ?>
+	</div>
+
 </html>
