@@ -1,0 +1,22 @@
+
+
+/* not active */
+.nav-pills .nav-item .nav-link:not(.active) {
+    color: #188fb9;
+    background-color: #F8F8F8;
+}
+
+
+/* active */
+.nav-pills .nav-item .nav-link {
+    background-color: #0a1657;
+    text-transform: uppercase;
+    color: white;
+    font-family: 'Fira Sans', sans-serif;
+    font-weight: 600;
+    margin-left: 20px;
+    display: flex;
+    justify-content: center;
+};
+
+
