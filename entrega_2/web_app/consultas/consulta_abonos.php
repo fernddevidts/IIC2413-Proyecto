@@ -19,12 +19,16 @@
 	</head>
 
 	<body>
-		<?php include '../partials/nav.php'; ?>
+		
+		<?php include '../partials/nav.php';?>
 		<div class="container">
 			<div class="row">
-				<h3>Persona que más ha pagado</h3>
+				<h3>Abonos</h3>
 
+
+				
 				<?php
+		 
 					include_once "psql-config.php";
 					try {
 						$db = new PDO("pgsql:dbname=".DATABASE.";host=".HOST.";port=".PORT.";user=".USER.";password=".PASSWORD);
@@ -33,20 +37,23 @@
 					echo $e->getMessage();
 					}
 
-
-					/*$query = "SELECT S.id_seguro, S.nombre FROM Seguros S, (SELECT Suma.id_seguro, MAX(Suma.total) FROM (SELECT US.id_seguro, COUNT(*) AS total FROM usuarioseguro US GROUP BY US.id_seguro) AS Suma) AS Final WHERE S.id_seguro = Final.id_seguro;";
+					echo "<div class='row'>";
+		
+					$query = "SELECT A.cantidad AS monto_abono, AT.id_tarjeta, U.nombre AS usuario_tarjeta FROM abonos A, abonotarjeta AT, tarjetausuario TU, usuarios U WHERE A.id_abono = AT.id_abono AND AT.id_tarjeta = TU.id_tarjeta AND TU.id_usuario = U.id_usuario;";
 
 					$result = $db -> prepare($query);
 					$result -> execute();
 
-					$transacciones = $result -> fetchAll();
-						echo "<table><tr><th>ID Pago</th><th>Monto</th><th>Nombre</th><th>Apellido</th><th>Nombre Empresa</th></tr>";
-					foreach ($transacciones as $transaccion) {
-						echo "<tr><td>$transaccion[0]</td><td>$transaccion[1]</td><td>$transaccion[2]</td><td>$transaccion[3]</td><td>$transaccion[4]</td></tr>";
+					$abonos = $result -> fetchAll();
+					echo "<table class='table'><thead><tr><th scope='col'>Monto Abono</th><th scope='col'>ID Tarjeta</th><th scope='col'>Nombre</th></tr></";
+					foreach ($abonos as $abono) {
+						echo "<tbody><tr><td>$abono[0]</td><td>$abono[1]</td><td>$abono[2]</td></tr>";
 					}
-					echo "</table>";*/
-
-
+		
+					echo "</tbody>";
+					echo "</table>";
+					echo "</div>";
+		
 				?>
 			</div>
 
@@ -55,6 +62,7 @@
 					<button type="submit" class="btn btn-primary">Volver</button>
 				</form>
 			</div>
+
 		</div>
 
 	</body>

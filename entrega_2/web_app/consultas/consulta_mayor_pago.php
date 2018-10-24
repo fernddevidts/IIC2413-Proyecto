@@ -19,16 +19,12 @@
 	</head>
 
 	<body>
-		
-		<?php include '../partials/nav.php';?>
+		<?php include '../partials/nav.php'; ?>
 		<div class="container">
 			<div class="row">
-				<h3>Abonos</h3>
+				<h3>Persona que más ha pagado</h3>
 
-
-				
 				<?php
-		 
 					include_once "psql-config.php";
 					try {
 						$db = new PDO("pgsql:dbname=".DATABASE.";host=".HOST.";port=".PORT.";user=".USER.";password=".PASSWORD);
@@ -36,27 +32,35 @@
 					catch(PDOException $e) {
 					echo $e->getMessage();
 					}
-		/*
-					$query = "SELECT A.cantidad, AT.id_tarjeta, N.nombre FROM Abonos A, abonotarjeta AT, tarjetanatural TN, naturales N WHERE A.id_abono = AT.id_abono AND AT.id_tarjeta = TN.id_tarjeta AND TN.id_natural = N.id_:natural;";
+
+					echo "</div>";
+
+					echo "<div class='row'>";
+
+					$query = "SELECT U.id_usuario, U.nombre, U.apellido FROM usuarios U, (SELECT PU.id_usuario1, SUM(P.monto) AS monto FROM pagousuarios PU, Pagos P WHERE PU.id_pago = P.id_pago GROUP BY id_usuario1) AS Montos WHERE U.id_usuario = Montos.id_usuario1 AND Montos.monto = (SELECT MAX(monto) FROM (SELECT PU.id_usuario1, SUM(P.monto) as monto FROM pagousuarios PU, Pagos P WHERE PU.id_pago = P.id_pago GROUP BY id_usuario1) AS Final); 
+";
+
 					$result = $db -> prepare($query);
 					$result -> execute();
 
-					$abonos = $result -> fetchAll();
-					echo "<table><tr><th>Monto Abono</th><th>ID Tarjeta</th><th>Nombre</th></tr>";
-					foreach ($transacciones as $transaccion) {
-						echo "<tr><td>$transaccion[0]</td><td>$transaccion[1]</td><td>$transaccion[2]</td></tr>";
+					$personas = $result -> fetchAll();
+
+
+					echo "<table class='table'<thead><tr><th scope='col'>ID Usuario</th><th scope='col'>Nombre </th><th>Apellido</th></tr>";
+					foreach ($personas as $persona) {
+						echo "<tbody><tr><td>$persona[0]</td><td>$persona[1]</td><td>$persona[2]</td></tr>";
 					}
+					echo "</tbody>";
 					echo "</table>";
-		*/
+
+
 				?>
-			</div>
 
 			<div class="row">
 				<form action="../consultas.php" method="post">
 					<button type="submit" class="btn btn-primary">Volver</button>
 				</form>
 			</div>
-
 		</div>
 
 	</body>
