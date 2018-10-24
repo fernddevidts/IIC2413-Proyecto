@@ -14,7 +14,7 @@
 
     <!-- Stylesheet -->
     <link href="index.css" rel="stylesheet">
-    <link href="hexagonos.css" rel="stylesheet">
+<!--    <link href="hexagonos.css" rel="stylesheet"> -->
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,600|Lato:400,900" rel="stylesheet">
 
 
