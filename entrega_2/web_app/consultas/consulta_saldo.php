@@ -19,16 +19,14 @@
 	</head>
 
 	<body>
-		
-		<?php include '../partials/nav.php';?>
+		<?php include '../partials/nav.php'; ?>
 		<div class="container">
 			<div class="row">
-				<h3>Abonos</h3>
 
-
-				
 				<?php
-		 
+					$usuario = $_POST["id_usuario"];
+					echo "<h3>Saldo del usuario ID: $usuario</h3>";
+
 					include_once "psql-config.php";
 					try {
 						$db = new PDO("pgsql:dbname=".DATABASE.";host=".HOST.";port=".PORT.";user=".USER.";password=".PASSWORD);
@@ -36,33 +34,32 @@
 					catch(PDOException $e) {
 					echo $e->getMessage();
 					}
+					echo "</div>";
+
 
 					echo "<div class='row'>";
-		
-					$query = "SELECT A.cantidad AS monto_abono, AT.id_tarjeta, U.nombre AS usuario_tarjeta FROM abonos A, abonotarjeta AT, tarjetausuario TU, usuarios U WHERE A.id_abono = AT.id_abono AND AT.id_tarjeta = TU.id_tarjeta AND TU.id_usuario = U.id_usuario;";
+
+					$query = "SELECT AB.abonado + R.monto - E.monto AS saldo_actual FROM (SELECT SUM(monto) as monto FROM (SELECT P.monto FROM pagos P, pagousuarios PU, usuarios U WHERE P.id_pago = PU.id_pago AND PU.id_usuario1 = $usuario UNION SELECT 0) C2) E, (SELECT SUM(abonado) AS abonado FROM (SELECT A.cantidad * A.valor_nebcoin AS abonado FROM abonos A, abonotarjeta AT, tarjetausuario TU WHERE A.id_abono = AT.id_abono AND AT.id_tarjeta = TU.id_tarjeta AND TU.id_usuario =  $usuario  UNION SELECT 0) AS C2) AB, (SELECT SUM(monto) as monto FROM (SELECT P.monto FROM pagos P, pagousuarios PU, usuarios U WHERE P.id_pago = PU.id_pago AND PU.id_usuario2 =  $usuario  UNION SELECT 0) C2) R;";
 
 					$result = $db -> prepare($query);
 					$result -> execute();
 
-					$abonos = $result -> fetchAll();
-					echo "<table class='table'><thead><tr><th scope='col'>Monto Abono</th><th scope='col'>ID Tarjeta</th><th scope='col'>Nombre</th></tr></";
-					foreach ($abonos as $abono) {
-						echo "<tbody><tr><td>$abono[0]</td><td>$abono[1]</td><td>$abono[2]</td></tr>";
+					$saldos = $result -> fetchAll();
+
+
+					foreach ($saldos as $saldo) {
+						echo "<h3>$ $saldo[0]</h3>";
 					}
-		
-					echo "</tbody>";
-					echo "</table>";
+					
 					echo "</div>";
-		
+
 				?>
-			</div>
 
 			<div class="row">
 				<form action="../consultas.php" method="post">
 					<button type="submit" class="btn btn-primary">Volver</button>
 				</form>
 			</div>
-
 		</div>
 
 	</body>
@@ -70,5 +67,6 @@
 	<div id="footer">
 		<?php include '../partials/footer.php'; ?>
 	</div>
+
 
 </html>

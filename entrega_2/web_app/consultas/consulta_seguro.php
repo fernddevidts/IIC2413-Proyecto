@@ -22,7 +22,7 @@
 		<?php include '../partials/nav.php'; ?>
 		<div class="container">
 			<div class="row">
-				<h3>Seguros más adquiridos</h3>
+				<h3>Seguro más adquiridos</h3>
 				
 				<?php
 					include_once "psql-config.php";
@@ -33,22 +33,31 @@
 					echo $e->getMessage();
 					}
 
+					echo "</div>";
 
-					/*$query = "SELECT S.id_seguro, S.nombre FROM Seguros S, (SELECT Suma.id_seguro, MAX(Suma.total) FROM (SELECT US.id_seguro, COUNT(*) AS total FROM usuarioseguro US GROUP BY US.id_seguro) AS Suma) AS Final WHERE S.id_seguro = Final.id_seguro;";
+
+					echo "<div class='row'>";
+
+					$query = "SELECT S.id_seguro, S.nombre AS nombre_seguro FROM seguros S, (SELECT US.id_seguro, COUNT(*) AS total FROM usuarioseguro US GROUP BY US.id_seguro) AS Suma WHERE S.id_seguro = Suma.id_seguro AND Suma.total = (SELECT MAX(total) FROM (SELECT US.id_seguro, COUNT(*) AS total FROM usuarioseguro US GROUP BY US.id_seguro) AS Final);";
 
 					$result = $db -> prepare($query);
 					$result -> execute();
 
-					$transacciones = $result -> fetchAll();
-						echo "<table><tr><th>ID Pago</th><th>Monto</th><th>Nombre</th><th>Apellido</th><th>Nombre Empresa</th></tr>";
-					foreach ($transacciones as $transaccion) {
-						echo "<tr><td>$transaccion[0]</td><td>$transaccion[1]</td><td>$transaccion[2]</td><td>$transaccion[3]</td><td>$transaccion[4]</td></tr>";
+					$seguros = $result -> fetchAll();
+
+					echo "<table class='table'<thead><tr><th scope='col'>ID Seguro</th><th scope='col'>Nombre Seguro</th></tr>";
+					foreach ($seguros as $seguro) {
+						echo "<tbody><tr><td>$seguro[0]</td><td>$seguro[1]</td></tr>";
 					}
-					echo "</table>";*/
+					echo "</tbody>";
+					echo "</table>";
+
+
+					echo "</div>";
+
 
 
 				?>
-			</div>
 
 			<div class="row">
 				<form action="../consultas.php" method="post">

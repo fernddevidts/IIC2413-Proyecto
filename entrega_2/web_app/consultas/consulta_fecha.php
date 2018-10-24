@@ -38,29 +38,23 @@
 				catch(PDOException $e) {
 				echo $e->getMessage();
 				}
-				$fecha = $_POST["fecha"];
+				$fecha = "'".$_POST["fecha"]."'";
 
-				/*$query = "SELECT P.id_pago, P.monto, N.nombre, N.apellido, E.nombre FROM Pagos P, Naturales N, Empresas E, pagousuarios PU WHERE P.fecha_transaccion = $fecha AND P.id_pago = PU.id_pago AND PU.id_natural = N.id_natural AND PU.id_empresa = E.id_empresa;";
 
-				$result = $db -> prepare($query);
-				$result -> execute();
-
-				$transacciones = $result -> fetchAll();
-					echo "<table><tr><th>ID Pago</th><th>Monto</th><th>Nombre</th><th>Apellido</th><th>Nombre Empresa</th></tr>";
-				foreach ($transacciones as $transaccion) {
-					echo "<tr><td>$transaccion[0]</td><td>$transaccion[1]</td><td>$transaccion[2]</td><td>$transaccion[3]</td><td>$transaccion[4]</td></tr>";
-				}
-				echo "</table>";*/
 				echo "<div class='row'>";
 
-				$query = "SELECT * FROM Pagos WHERE fecha_transaccion LIKE '%$fecha%';";
+
+				$query = "SELECT P.id_pago, P.monto, U1.nombre AS emisor_del_pago, U2.nombre AS receptor_del_pago FROM pagos P, usuarios U1, usuarios U2, pagousuarios PU WHERE P.fecha_transaccion = $fecha AND P.id_pago = PU.id_pago AND PU.id_usuario1 = U1.id_usuario AND PU.id_usuario2 = U2.id_usuario;";
+
+
+
 				$result = $db -> prepare($query);
 				$result -> execute();
 
 				$transacciones = $result -> fetchAll();
-				echo "<table class='table'<thead><tr><th scope='col'>ID Pago</th><th scope='col'>Monto</th><th scope='col'>Fecha</th></tr>";
+				echo "<table class='table'<thead><tr><th scope='col'>ID Pago</th><th scope='col'>Monto</th><th scope='col'>Nombre</th></tr>";
 				foreach ($transacciones as $transaccion) {
-					echo "<tbody><tr><td>$transaccion[0]</td><td>$transaccion[1]</td><td>$transaccion[2]</td></tr>";
+					echo "<tbody><tr><td>$transaccion[0]</td><td>$ $transaccion[1]</td><td>$transaccion[2]</td></tr>";
 				}
 				echo "</tbody>";
 				echo "</table>";

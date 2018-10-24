@@ -35,6 +35,9 @@
 			<div class="row justify-content-center top-buffer">
 				<h3>Some Stats</h3>
 			</div>
+			<div class="row justify-content-center">
+				<p>aún no hay stats :(</p>
+			</div>
 		</div>
 
 <!-- 		<div class="container">

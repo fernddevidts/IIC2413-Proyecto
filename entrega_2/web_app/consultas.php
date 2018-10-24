@@ -66,6 +66,25 @@
 				</form>
 			</div>
 
+			<div class="row top-buffer">
+				<div class="col">
+					<p>Saldo de usuario</p>
+				</div>
+			</div>
+
+			<div class="row">
+				<form action="consultas/consulta_saldo.php" method="post">
+					<div class="col">
+						<div class="form-group">
+							<label for="consultaSaldo">ID Usuario</label>
+							<input type="text" name="id_usuario" class="form-control" id="inputIdUsuario">
+						</div>
+
+						<button type="submit" class="btn btn-primary">Consultar</button>
+					</div>
+				</form>
+			</div>
+
 
 			<div class="row top-buffer">
 				<div class="col-3">

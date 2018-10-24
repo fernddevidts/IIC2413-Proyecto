@@ -33,22 +33,28 @@
 					echo $e->getMessage();
 					}
 
+					echo "</div>";
 
-					/*$query = "SELECT S.id_seguro, S.nombre FROM Seguros S, (SELECT Suma.id_seguro, MAX(Suma.total) FROM (SELECT US.id_seguro, COUNT(*) AS total FROM usuarioseguro US GROUP BY US.id_seguro) AS Suma) AS Final WHERE S.id_seguro = Final.id_seguro;";
+					echo "<div class='row'>";
+
+					$query = "SELECT U.id_usuario, U.nombre, U.apellido FROM usuarios U, (SELECT PU.id_usuario1, SUM(P.monto) AS monto FROM pagousuarios PU, Pagos P WHERE PU.id_pago = P.id_pago GROUP BY id_usuario1) AS Montos WHERE U.id_usuario = Montos.id_usuario1 AND Montos.monto = (SELECT MAX(monto) FROM (SELECT PU.id_usuario1, SUM(P.monto) as monto FROM pagousuarios PU, Pagos P WHERE PU.id_pago = P.id_pago GROUP BY id_usuario1) AS Final); 
+";
 
 					$result = $db -> prepare($query);
 					$result -> execute();
 
-					$transacciones = $result -> fetchAll();
-						echo "<table><tr><th>ID Pago</th><th>Monto</th><th>Nombre</th><th>Apellido</th><th>Nombre Empresa</th></tr>";
-					foreach ($transacciones as $transaccion) {
-						echo "<tr><td>$transaccion[0]</td><td>$transaccion[1]</td><td>$transaccion[2]</td><td>$transaccion[3]</td><td>$transaccion[4]</td></tr>";
+					$personas = $result -> fetchAll();
+
+
+					echo "<table class='table'<thead><tr><th scope='col'>ID Usuario</th><th scope='col'>Nombre </th><th>Apellido</th></tr>";
+					foreach ($personas as $persona) {
+						echo "<tbody><tr><td>$persona[0]</td><td>$persona[1]</td><td>$persona[2]</td></tr>";
 					}
-					echo "</table>";*/
+					echo "</tbody>";
+					echo "</table>";
 
 
 				?>
-			</div>
 
 			<div class="row">
 				<form action="../consultas.php" method="post">
