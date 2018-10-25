@@ -11,7 +11,7 @@
 
 
 	    <!-- Stylesheet -->
-	    <link href="profile.css" rel="stylesheet">
+	    <link href="../profile.css" rel="stylesheet">
 	    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,600|Lato:400,900" rel="stylesheet">
 
 
@@ -22,8 +22,8 @@
 		<?php 
 			
 		// ini_set('display_errors', 0);
-		include '../partials/nav.php';
-		include '../config/psql-config.php';
+		include '../../partials/nav.php';
+		include '../../config/psql-config.php';
 		?>
 
 		<div class="container">
@@ -80,8 +80,13 @@
 
 			<div class="row">
 				<div class="col">
-					<form action="profile.php" method="post">
+					<form action="../profile.php" method="post">
 						<button type="submit" class="btn btn-primary">Volver</button>
+					</form>
+				</div>
+				<div class="col">
+					<form action="agregar_tarjeta.php" method="post">
+						<button type="submit" class="btn btn-primary">Agregar Tarjeta</button>
 					</form>
 				</div>
 			</div>
