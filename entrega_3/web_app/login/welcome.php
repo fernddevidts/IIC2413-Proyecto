@@ -26,7 +26,7 @@
     <title>NebCoin Bank</title>
 	</head>
 
-	<body>
+	<body onload=UpdateEthPrice()>
 		<?php include '../partials/nav.php'; ?>
 
 		<div class="container">
