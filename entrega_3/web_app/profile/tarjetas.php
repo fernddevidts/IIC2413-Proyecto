@@ -97,7 +97,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col">
-						<form action="../profile.php" method="post">
+						<form action="profile.php" method="post">
 							<button type="submit" class="btn btn-primary">Volver</button>
 						</form>
 					</div>
