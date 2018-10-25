@@ -79,7 +79,9 @@
 			<?php 
 				if(isset($_POST["remove"])) {
 				$id_borrar = $_POST["id"];
-				$query_borrar = "DELETE FROM tarjetas WHERE id_tarjeta=$id_borrar";
+				$query_borrar = "DELETE FROM tarjetas WHERE id_tarjeta=$id_borrar;";
+				$result_borrar = $db_trans -> prepare($query_borrar);
+				$result_borrar -> execute();
 				$revision = pg_query($con, $query_borrar);
 
 				$row = pg_fetch_row($revision);
@@ -87,12 +89,13 @@
 				$active = $row['active'];
 
 				$count = pg_num_rows($revision);
+				echo "<p>$id_borrar</p>";
+
 
 				if($count==0) {
 					header("location: tarjetas.php");
 					exit;
 				}
-				echo "<p>$id_borrar</p>";
 				}?>
 			<div class="container">
 				<div class="row">
