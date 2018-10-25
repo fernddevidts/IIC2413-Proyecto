@@ -1,7 +1,3 @@
-<?php
-   include '../login/session.php';
-?>
-
 <!DOCTYPE html>
 <html>
 	<head>
@@ -26,9 +22,10 @@
 	<body>
 		<?php 
 		ini_set('display_errors', 0);
+		session_start();
 		include '../partials/nav.php';
 		include '../config/psql-config.php';
-		session_start();
+		
 
 		$user_check = $_SESSION['username'];
 		$ses_psql = pg_query($con_trans,"SELECT * from usuarios where correo = '$user_check' ");
