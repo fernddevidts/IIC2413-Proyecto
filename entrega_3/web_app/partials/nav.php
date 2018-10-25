@@ -5,10 +5,16 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse-2">
-
-    <a class="navbar-brand" href="/~grupo6/entrega_3/web_app/index.php">
-    	<img src="/~grupo6/entrega_3/web_app/imgs/logo_chico.png" height="40">
-    </a>
+    <?php 
+      if(isset($_SESSION['id'])) { ?>
+        <a class="navbar-brand" href="/~grupo6/entrega_3/web_app/login/welcome.php">
+        	<img src="/~grupo6/entrega_3/web_app/imgs/logo_chico.png" height="40">
+        </a>
+    <?php }else{ ?>
+      <a class="navbar-brand" href="/~grupo6/entrega_3/web_app/index.php">
+          <img src="/~grupo6/entrega_3/web_app/imgs/logo_chico.png" height="40">
+        </a>
+    <?php } ?>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>

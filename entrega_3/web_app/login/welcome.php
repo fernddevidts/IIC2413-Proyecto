@@ -18,7 +18,6 @@
 
     <!-- Stylesheet -->
     <link href="../index.css" rel="stylesheet">
-    <link href="hexagonos.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,600|Lato:400,900" rel="stylesheet">
 
 
@@ -31,17 +30,16 @@
 
 		<div class="container">
 			<div class="row justify-content-center top-buffer">
+				<h3>¡Bienvenido <?php echo $user_check; ?>!</h3>
+			</div>
+			<div class="row justify-content-center top-buffer">
 				<h2>NebCoin Bank</h2>
 			</div>
 			<div class="row justify-content-center">
-				<img src="../imgs/hexagons.png" width="50%" height="50%">
+				<img src="../imgs/hexagons.png" width="570px" height="323px">
 			</div>
-			<div class="row justify-content-center top-buffer">
-				<h3>¡Bienvenido <?php echo $user_check; ?>!</h3>
-			</div>
-			<div class="row justify-content-center">
-				<p>aún no hay stats :(</p>
-			</div>
+
+
 		</div>
 
 	</body>
