@@ -49,6 +49,9 @@
 				     <li class="nav-item">
 				     	<a class="nav-link" id="seguros-pill" href="seguros/seguros.php" role="tab" onclick="selected()">Seguros</a>
 				     </li>
+				     <li class="nav-item">
+				     	<a class="nav-link" id="saldo-pill" href="saldo.php" role="tab" onclick="selected()">Saldo Actual</a>
+				     </li>
 				 </ul>
 			</div>
 			<div class="row">

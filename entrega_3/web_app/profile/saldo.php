@@ -1,4 +1,8 @@
-<!DOCTYPE html>
+<?php
+   include('../login/session.php');
+?>
+
+
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -11,7 +15,7 @@
 
 
 	    <!-- Stylesheet -->
-	    <link href="../profile.css" rel="stylesheet">
+	    <link href="profile.css" rel="stylesheet">
 	    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,600|Lato:400,900" rel="stylesheet">
 
 
@@ -22,8 +26,8 @@
 		<?php 
 		ini_set('display_errors', 0);
 		session_start();
-		include '../../partials/nav.php';
-		include '../../config/psql-config.php';
+		include '../partials/nav.php';
+		include '../config/psql-config.php';
 		$id = $_SESSION['id'];
 		$query = "SELECT AB.abonado + R.monto - E.monto AS saldo_actual FROM (SELECT SUM(monto) as monto FROM (SELECT P.monto FROM pagos P WHERE P.id_usuario1 = $id UNION SELECT 0) C2) E, (SELECT SUM(abonado) AS abonado FROM (SELECT A.cantidad * A.valor_nebcoin AS abonado FROM abonos A, tarjetas TU WHERE A.id_tarjeta = TU.id_tarjeta AND TU.id_usuario =  $id  UNION SELECT 0) AS C2) AB, (SELECT SUM(monto) as monto FROM (SELECT P.monto FROM pagos P WHERE P.id_usuario2 =  $id  UNION SELECT 0) C2) R";
 		$result = $db_trans -> prepare($query);
@@ -49,13 +53,8 @@
 			</div>
 			<div class="row">
 				<div class="col">
-					<form action="../profile.php" method="post">
+					<form action="profile.php" method="post">
 						<button type="submit" class="btn btn-primary">Volver</button>
-					</form>
-				</div>
-				<div class="col">
-					<form action="contrato_seguro.php" method="post">
-						<button type="submit" class="btn btn-primary">Contratar Seguro</button>
 					</form>
 				</div>
 			</div>
