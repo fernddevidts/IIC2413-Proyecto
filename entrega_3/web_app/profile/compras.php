@@ -11,55 +11,34 @@
 
 
 	    <!-- Stylesheet -->
-	    <link src="profile.css" rel="stylesheet">
+	    <link href="profile.css" rel="stylesheet">
 	    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,600|Lato:400,900" rel="stylesheet">
 
 
 
-	    <title>Profile</title>
+	    <title>Compras</title>
 	</head>
-
 	<body>
 		<?php 
 		ini_set('display_errors', 0);
-		session_start();
 		include '../partials/nav.php';
 		include '../config/psql-config.php';
-		$id = $_SESSION['id'];
-		$username = $_SESSION['username'];
-
-		$query = "SELECT * FROM Usuarios WHERE id=$id";
-		$result = $db_trans -> prepare($query);
-		$result -> execute();
-
-		$usuarios = $result -> fetchAll();
-
 		?>
+
 		<div class="container">
 			<div class="row">
-				<ul class="nav nav-pills" id="myTab" role="tablist" >
-     				 <li class="nav-item">
-				        <a class="nav-link" id="transferencias-pill" href="transferencias.php" role="tab" onclick="selected()">Transferencias</a>
-				     </li>
-				     <li class="nav-item">
-				     	<a class="nav-link" id="compras-pill" href="compras.php" role="tab" onclick="selected()">Compras</a>
-				     </li>
-				     <li class="nav-item">
-				     	<a class="nav-link" id="tarjetas-pill" href="tarjetas.php" role="tab" onclick="selected()">Tarjetas</a>
-				     </li>
-				     <li class="nav-item">
-				     	<a class="nav-link" id="seguros-pill" href="seguros/seguros.php" role="tab" onclick="selected()">Seguros</a>
-				     </li>
-				 </ul>
-			</div>
-			<div class="row">
-				<?php
-				foreach ($usuarios as $usuario) {
-					echo "<h3>$usuario[2] $usuario[1]</h3>";
-				}
+				<?php 
+					session_start();
+					$id_usuario = $_SESSION['id'];
 				?>
 			</div>
-
+			<div class="row">
+				<h3>Compras</h3>
+			</div>
+			<div class="row">
+				<form action="profile.php" method="post">
+					<button type="submit" class="btn btn-primary">Volver</button>
+				</form>
+			</div>
 		</div>
 	</body>
-</html>

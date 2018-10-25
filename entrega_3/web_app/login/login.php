@@ -11,7 +11,7 @@
 
 
     <!-- Stylesheet -->
-    <link src="login.css" rel="stylesheet">
+    <link href="login.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,600|Lato:400,900" rel="stylesheet">
 
 
@@ -35,7 +35,7 @@
 
 				$con = pg_connect("host=".HOST." dbname=".DATABASE_TRANS." user=".USER_TRANS." password=".PASSWORD_TRANS);
 
-				$query = "SELECT id FROM Usuarios WHERE correo = '$myusername' AND clave='$mypassword'";
+				$query = "SELECT id FROM Usuarios WHERE correo = '$myusername' AND clave='$mypassword';";
 
 				$result = pg_query($con, $query);
 
@@ -64,12 +64,16 @@
 					<form  method='post'>
 						<div class='col'>
 							<div class='form-group'>
-								<label for='login'>Username</label>
-								<input type='text' name='username' class='form-control' id='inputUsername'>
-								<label for='login'>Password</label>
-								<input type='text' name='password' class='form-control' id='inputPassword'>
+								<div class="row top-buffer">
+									<label for='login'><p>Username</p></label>
+									<input type='text' name='username' class='form-control' id='inputUsername'>
+								</div>
+								<div class="row top-buffer">
+									<label for='login'><p>Password</p></label>
+									<input type='text' name='password' class='form-control' id='inputPassword'>
+								</div>
 							</div>
-							<button type='submit' class='btn btn-primary'>Login</button>
+							<button type="submit" class="btn btn-primary">Login</button>
 						</div>
 					</form>
 				</div>

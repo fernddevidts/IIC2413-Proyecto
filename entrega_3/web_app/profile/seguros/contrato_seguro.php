@@ -11,19 +11,18 @@
 
 
 	    <!-- Stylesheet -->
-	    <link href="profile.css" rel="stylesheet">
+	    <link href="../profile.css" rel="stylesheet">
 	    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,600|Lato:400,900" rel="stylesheet">
 
 
 
-	    <title>Transferencias</title>
+	    <title>Seguros</title>
 	</head>
-
 	<body>
 		<?php 
 		ini_set('display_errors', 0);
-		include '../partials/nav.php';
-		include '../config/psql-config.php';
+		include '../../partials/nav.php';
+		include '../../config/psql-config.php';
 		?>
 
 		<div class="container">
@@ -34,13 +33,15 @@
 				?>
 			</div>
 			<div class="row">
-				<h3>Transferencias</h3>
+				<h3>Contratar Seguro</h3>
 			</div>
 			<div class="row">
-				<form action="profile.php" method="post">
+				
+			</div>
+			<div class="row">
+				<form action="seguros.php" method="post">
 					<button type="submit" class="btn btn-primary">Volver</button>
 				</form>
 			</div>
 		</div>
 	</body>
-</html>
