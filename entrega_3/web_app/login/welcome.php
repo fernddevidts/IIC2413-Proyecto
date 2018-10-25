@@ -14,6 +14,7 @@
 	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 
 
+	<script type="text/javascript" src="../valor_eth.js"></script>
 
 
     <!-- Stylesheet -->
@@ -37,6 +38,17 @@
 			</div>
 			<div class="row justify-content-center">
 				<img src="../imgs/hexagons.png" width="570px" height="323px">
+			</div>
+			<div class="row justify-content-center top-buffer">
+				<h3>Some Stats</h3>
+			</div>
+			<div class="row justify-content-center">
+				<p>Valor ETH: </p>
+				<p id="valor_eth"></p>
+			</div>
+			<div class="row justify-content-center">
+				<p>Valor NebCoin: </p>
+				<p id="valor_nc"></p>
 			</div>
 
 
