@@ -43,7 +43,7 @@
 				     	<a class="nav-link" id="compras-pill" href="compras.php" role="tab" onclick="selected()">Compras</a>
 				     </li>
 				     <li class="nav-item">
-				     	<a class="nav-link" id="tarjetas-pill" href="tarjetas/tarjetas.php" role="tab" onclick="selected()">Tarjetas</a>
+				     	<a class="nav-link" id="tarjetas-pill" href="tarjetas.php" role="tab" onclick="selected()">Tarjetas</a>
 				     </li>
 				     <li class="nav-item">
 				     	<a class="nav-link" id="seguros-pill" href="seguros/seguros.php" role="tab" onclick="selected()">Seguros</a>

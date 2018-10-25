@@ -1,5 +1,5 @@
 <?php
-   include('../config/psql-config.php');
+   include '../config/psql-config.php';
 
    session_start();
    
