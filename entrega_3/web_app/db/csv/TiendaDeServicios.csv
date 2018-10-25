@@ -1,4 +1,4 @@
-qid_tienda_s,nombre,ubicacion,telefono,apertura,cierre,rubro,correo
+id_tienda_s,nombre,ubicacion,telefono,apertura,cierre,rubro,correo
 140,Hoyts Cinema,185 W. Waterfront Drive Homestead Pittsburgh/Waterfront. PA 15120,93422751,11:30,23:00,Entretención,sisyphus@me.com
 141,Tom Bradley Airport,4840 E Indian School Rd Ste 101 Phoenix. AZ 85018,90573044,0:00,23:59,Transporte,burns@msn.com
 142,Metro,202 McClure St Dravosburg. PA 15034,87152577,0:00,23:59,Transporte,brainless@live.com

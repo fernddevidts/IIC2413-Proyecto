@@ -24,7 +24,7 @@
 			ini_set('display_errors', 0);
 			include '../partials/nav.php';
 			include '../config/psql-config.php';
-			session_start();
+			
 			$e = "";
 
 			if($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -35,7 +35,7 @@
 
 				$con = pg_connect("host=".HOST." dbname=".DATABASE_TRANS." user=".USER_TRANS." password=".PASSWORD_TRANS);
 
-				$query = "SELECT id FROM Usuarios WHERE correo = '$myusername' AND clave='$mypassword';";
+				$query = "SELECT id_usuario FROM Usuarios WHERE correo = '$myusername' AND clave='$mypassword';";
 
 				$result = pg_query($con, $query);
 
@@ -48,11 +48,13 @@
 
 				//If result matched $myusername and $mypassword, table row must be 1 row
 				if($count == 1) {
-					session_register("myusername");
+					session_start();
+					//session_register("myusername");
 					$_SESSION['username'] = $myusername;
 					$_SESSION['id'] = $row[0];
 
 					header("location: welcome.php");
+					exit;
 				} else {
 					$e = "Your login name or password is invalid";
 				}
