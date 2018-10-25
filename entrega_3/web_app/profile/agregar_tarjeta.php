@@ -11,7 +11,7 @@
 
 
 	    <!-- Stylesheet -->
-	    <link href="../profile.css" rel="stylesheet">
+	    <link href="profile.css" rel="stylesheet">
 	    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,600|Lato:400,900" rel="stylesheet">
 
 
@@ -21,13 +21,14 @@
 	<body>
 		<?php 
 		ini_set('display_errors', 0);
-		include '../../partials/nav.php';
-		include '../../config/psql-config.php';
+		include '../partials/nav.php';
+		include '../config/psql-config.php';
 		?>
 
 		<div class="container">
 			<div class="row">
 				<?php 
+					session_start();
 					$id_usuario = $_SESSION['id'];
 				?>
 			</div>
@@ -35,7 +36,7 @@
 				<h3>Nueva Tarjeta</h3>
 			</div>
 			<div class="row">
-				<form method="post" action="tarjetas.php">
+				<form method="post" action="">
 
 					<div class="col">
 						<div class="form-group">
@@ -54,10 +55,40 @@
 						</div>
 					</div>
 					<button name="agregar" type="submit" class="btn btn-primary">Agregar Tarjeta</button>
-
 				</form>
-				
 			</div>
+			<?php 
+				$con = pg_connect("host=".HOST." dbname=".DATABASE_TRANS." user=".USER_TRANS." password=".PASSWORD_TRANS);
+
+				if(isset($_POST["agregar"])) {
+
+				$id_tarjeta = $_POST["numero"];
+				$cvv = $_POST["cvv"];
+				$fecha_exp = $_POST["fecha_exp"];
+
+				echo "<p>$id_usuario, $id_tarjeta, $cvv, $fecha_exp</p>";
+
+				$query = "INSERT INTO tarjetas (id_usuario, id_tarjeta, cvv, fecha_expiracion) VALUES ($id_usuario, $id_tarjeta, $cvv, '$fecha_exp')";
+
+				$result = $db_trans -> prepare($query);
+				$result -> execute();
+
+				$revisar = "SELECT T.id_tarjeta FROM tarjetas AS T WHERE T.id_tarjeta=$id_tarjeta";
+				$revision = pg_query($con, $revisar);
+
+				$row = pg_fetch_row($revision);
+
+				$active = $row['active'];
+
+				$count = pg_num_rows($revision);
+			}
+
+				if($count==1) {
+					header("location: tarjetas.php");
+					exit;
+				}
+
+			?>
 			<div class="row">
 
 				<div class="col">
