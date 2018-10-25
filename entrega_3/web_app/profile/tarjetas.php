@@ -1,5 +1,5 @@
 <?php
-   include('../login/session.php');
+   include '../login/session.php';
 ?>
 
 <html>
@@ -14,7 +14,7 @@
 
 
 	    <!-- Stylesheet -->
-	    <link href="../profile.css" rel="stylesheet">
+	    <link href="profile.css" rel="stylesheet">
 	    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,600|Lato:400,900" rel="stylesheet">
 
 
@@ -25,59 +25,56 @@
 		<?php 
 			
 		// ini_set('display_errors', 0);
-		include '../../partials/nav.php';
-		include '../../config/psql-config.php';
+		include '../partials/nav.php';
 		?>
 
 		<div class="container">
 			<div class="row">
 				<?php 
-				$id = 0;
 					session_start();
-					$id_usuario = $_SESSION['id'];
+					$id = $_SESSION['id'];
 
-					$query = "";
+					$query = "SELECT T.id_usuario, T.id_tarjeta, T.fecha_expiracion FROM tarjetas T WHERE T.id_usuario = $id";
 
 					$result = $db_trans -> prepare($query);
 					$result -> execute();
-
 					$tarjetas = $result -> fetchAll();
-
 
 				?>
 			</div>
 			<div class="row">
 				<h3>Tarjetas</h3>
 				<?php
-					// echo "<table class='table'><thead><tr><th scope='col'>ID Tarjeta</th><th scope='col'>Fecha Expiracion</th><th scope='col'></th></tr>";
-					// foreach ($tarjetas as $tarjeta) {
-					// 	echo "<tbody method='post'><tr id='$tarjeta[0]'><td name='remove'>$tarjeta[0]</td><td>$tarjeta[1]</td>";
-					// 	echo "<td><button type='submit'>Remove</button></td></tr>"
-					// }
-		
-					// echo "</tbody>";
-					// echo "</table>";
-					// echo "</div>";
-
 					echo "<table class='table'><thead><tr><th scope='col'>ID Tarjeta</th><th scope='col'>Fecha Expiracion</th><th scope='col'></th></tr>";
-					echo "<tbody><form method='post' action=''><tr><td id='id' name='id'>1</td><td>123</td>";
-					echo "<input type='hidden' name='id' value='1'></input>";
-					echo "<td><button id='1' type='submit' name='remove'>Remove</button></td></tr></form>";
-					
+					foreach ($tarjetas as $tarjeta) {
+						echo "<tbody><form method='post' action=''><tr><td name='id'>$tarjeta[1]</td><td>$tarjeta[2]</td>";
+						echo "<input type='hidden' name='id' value='$tarjeta[1]'></input>";
+						echo "<td><button id='$tarjeta[1]' type='submit' name='remove'>Remove</button></td></tr></form>";
+					}
 		
 					echo "</tbody>";
 					echo "</table>";
 					echo "</div>";
-					if (isset($_POST["remove"]))
-					{
-						$id = $_POST['id'];
-					  echo "$id es tu id";
-					} 
-					else 
-					{
-					  $user = null;
-					  echo "no username supplied";
-					}
+
+					// echo "<table class='table'><thead><tr><th scope='col'>ID Tarjeta</th><th scope='col'>Fecha Expiracion</th><th scope='col'></th></tr>";
+					// echo "<tbody><form method='post' action=''><tr><td id='id' name='id'>1</td><td>123</td>";
+					// echo "<input type='hidden' name='id' value='1'></input>";
+					// echo "<td><button id='1' type='submit' name='remove'>Remove</button></td></tr></form>";
+					
+		
+					// echo "</tbody>";
+					// echo "</table>";
+					// echo "</div>";
+					// if (isset($_POST["remove"]))
+					// {
+					// 	$id = $_POST['id'];
+					//   echo "$id es tu id";
+					// } 
+					// else 
+					// {
+					//   $user = null;
+					//   echo "no username supplied";
+					// }
 				 ?>
 			</div>
 

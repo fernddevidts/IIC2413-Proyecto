@@ -11,7 +11,7 @@
 
 
 	    <!-- Stylesheet -->
-	    <link src="profile.css" rel="stylesheet">
+	    <link href="profile.css" rel="stylesheet">
 	    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,600|Lato:400,900" rel="stylesheet">
 
 
@@ -22,17 +22,15 @@
 	<body>
 		<?php 
 		ini_set('display_errors', 0);
-		session_start();
 		include '../partials/nav.php';
 		include '../config/psql-config.php';
-		$id = $_SESSION['id'];
-		$username = $_SESSION['username'];
+		session_start();
 
-		$query = "SELECT * FROM Usuarios WHERE id=$id";
-		$result = $db_trans -> prepare($query);
-		$result -> execute();
-
-		$usuarios = $result -> fetchAll();
+		$user_check = $_SESSION['username'];
+		$ses_psql = pg_query($con_trans,"SELECT * from usuarios where correo = '$user_check' ");
+		$row = pg_fetch_array($ses_psql);
+   		$nombre = $row['nombre'];
+   		$apellido = $row['apellido'];
 
 		?>
 		<div class="container">
@@ -45,7 +43,7 @@
 				     	<a class="nav-link" id="compras-pill" href="compras.php" role="tab" onclick="selected()">Compras</a>
 				     </li>
 				     <li class="nav-item">
-				     	<a class="nav-link" id="tarjetas-pill" href="tarjetas/tarjetas.php" role="tab" onclick="selected()">Tarjetas</a>
+				     	<a class="nav-link" id="tarjetas-pill" href="tarjetas.php" role="tab" onclick="selected()">Tarjetas</a>
 				     </li>
 				     <li class="nav-item">
 				     	<a class="nav-link" id="seguros-pill" href="seguros/seguros.php" role="tab" onclick="selected()">Seguros</a>
@@ -53,11 +51,7 @@
 				 </ul>
 			</div>
 			<div class="row">
-				<?php
-				foreach ($usuarios as $usuario) {
-					echo "<h3>$usuario[2] $usuario[1]</h3>";
-				}
-				?>
+				<p> Perfil de: <?php echo "$nombre $apellido"?> </p>
 			</div>
 
 		</div>

@@ -28,7 +28,6 @@
 		<div class="container">
 			<div class="row">
 				<?php 
-					session_start();
 					$id_usuario = $_SESSION['id'];
 				?>
 			</div>
