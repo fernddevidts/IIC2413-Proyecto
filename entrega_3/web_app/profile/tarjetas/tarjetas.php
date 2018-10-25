@@ -24,12 +24,16 @@
 		// ini_set('display_errors', 0);
 		include '../../partials/nav.php';
 		include '../../config/psql-config.php';
+
+		if(isset($_POST["agregar"])) {
+			$numero = $_POST["numero"];
+			echo "numero: $numero";
+		}
 		?>
 
 		<div class="container">
 			<div class="row">
 				<?php 
-				$id = 0;
 					session_start();
 					$id_usuario = $_SESSION['id'];
 
