@@ -30,7 +30,7 @@
 				<h2>NebCoin Bank</h2>
 			</div>
 			<div class="row justify-content-center">
-				<img src="imgs/hexagons.png" width="50%" height="50%">
+				<img src="imgs/hexagons.png" width="50%" height="25%">
 			</div>
 			<div class="row justify-content-center top-buffer">
 				<h3>Some Stats</h3>

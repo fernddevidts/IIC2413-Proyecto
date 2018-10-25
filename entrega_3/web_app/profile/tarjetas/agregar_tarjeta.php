@@ -37,6 +37,7 @@
 			</div>
 			<div class="row">
 				<form method="post" action="tarjetas.php">
+
 					<div class="col">
 						<div class="form-group">
 							<div class="row top-buffer">
@@ -54,15 +55,18 @@
 						</div>
 					</div>
 					<button name="agregar" type="submit" class="btn btn-primary">Agregar Tarjeta</button>
+
 				</form>
 				
 			</div>
 			<div class="row">
+
 				<div class="col">
 					<form action="tarjetas.php" method="post">
 						<button type="submit" class="btn btn-primary">Volver</button>
 					</form>
 				</div>
+
 			</div>
 		</div>
 	</body>
