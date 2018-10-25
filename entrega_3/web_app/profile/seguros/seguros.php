@@ -21,19 +21,35 @@
 	<body>
 		<?php 
 		ini_set('display_errors', 0);
+
+		session_start();
 		include '../../partials/nav.php';
 		include '../../config/psql-config.php';
+
+		$id = $_SESSION['id'];
+
+		$query = "SELECT RUS.id_seguro, S.nombre FROM rusuarioseguro RUS, seguros S WHERE RUS.id_usuario = $id AND RUS.id_seguro = S.id_seguro";
+
+		$result = $db_trans -> prepare($query);
+		$result -> execute();
+		$seguros = $result -> fetchAll();
 		?>
 
 		<div class="container">
 			<div class="row">
-				<?php 
-					session_start();
-					$id_usuario = $_SESSION['id'];
-				?>
+				<h3>Seguros</h3>
 			</div>
 			<div class="row">
-				<h3>Seguros</h3>
+				<?php 
+					echo "<div class='row'>";
+				    echo "<table class='table'<thead><tr><th scope='col'>ID Seguro</th><th scope='col'>Nombre</th></tr>";
+				    foreach ($seguros as $seguro) {
+					    echo "<tbody><tr><td>$seguro[0]</td><td>$seguro[1]</td></tr>";
+				    }
+				    echo "</tbody>";
+				    echo "</table>";
+					echo "</div>";
+				?>
 			</div>
 			<div class="row">
 				<div class="col">
