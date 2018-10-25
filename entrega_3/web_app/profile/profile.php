@@ -1,3 +1,8 @@
+<?php
+   include '../login/session.php';
+?>
+
+
 <!DOCTYPE html>
 <html>
 	<head>
