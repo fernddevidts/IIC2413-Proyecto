@@ -4,7 +4,7 @@ lista = []
 for i in range(0, 161):
     lista.append(i)
 
-with open('usuariosviejo.csv', newline='') as csvfile:
+with open('TiendaDeServicios.csv', newline='') as csvfile:
     reader = csv.reader(csvfile, delimiter=' ', quotechar='|')
     encabezado = (next(reader))[0]
     with open('usuarios.csv', 'w') as file:
@@ -33,12 +33,7 @@ with open('usuariosviejo.csv', newline='') as csvfile:
                         element = element2
                         row2.append(element)
                         work = True
-        if row2[2] == 'S/A':
-            row2[2] = ''
-        if row2[4] == '"No Aplica"':
-            row2[4] = ''
-        row2[1] = row2[1].replace('"', '')
-        row2[2] = row2[2].replace('"', '')
+
         while True:
             if int(row2[0]) == lista[0]:
                 row = ','.join(row2)

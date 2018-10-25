@@ -1,162 +1,142 @@
-id_usuario,nombre,apellido,correo,sexo
-0,RAFAEL ANTONIO,ABUSLEME,raabusleme@uc.cl,M
-1,JUAN JOSÉ ARTURO,AGUILLÓN,jjaguillon@uc.cl,M
+﻿id_tienda_s,nombre,ubicacion,telefono,apertura,cierre,rubro,correo,
+0,,,,
+1,,,,
 2,,,,
-3,VALENTINA JAVIERA,ÁLVAREZ,vjalvarez@uc.cl,F
-4,TOMÁS,ÁLVAREZ,talvarez2@uc.cl,M
-5,AUGUSTO ALEJANDRO,ALVAREZ,aaalvarez@uc.cl,M
-6,KENZO,ANDRADE,kandrade@uc.cl,M
-7,FELIPE EDUARDO,APABLAZA,feapablaza@uc.cl,F
-8,PAULA FABIOLA,ARELLANO,pfarellano@uc.cl,M
-9,ANDRES EMILIO,AVALOS,aeavalos@uc.cl,M
-10,BENJAMIN EDUARDO,AYANCAN,beayancan@uc.cl,M
-11,IGNACIA,BAEZA,ibaeza1@uc.cl,F
+3,,,,
+4,,,,
+5,,,,
+6,,,,
+7,,,,
+8,,,,
+9,,,,
+10,,,,
+11,,,,
 12,,,,
-13,JAVIERA BELÉN,BAO,jbbao@uc.cl,F
-14,FELIPE RAÚL,BARRÍA,frbarria@uc.cl,M
-15,FELIPE ANTONIO,BARRIENTOS,fnbarrientos@uc.cl,M
-16,JOSEFINA,BENGOA,jbengoa1@uc.cl,F
-17,CAMILO IGNACIO,BERRÍOS,ciberrios@uc.cl,M
-18,FELIPE ALBERTO,BERRIOS,faberrios@uc.cl,M
-19,JOAQUÍN ALBERTO,BUGMANN,jabugmann@uc.cl,M
+13,,,,
+14,,,,
+15,,,,
+16,,,,
+17,,,,
+18,,,,
+19,,,,
 20,,,,
-21,AGUSTÍN RICARDO,CAMPENY,arcampeny@uc.cl,M
-22,DIEGO ANTONIO,CAROCA,dncaroca@uc.cl,M
-23,DANIEL ROBERTO,CARRASCO,drcarrasco@uc.cl,M
+21,,,,
+22,,,,
+23,,,,
 24,,,,
 25,,,,
 26,,,,
-27,ANTONIA SOFIA,COBO,ascobo@uc.cl,F
-28,DANIELA ALEJANDRA,CONCHA,daconcha@uc.cl,F
-29,IGNACIO,CONTRERAS,icontreras1@uc.cl,M
-30,TAMARA ALEXANDRA,CUCUMIDES,tacucumides@uc.cl,F
-31,DANIEL EDUARDO,DARRITCHON,dedarritchon@uc.cl,M
-32,FERNANDO ANTONIO,DE DIEGO,fadediego@uc.cl,M
-33,BENJAMÍN IGNACIO,DEL REAL,bidelreal@uc.cl,M
+27,,,,
+28,,,,
+29,,,,
+30,,,,
+31,,,,
+32,,,,
+33,,,,
 34,,,,
 35,,,,
-36,FERNANDA ROCIO,DURAN,frduran@uc.cl,F
+36,,,,
 37,,,,
-38,JOAQUIN,EICHHOLZ,jeichholz3@uc.cl,M
-39,MARCELO IGNACIO,ESCUDERO,miescudero@uc.cl,M
+38,,,,
+39,,,,
 40,,,,
-41,SARAH VIRGINIA,EVERKE,sveverke@uc.cl,F
+41,,,,
 42,,,,
-43,IAN,FIELDHOUSE,ifieldhouse@uc.cl,M
+43,,,,
 44,,,,
 45,,,,
-46,MATÍAS ANDRÉS,GABLER,mngabler@uc.cl,M
+46,,,,
 47,,,,
-48,NICOLÁS JORGE,GARRIDO,njgarrido@uc.cl,M
+48,,,,
 49,,,,
 50,,,,
-51,RODRIGO IGNACIO,HANUCH,rihanuch@uc.cl,M
-52,JORGE ESTEBAN,HARCHA,jeharcha@uc.cl,M
+51,,,,
+52,,,,
 53,,,,
-54,CRISTOBAL EDUARDO,HERREROS,ceherreros@uc.cl,M
-55,CRISTOBAL,ILABACA,cilabaca1@uc.cl,M
-56,JAVIERA MONSERRAT,INOSTROZA,jminostroza@uc.cl,F
-57,ALFONSO JUAN DE DIOS,IRARRAZAVAL,auirarrazaval@uc.cl,M
-58,FELIPE CARLOS,JIMÉNEZ,fcjimenez@uc.cl,M
-59,JEAN PAUL ANDRE,JOUBLAN,jpjoublan@uc.cl,M
-60,VICENTE IGNACIO,JUAREZ,vijuarez@uc.cl,M
+54,,,,
+55,,,,
+56,,,,
+57,,,,
+58,,,,
+59,,,,
+60,,,,
 61,,,,
-62,AGUSTIN,KREBS,akrebs2@uc.cl,M
-63,CARLA DANIELA,LEPE,cdlepe@uc.cl,F
+62,,,,
+63,,,,
 64,,,,
-65,VICENTE JOSE,LIRA,vjlira@uc.cl,M
+65,,,,
 66,,,,
-67,VÍCTOR ARIEL,MARAMBIO,vamarambio@uc.cl,M
-68,MAXIMILIANO ANDRES,MARDONES,mnmardones@uc.cl,M
+67,,,,
+68,,,,
 69,,,,
 70,,,,
-71,RAIMUNDO,MARTINEZ,rmartinez7@uc.cl,M
-72,WILLIAMS ALEJANDRO,MEDINA,wamedina@uc.cl,M
-73,VICENTE TOMÁS,MELÍN,vtmelin@uc.cl,M
+71,,,,
+72,,,,
+73,,,,
 74,,,,
-75,JAIME ANDRES,MIDDLETON,jamiddleton@uc.cl,M
+75,,,,
 76,,,,
-77,DIEGO,MOLINA,dmolina2@uc.cl,M
-78,JEREMÍAS ANDRÉS,MOLINA,jamolina3@uc.cl,M
-79,JUAN PABLO,MORAGA,jomoraga@uc.cl,M
-80,VITO ARCANGELO,MUSSUTO,vamussuto@uc.cl,M
-81,JUAN JOSÉ,NESTLER,jjnestler@uc.cl,M
-82,PABLO IGNACIO,OLEA,pgolea@uc.cl,M
-83,NORMAN ANDRES,OLIDEN,naoliden@uc.cl,M
-84,LEONARDO ENRIQUE,OLIVARES,leolivares@uc.cl,M
-85,JOSE MANUEL,OPASO,jmopaso@uc.cl,M
+77,,,,
+78,,,,
+79,,,,
+80,,,,
+81,,,,
+82,,,,
+83,,,,
+84,,,,
+85,,,,
 86,,,,
-87,NICOLÁS ALEJANDRO,PARRAGUEZ,nlparraguez@uc.cl,M
+87,,,,
 88,,,,
-89,MARIA IGNACIA,PLAZA DE LOS REYES,miplazadelosreyes@uc.cl,F
-90,SEBASTIÁN IGNACIO,POBLETE,sipoblete@uc.cl,M
-91,CRISTÓBAL MARTÍN,POBLETE,cmpoblete@uc.cl,M
-92,PHILIPPE ANDRE,POTIN,papotin@uc.cl,M
+89,,,,
+90,,,,
+91,,,,
+92,,,,
 93,,,,
-94,GONZALO TOMAS,QUIROGA,gtquiroga@uc.cl,M
+94,,,,
 95,,,,
 96,,,,
-97,SEBASTIAN,RICKE,sricke@uc.cl,M
-98,PABLO IGNACIO,RODRÍGUEZ,pcrodriguez@uc.cl,M
+97,,,,
+98,,,,
 99,,,,
 100,,,,
-101,TOMAS IGNACIO,SALVADORES,tisalvadores@uc.cl,M
-102,MARÍA IGNACIA,SÁNCHEZ,mcsanchez@uc.cl,F
-103,RICARDO ESTEBAN,SCHILLING,reschilling@uc.cl,M
+101,,,,
+102,,,,
+103,,,,
 104,,,,
-105,JAN PAUL,SIEGEL,jasiegel@uc.cl,M
-106,FEDERICO ANDRES,TALADRIZ,fntaladriz@uc.cl,M
-107,DUNKAN NICOLÁS,TORRES,dntorres1@uc.cl,M
-108,JAVIER OMAR,TRAMON,jotramon@uc.cl,M
-109,TOMÁS PATRICIO,VALENZUELA,tpvalenzuela@uc.cl,M
-110,SEBASTIAN ANDRES,VELOZO,savelozo@uc.cl,M
-111,TIEN,VILLALOBOS,tvillalobos1@uc.cl,M
-112,THOMAS,WALLACE,twallace@uc.cl,M
+105,,,,
+106,,,,
+107,,,,
+108,,,,
+109,,,,
+110,,,,
+111,,,,
+112,,,,
 113,,,,
-114,JOSE MANUEL,WIELANDT,jmwielandt@uc.cl,M
-115,DINKO FERNANDO,YOMA,dfyoma@uc.cl,M
-116,MATÍAS ALEJANDRO,ZENTENO,mlzenteno@uc.cl,M
-117,SAMUEL EMILIO,ZÚÑIGA,sezuniga1@uc.cl,M
-118,DANIEL,ZUPEUC,dzupeuc@uc.cl,M
-119,Old Navy,,jonadab@sbcglobal.net,
-120,Dick's Sporting Goods,,ryanvm@aol.com,
-121,Big Bang Bicycles,,mjewell@optonline.net,
-122,American Thrift Center,,pajas@comcast.net,
-123,Cindy Esser's Floral Shop,,denism@icloud.com,
-124,Red White & Blue Thrift Store,,symbolic@yahoo.ca,
-125,Paul's Clock Repair,,dkrishna@msn.com,
+114,,,,
+115,,,,
+116,,,,
+117,,,,
+118,,,,
+119,,,,
+120,,,,
+121,,,,
+122,,,,
+123,,,,
+124,,,,
+125,,,,
 126,,,,
-127,Homecenter,,mhassel@mac.com,
-128,Casa Ideas,,giafly@sbcglobal.net,
-129,Adidas,,martyloo@hotmail.com,
-130,Porto Fino,,esbeck@msn.com,
-131,Paddy's House,,frostman@yahoo.com,
-132,Nike,,iapetus@sbcglobal.net,
+127,,,,
+128,,,,
+129,,,,
+130,,,,
+131,,,,
+132,,,,
 133,,,,
-134,Apple,,scotfl@gmail.com,
-135,Jumbo,,sekiya@yahoo.ca,
-136,Loft,,catalog@gmail.com,
-137,North Face,,chaki@msn.com,
-138,Assoto,,alfred@hotmail.com,
-139,Rapa Nui,,mddallara@yahoo.com,
-140,Hoyts Cinema,,sisyphus@me.com,
-141,Tom Bradley Airport,,burns@msn.com,
-142,Metro,,brainless@live.com,
-143,Shop 'n Save,,parents@yahoo.ca,
-144,,,,
-145,Latina Pizza,,hamilton@hotmail.com,
-146,Bellisario Pizza Shop,,jimxugle@live.com,
-147,Hunan Wok Chinese Restaurant,,moonlapse@outlook.com,
-148,Minerva Bakery,,delpino@optonline.net,
-149,Pierogies Plus,,ullman@optonline.net,
-150,Marge's Place,,wkrebs@att.net,
-151,Applebee's,,nullchar@verizon.net,
-152,R & B's Pizza Place,,monkeydo@optonline.net,
-153,Luigi's Pizzeria,,mcrawfor@sbcglobal.net,
-154,Donald's,,gslondon@att.net,
-155,China Sea Chinese Restaurant,,matloff@verizon.net,
-156,Avalon Motel,,geekgrl@hotmail.com,
-157,Star Nails,,dobey@optonline.net,
-158,Vivo,,crypt@comcast.net,
-159,Remember When,,msusa@live.com,
-160,Pistella Beer Distributors,,staikos@msn.com,
+134,,,,
+135,,,,
+136,,,,
+137,,,,
+138,,,,
+139,,,,
+140,Hoyts,Cinema
