@@ -1,5 +1,6 @@
 <?php
    include('../config/psql-config.php');
+
    session_start();
    
    $user_check = $_SESSION['username'];

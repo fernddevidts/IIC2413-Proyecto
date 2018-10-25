@@ -2,6 +2,7 @@
    include('../login/session.php');
 ?>
 
+
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -25,6 +26,7 @@
 	<body>
 		<?php 
 		ini_set('display_errors', 0);
+
 		session_start();
 		include '../partials/nav.php';
 		include '../config/psql-config.php';
@@ -35,6 +37,7 @@
 		$result = $db_trans -> prepare($query);
 		$result -> execute();
 		$transferencias = $result -> fetchAll();
+
 
 		?>
 
@@ -60,6 +63,7 @@
 				?>
 			</div>
 			
+
 			<div class="row">
 				<form action="profile.php" method="post">
 					<button type="submit" class="btn btn-primary">Volver</button>

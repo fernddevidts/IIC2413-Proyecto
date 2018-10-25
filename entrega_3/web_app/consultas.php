@@ -43,7 +43,7 @@
 
 						<button type="submit" class="btn btn-primary">Consultar</button>
 					</div>
-					</form>
+				</form>
 			</div>
 
 

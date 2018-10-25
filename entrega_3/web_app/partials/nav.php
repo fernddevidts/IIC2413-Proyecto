@@ -17,6 +17,7 @@
 
   <div class="navbar-collapse collapse w-100 order-3 dual-collapse-2" id="navbarSupportedContent">
     <ul class="nav nav-pills" id="myTab" role="tablist" >
+
 <!--       <li class="nav-item">
         <a class="nav-link" id="consultas-pill" href="/~grupo6/entrega_3/web_app/consultas.php" role="tab" onclick="selected()">Consultas</a>
       </li> -->
@@ -38,6 +39,7 @@
         <li class="nav-item">
           <a class="nav-link" id="login-pill" href="/~grupo6/entrega_3/web_app/login/login.php" role="tab" onclick="selected()">Login</a>
         </li>
+
       <?php } ?>
     </ul>
   </div>
