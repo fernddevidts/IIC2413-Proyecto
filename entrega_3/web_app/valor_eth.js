@@ -9,7 +9,7 @@ function UpdateEthPrice(){
         url: "https://api.coinmarketcap.com/v1/ticker/bitcoin/",
         dataType: "json",
         success: function(result){
-            ethPrice = result[0].price_usd;
+            ethPrice = Math.round(result[0].price_usd * 100)/100;
             ncPrice = ethPrice * 0.001
             displayEth = " $USD"+ethPrice;
             displayNC = " $USD"+ncPrice;
