@@ -14,12 +14,12 @@
 
 
 	    <!-- Stylesheet -->
-	    <link href="profile.css" rel="stylesheet">
+	    <link href="../profile.css" rel="stylesheet">
 	    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,600|Lato:400,900" rel="stylesheet">
 
 
 
-	    <title>Compras</title>
+	    <title>Seguros</title>
 	</head>
 	<body>
 		<?php 
@@ -36,10 +36,10 @@
 				?>
 			</div>
 			<div class="row">
-				<h3>Compras</h3>
+				<h3>Seguros</h3>
 			</div>
 			<div class="row">
-				<form action="profile.php" method="post">
+				<form action="../profile.php" method="post">
 					<button type="submit" class="btn btn-primary">Volver</button>
 				</form>
 			</div>

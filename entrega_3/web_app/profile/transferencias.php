@@ -1,4 +1,8 @@
-<!DOCTYPE html>
+<?php
+   include('../login/session.php');
+?>
+
+
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -22,20 +26,44 @@
 	<body>
 		<?php 
 		ini_set('display_errors', 0);
+
+		session_start();
 		include '../partials/nav.php';
 		include '../config/psql-config.php';
+		$id = $_SESSION['id'];
+
+		$query = "SELECT P.id_pago, P.id_usuario2, P.monto, P.fecha_transaccion FROM pagos P WHERE P.id_usuario1 = $id";
+
+		$result = $db_trans -> prepare($query);
+		$result -> execute();
+		$transferencias = $result -> fetchAll();
+
+
 		?>
 
 		<div class="container">
 			<div class="row">
-				<?php 
-					session_start();
-					$id_usuario = $_SESSION['id'];
-				?>
-			</div>
-			<div class="row">
 				<h3>Transferencias</h3>
 			</div>
+			<div class="row">
+				<?php 
+					
+
+					// echo "<h3>Monto restante para transacción ID: $transaccion</h3>";
+
+	
+					echo "<div class='row'>";
+				    echo "<table class='table'<thead><tr><th scope='col'>ID Pago</th><th scope='col'>Receptor</th><th scope='col'>Monto</th><th scope='col'>Fecha de Transacción</th></tr>";
+				    foreach ($transferencias as $transaccion) {
+					echo "<tbody><tr><td>$transaccion[0]</td><td>$transaccion[1]</td><td>$transaccion[2]</td><td>$transaccion[3]</td></tr>";
+				    }
+				    echo "</tbody>";
+				    echo "</table>";
+					echo "</div>";
+				?>
+			</div>
+			
+
 			<div class="row">
 				<form action="profile.php" method="post">
 					<button type="submit" class="btn btn-primary">Volver</button>
