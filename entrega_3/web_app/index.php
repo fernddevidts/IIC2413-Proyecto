@@ -9,6 +9,8 @@
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 
+	<script type="text/javascript" src="valor_eth.js"></script>
+
 
 
 
@@ -22,7 +24,7 @@
     <title>NebCoin Bank</title>
 	</head>
 
-	<body>
+	<body onload=UpdateEthPrice()>
 		<?php include 'partials/nav.php'; ?>
 
 		<div class="container">
@@ -36,7 +38,12 @@
 				<h3>Some Stats</h3>
 			</div>
 			<div class="row justify-content-center">
-				<p>aún no hay stats :(</p>
+				<p>Valor ETH: </p>
+				<p id="valor_eth"></p>
+			</div>
+			<div class="row justify-content-center">
+				<p>Valor NebCoin: </p>
+				<p id="valor_nc"></p>
 			</div>
 		</div>
 
