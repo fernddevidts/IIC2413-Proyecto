@@ -89,7 +89,6 @@
 				$active = $row['active'];
 
 				$count = pg_num_rows($revision);
-				echo "<p>$id_borrar</p>";
 
 
 				if($count==0) {
