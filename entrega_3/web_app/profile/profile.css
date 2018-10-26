@@ -1,3 +1,11 @@
+.container {
+	padding: 10px;
+}
+
+.row {
+	padding: 10px;
+}
+
 h1 {
 	font-family: 'Fira Sans', sans-serif;
     font-weight: 600;
@@ -44,3 +52,13 @@ td {
     font-family: 'Fira Sans', sans-serif;
     font-weight: 600;
 }
+
+.btn-secondary {
+	background-color: white;
+	text-transform: uppercase;
+	color: black;
+	font-family: 'Fira Sans', sans-serif;
+	font-weight: 600;
+	border: 0 none;
+}
+

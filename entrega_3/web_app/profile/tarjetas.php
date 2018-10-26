@@ -48,7 +48,7 @@
 					foreach ($tarjetas as $tarjeta) {
 						echo "<tbody><form method='post' action=''><tr><td name='id'>$tarjeta[1]</td><td>$tarjeta[2]</td>";
 						echo "<td><input type='hidden' name='id' value='$tarjeta[1]'></input></td>";
-						echo "<td><button id='$tarjeta[1]' type='submit' name='remove'>Remove</button></td></tr></form>";
+						echo "<td><button class='btn btn-secondary' id='$tarjeta[1]' type='submit' name='remove'>Remove</button></td></tr></form>";
 					}
 		
 					echo "</tbody>";
