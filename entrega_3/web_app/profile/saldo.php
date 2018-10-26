@@ -2,6 +2,7 @@
    include('../login/session.php');
 ?>
 
+
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -14,34 +15,48 @@
 
 
 	    <!-- Stylesheet -->
-	    <link href="../profile.css" rel="stylesheet">
+	    <link href="profile.css" rel="stylesheet">
 	    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,600|Lato:400,900" rel="stylesheet">
 
 
 
-	    <title>Seguros</title>
+	    <title>Saldo Actual</title>
 	</head>
 	<body>
 		<?php 
 		ini_set('display_errors', 0);
+		session_start();
 		include '../partials/nav.php';
 		include '../config/psql-config.php';
+		$id = $_SESSION['id'];
+		$query = "SELECT AB.abonado + R.monto - E.monto AS saldo_actual FROM (SELECT SUM(monto) as monto FROM (SELECT P.monto FROM pagos P WHERE P.id_usuario1 = $id UNION SELECT 0) C2) E, (SELECT SUM(abonado) AS abonado FROM (SELECT A.cantidad * A.valor_nebcoin AS abonado FROM abonos A, tarjetas TU WHERE A.id_tarjeta = TU.id_tarjeta AND TU.id_usuario =  $id  UNION SELECT 0) AS C2) AB, (SELECT SUM(monto) as monto FROM (SELECT P.monto FROM pagos P WHERE P.id_usuario2 =  $id  UNION SELECT 0) C2) R";
+		$result = $db_trans -> prepare($query);
+		$result -> execute();
+		$saldos = $result -> fetchAll();
 		?>
 
 		<div class="container">
 			<div class="row">
+				<h3>Saldo Actual</h3>
+			</div>
+			<div class="row">
 				<?php 
-					session_start();
-					$id_usuario = $_SESSION['id'];
+					echo "<div class='row'>";
+				    echo "<table class='table'<thead><tr><th scope='col'>Saldo Actual</th></tr>";
+				    foreach ($saldos as $saldo) {
+					    echo "<tbody><tr><td>$saldo[0]</td></tr>";
+				    }
+				    echo "</tbody>";
+				    echo "</table>";
+					echo "</div>";
 				?>
 			</div>
 			<div class="row">
-				<h3>Seguros</h3>
-			</div>
-			<div class="row">
-				<form action="../profile.php" method="post">
-					<button type="submit" class="btn btn-primary">Volver</button>
-				</form>
+				<div class="col">
+					<form action="profile.php" method="post">
+						<button type="submit" class="btn btn-primary">Volver</button>
+					</form>
+				</div>
 			</div>
 		</div>
 	</body>

@@ -1,7 +1,3 @@
-<?php
-   include '../login/session.php';
-?>
-
 <!DOCTYPE html>
 <html>
 	<head>
@@ -24,13 +20,12 @@
 	</head>
 
 	<body>
-		<?php 
+		<?php
 		ini_set('display_errors', 0);
 		session_start();
-		
 		include '../partials/nav.php';
 		include '../config/psql-config.php';
-		
+
 
 		$user_check = $_SESSION['username'];
 		$ses_psql = pg_query($con_trans,"SELECT * from usuarios where correo = '$user_check' ");
@@ -54,11 +49,34 @@
 				     <li class="nav-item">
 				     	<a class="nav-link" id="seguros-pill" href="seguros/seguros.php" role="tab" onclick="selected()">Seguros</a>
 				     </li>
+				     <li class="nav-item">
+				     	<a class="nav-link" id="saldo-pill" href="saldo.php" role="tab" onclick="selected()">Saldo Actual</a>
+				     </li>
 				 </ul>
 			</div>
 			<div class="row">
 				<p> Perfil de: <?php echo "$nombre $apellido"?> </p>
 			</div>
+			<div class="row">
+				<div class="col">
+						<form action="abonos.php" method="post">
+							<button type="submit" class="btn btn-primary">Abonar</button>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div id="profile">
+    <form action="../consultas/buscar_tienda.php" method="GET">
+        Búsqueda de tiendas: <input name="nombre" id="search" type="text" placeholder="Nombre de la tienda">
+        <input id="submit" type="submit" value="Buscar">
+    </form>
+		</div>
+		<div id="profile">
+	<form action="../consultas/buscar_producto_servicio.php" method="GET">
+			Búsqueda de tiendas: <input name="query" id="search" type="text" placeholder="Nombre del producto o servicio">
+			<input id="submit" type="submit" value="Buscar">
+	</form>
+	</div>
 
 		</div>
 	</body>
