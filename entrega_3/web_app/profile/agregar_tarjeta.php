@@ -16,7 +16,7 @@
 
 
 
-	    <title>Seguros</title>
+	    <title>Agregaar Tarjeta</title>
 	</head>
 	<body>
 		<?php 

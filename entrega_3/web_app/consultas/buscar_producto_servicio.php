@@ -1,9 +1,8 @@
+<?php
+include '../login/session.php';
+ini_set('display_errors', 0);
+?>
 <!DOCTYPE html>
-<<<<<<< HEAD
-<?php include '../login/session.php';
-ini_set('display_errors', 0); ?>
-=======
->>>>>>> b560de6546c405d7b591de0dfd422eedce1e844f
 <html>
 	<head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -16,11 +15,7 @@ ini_set('display_errors', 0); ?>
 
 
     <!-- Stylesheet -->
-<<<<<<< HEAD
-    <link href="../profile/profile.css" rel="stylesheet">
-=======
     <link href="../index.css" rel="stylesheet">
->>>>>>> b560de6546c405d7b591de0dfd422eedce1e844f
     <link href="../consultas.css" rel="stylesheet">
 
 
@@ -31,11 +26,7 @@ ini_set('display_errors', 0); ?>
 		<?php include '../partials/nav.php'; ?>
 		<div class="container">
 			<div class="row">
-<<<<<<< HEAD
-				<h3>Tiendas</h3>
-=======
-				<h3>Nombres de tienda</h3>
->>>>>>> b560de6546c405d7b591de0dfd422eedce1e844f
+				<h3>Nombres de producto o servicio</h3>
 
 				<?php
 					include_once "psql-config.php";
@@ -50,47 +41,28 @@ ini_set('display_errors', 0); ?>
 
 
 					echo "<div class='row'>";
-          $nombre_tienda = $_GET['nombre'];
-<<<<<<< HEAD
-					$query = "SELECT TS.nombre, TS.id_tienda
-          FROM tiendas AS TS
-          WHERE TS.nombre LIKE '%$nombre_tienda%'
-          UNION
-          SELECT TS.nombre, TS.id_tienda_s
-          FROM tiendasdeservicios AS TS
-          WHERE TS.nombre LIKE '%$nombre_tienda%'
+          $nombre_tienda = $_GET['query'];
+					$query = "SELECT P.nombre, P.id_producto,P.descripcion
+          FROM productos AS P
+          WHERE P.nombre LIKE '%$nombre_tienda%'
+					UNION
+					SELECT S.nombre, S.id_servicio,S.descripcion
+          FROM servicios AS S
+          WHERE S.nombre LIKE '%$nombre_tienda%'
           ;";
-=======
-					$query = "
-    SELECT TS.nombre, TS.id_tienda_s
-    FROM tiendas_servicio AS TS
-    WHERE TS.nombre LIKE '%$nombre_tienda%';
-    ";
->>>>>>> b560de6546c405d7b591de0dfd422eedce1e844f
 					$result = $db -> prepare($query);
 					$result -> execute();
 
 					$seguros = $result -> fetchAll();
 
-<<<<<<< HEAD
-					echo "<table class='table'<thead><tr><th scope='col'>Nombre</th><th scope='col'>Id</th><th scope='col'>Link</th></tr>";
+					echo "<table class='table'<thead><tr><th scope='col'>Nombre</th><th scope='col'>Descripcion</th><th scope='col'>Tiendas</th></tr>";
 					foreach ($seguros as $seguro) {
-						echo "<tbody><tr><td>$seguro[0]</td><td>$seguro[1]</td><td><a href='tiendaquevendeproductos.php?tienda=".$seguro[1]."'><button class='btn btn-secondary' type='submit' name='id_prod'/>Ir a $seguro[0]</a></td></tr>";
+						echo "<tbody><tr><td>$seguro[0]</td><td>$seguro[2]</td>><td><a href='tiendas_que_venden_product.php?store_id=".$seguro[1]."'>Detalle de tienda</a></td>";
 					};
-=======
-					echo "<table class='table'<thead><tr><th scope='col'>Nombre</th><th scope='col'>Nombre Seguro</th></tr>";
-					foreach ($seguros as $seguro) {
-						echo "<tbody><tr><td>$seguro[0]</td><td>$seguro[1]</td></tr>";
-					}
->>>>>>> b560de6546c405d7b591de0dfd422eedce1e844f
 					echo "</tbody>";
 					echo "</table>";
 
 
-<<<<<<< HEAD
-
-=======
->>>>>>> b560de6546c405d7b591de0dfd422eedce1e844f
 					echo "</div>";
 
 
