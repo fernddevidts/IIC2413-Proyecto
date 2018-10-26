@@ -16,13 +16,19 @@
 
 
 
-	    <title>Seguros</title>
+	    <title>Contrato Seguros</title>
 	</head>
 	<body>
 		<?php 
 		ini_set('display_errors', 0);
+		session_start();
 		include '../../partials/nav.php';
 		include '../../config/psql-config.php';
+		$id = $_SESSION['id'];
+		$query = "SELECT DISTINCT RUS.id_seguro, S.nombre FROM rusuarioseguro RUS, seguros S WHERE RUS.id_usuario != $id AND RUS.id_seguro = S.id_seguro";
+		$result = $db_trans -> prepare($query);
+		$result -> execute();
+		$seguros = $result -> fetchAll();
 		?>
 
 		<div class="container">
@@ -36,7 +42,19 @@
 				<h3>Contratar Seguro</h3>
 			</div>
 			<div class="row">
-				
+				<?php 
+					echo "<div class='row'>";
+				    echo "<table class='table'<thead><tr><th scope='col'>ID Seguro</th><th scope='col'>Nombre</th><th></th></tr>";
+				    foreach ($seguros as $seguro) {
+					    echo "<tbody><form method'post' action=''><tr><td name='id'>$seguro[0]</td><td>$seguro[1]</td>";
+					    echo "<td><input type='hidden' name='id' value='$seguro[0]'></input></td>";
+					    echo "<td><button class='btn btn-secondary' id='$seguro[0]' type='submit' name='agregar'>CONTRATAR</button></td></tr></form>";
+
+				    }
+				    echo "</tbody>";
+				    echo "</table>";
+					echo "</div>";
+				?>
 			</div>
 			<div class="row">
 				<form action="seguros.php" method="post">
