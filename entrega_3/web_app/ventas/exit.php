@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+<?php include '../login/session.php';
+ini_set('display_errors', 0); ?>
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -11,53 +12,54 @@
 
 
 	    <!-- Stylesheet -->
-	    <link href="../profile.css" rel="stylesheet">
+	    <link href="../profile/profile.css" rel="stylesheet">
 	    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,600|Lato:400,900" rel="stylesheet">
 
 
 
-	    <title>Seguros</title>
+	    <title>Servicios</title>
 	</head>
+
 	<body>
 		<?php 
 		ini_set('display_errors', 0);
+
 		session_start();
-		include '../../partials/nav.php';
-		include '../../config/psql-config.php';
+		include '../partials/nav.php';
+		include '../config/psql-config.php';
 		$id = $_SESSION['id'];
-		$query = "SELECT RUS.id_seguro, S.nombre, RUS.fecha_de_expiracion FROM rusuarioseguro RUS, seguros S WHERE RUS.id_usuario = $id AND RUS.id_seguro = S.id_seguro";
-		$result = $db_trans -> prepare($query);
-		$result -> execute();
-		$seguros = $result -> fetchAll();
+
+		$n_cuotas = $_POST['cuotas'];
+		$id_tienda = $_POST['tienda'];
+		$n_unidades = $_POST['unidades'];
+		
+
 		?>
 
 		<div class="container">
 			<div class="row">
-				<h3>Seguros</h3>
+				<h3>¡Éxito!</h3>
 			</div>
 			<div class="row">
 				<?php 
-					echo "<div class='row'>";
-				    echo "<table class='table'<thead><tr><th scope='col'>ID Seguro</th><th scope='col'>Nombre</th><th scope='col'>Fecha Expiracion</th></tr>";
-				    foreach ($seguros as $seguro) {
-					    echo "<tbody><tr><td>$seguro[0]</td><td>$seguro[1]</td><td>$seguro[2]</td></tr>";
-				    }
-				    echo "</tbody>";
-				    echo "</table>";
-					echo "</div>";
+
+                    echo "<div class='row'>";
+                    echo $n_cuotas;
+                    echo $id_tienda;
+                    echo $n_unidades;
+                    echo 'Su compra ha sido realizada con éxito.';	
+                    	    
+				    echo "</div>";
+
 				?>
 			</div>
+			
+
 			<div class="row">
-				<div class="col">
-					<form action="../profile.php" method="post">
-						<button type="submit" class="btn btn-primary">Volver</button>
-					</form>
-				</div>
-				<div class="col">
-					<form action="contrato_seguro.php" method="post">
-						<button type="submit" class="btn btn-primary">Contratar Seguro</button>
-					</form>
-				</div>
+				<form action="../profile/profile.php" method="post">
+					<button type="submit" class="btn btn-primary">Volver</button>
+				</form>
 			</div>
 		</div>
 	</body>
+</html>

@@ -24,7 +24,7 @@
 	<body>
 		<?php 
 			
-		ini_set('display_errors', 0);
+		// ini_set('display_errors', 0);
 		include '../partials/nav.php';
 		?>
 
@@ -33,6 +33,21 @@
 				<?php 
 					session_start();
 					$id = $_SESSION['id'];
+					if(isset($_POST["remove"])) {
+					$con = pg_connect("host=".HOST." dbname=".DATABASE_TRANS." user=".USER_TRANS." password=".PASSWORD_TRANS);
+
+					$id_borrar = $_POST["id"];
+					$query_borrar = "DELETE FROM tarjetas WHERE id_tarjeta=$id_borrar;";
+					$result_borrar = $db_trans -> prepare($query_borrar);
+					$result_borrar -> execute();
+					$revision = pg_query($con, $query_borrar);
+
+					$row = pg_fetch_row($revision);
+
+					$active = $row['active'];
+
+					$count = pg_num_rows($revision);
+					}
 
 					$query = "SELECT T.id_usuario, T.id_tarjeta, T.fecha_expiracion FROM tarjetas T WHERE T.id_usuario = $id";
 
@@ -54,48 +69,9 @@
 					echo "</tbody>";
 					echo "</table>";
 					echo "</div>";
-
-					// echo "<table class='table'><thead><tr><th scope='col'>ID Tarjeta</th><th scope='col'>Fecha Expiracion</th><th scope='col'></th></tr>";
-					// echo "<tbody><form method='post' action=''><tr><td id='id' name='id'>1</td><td>123</td>";
-					// echo "<input type='hidden' name='id' value='1'></input>";
-					// echo "<td><button id='1' type='submit' name='remove'>Remove</button></td></tr></form>";
-					
-		
-					// echo "</tbody>";
-					// echo "</table>";
-					// echo "</div>";
-					// if (isset($_POST["remove"]))
-					// {
-					// 	$id = $_POST['id'];
-					//   echo "$id es tu id";
-					// } 
-					// else 
-					// {
-					//   $user = null;
-					//   echo "no username supplied";
-					// }
 				 ?>
 			</div>
-			<?php 
-				if(isset($_POST["remove"])) {
-				$id_borrar = $_POST["id"];
-				$query_borrar = "DELETE FROM tarjetas WHERE id_tarjeta=$id_borrar;";
-				$result_borrar = $db_trans -> prepare($query_borrar);
-				$result_borrar -> execute();
-				$revision = pg_query($con, $query_borrar);
 
-				$row = pg_fetch_row($revision);
-
-				$active = $row['active'];
-
-				$count = pg_num_rows($revision);
-
-
-				if($count==0) {
-					header("location: tarjetas.php");
-					exit;
-				}
-				}?>
 			<div class="container">
 				<div class="row">
 					<div class="col">

@@ -54,7 +54,7 @@
 								</div>
 								<div class="row top-buffer">
 									<label for='login'><p>Numero Tarjeta</p></label>
-									<select>
+									<select name='numero_tarjeta'>
 										<?php 
 										$query = "SELECT T.id_usuario, T.id_tarjeta, T.fecha_expiracion FROM tarjetas T WHERE T.id_usuario = $id_usuario";
 
@@ -62,8 +62,8 @@
 										$result -> execute();
 										$tarjetas = $result -> fetchAll();
 										foreach ($tarjetas as $tarjeta){
-										echo "<option value='$tarjeta[1]' name='numero_tarjeta'>$tarjeta[1]</option>";
-										echo "<input type='hidden' name='numero_tarjeta' value=$tarjeta[1]'></input>";
+										echo "<option value='$tarjeta[1]' name='numero_tarjeta'>$tarjeta[1]";
+										// echo "<input type='hidden' name='numero_tarjeta' value=$tarjeta[1]'></input></option>";
 										}		
 										?>
 									</select>
@@ -103,7 +103,7 @@
 					$count = pg_num_rows($revision);
 				}
 				if($count==1) {
-					echo "<p>Se han abonado $monto a tu saldo</p>";
+					echo "<p>Se han abonado $monto a tu saldo desde tu tarjeta $id_tarjeta</p>";
 					$query = "SELECT AB.abonado + R.monto - E.monto AS saldo_actual FROM (SELECT SUM(monto) as monto FROM (SELECT P.monto FROM pagos P WHERE P.id_usuario1 = $id_usuario UNION SELECT 0) C2) E, (SELECT SUM(abonado) AS abonado FROM (SELECT A.cantidad * A.valor_nebcoin AS abonado FROM abonos A, tarjetas TU WHERE A.id_tarjeta = TU.id_tarjeta AND TU.id_usuario =  $id_usuario  UNION SELECT 0) AS C2) AB, (SELECT SUM(monto) as monto FROM (SELECT P.monto FROM pagos P WHERE P.id_usuario2 =  $id_usuario  UNION SELECT 0) C2) R";
 					$result = $db_trans -> prepare($query);
 					$result -> execute();

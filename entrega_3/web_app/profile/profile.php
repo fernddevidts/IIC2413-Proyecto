@@ -58,9 +58,14 @@
 				<p> Perfil de: <?php echo "$nombre $apellido"?> </p>
 			</div>
 			<div class="row">
-				<div class="col">
+				<div class="col-2">
 					<form action="abonos.php" method="post">
 						<button type="submit" class="btn btn-primary">Abonar</button>
+					</form>
+				</div>
+				<div class="col">
+					<form action="transferir.php" method="post">
+						<button type="submit" class="btn btn-primary">Transferir</button>
 					</form>
 				</div>
 			</div>

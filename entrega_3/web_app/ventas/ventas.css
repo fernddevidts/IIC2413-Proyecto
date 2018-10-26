@@ -1,0 +1,64 @@
+.container {
+	padding: 10px;
+}
+
+.row {
+	padding: 10px;
+}
+
+h1 {
+	font-family: 'Fira Sans', sans-serif;
+    font-weight: 600;
+    font-size: 18pt;
+}
+
+h2 {
+	font-family: 'Fira Sans', sans-serif;
+	font-size: 14pt;
+}
+
+h3 {
+	font-family: 'Fira Sans', sans-serif;
+	font-size: 14pt;
+	font-weight: 600;
+	text-transform: uppercase;
+
+}
+
+
+p {
+	font-family: 'Lato', sans-serif;
+	text-transform: uppercase;
+	font-weight: 900;
+}  
+
+.form-group {
+	width: 400px;
+}
+
+label {
+	font-family: 'Lato', sans-serif;
+}
+
+td {
+	font-family: 'Lato', sans-serif;
+	font-weight: 600;
+}
+
+.btn-primary {
+	background-color: #0a1657;
+    text-transform: uppercase;
+    color: white;
+    font-family: 'Fira Sans', sans-serif;
+    font-weight: 600;
+}
+
+.btn-secondary {
+	background-color: white;
+	text-transform: uppercase;
+	color: black;
+	font-family: 'Fira Sans', sans-serif;
+	font-weight: 600;
+	border: 0 none;
+}
+
