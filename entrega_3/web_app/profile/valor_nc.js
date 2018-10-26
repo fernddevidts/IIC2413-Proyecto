@@ -1,7 +1,8 @@
- var ethPrice;
- var displayEth;
  var ncPrice;
  var displayNC;
+ var ethPrice;
+ var cname = "ncPrice";
+ var cvalue;
 
 function UpdateEthPrice(){
     $.ajax({
@@ -11,17 +12,15 @@ function UpdateEthPrice(){
         success: function(result){
             ethPrice = Math.round(result[0].price_usd * 100)/100;
             ncPrice = ethPrice * 0.001
-            displayEth = " $USD"+ethPrice;
+            cvalue = ncPrice.toString();
             displayNC = " $USD"+ncPrice;
-            document.getElementById("valor_eth").innerHTML = displayEth;
             document.getElementById("valor_nc").innerHTML = displayNC;
+            document.cookie= cname + "=" + cvalue;
+
 
         },
     error: function(err){
         console.log(err);
     }
     });
-}
-
-//window.location.href = 'profile/abonos.php?ncPrice=' + ncPrice;
-
+};

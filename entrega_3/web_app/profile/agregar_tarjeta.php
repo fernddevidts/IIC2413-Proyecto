@@ -66,8 +66,6 @@
 				$cvv = $_POST["cvv"];
 				$fecha_exp = $_POST["fecha_exp"];
 
-				echo "<p>$id_usuario, $id_tarjeta, $cvv, $fecha_exp</p>";
-
 				$query = "INSERT INTO tarjetas (id_usuario, id_tarjeta, cvv, fecha_expiracion) VALUES ($id_usuario, $id_tarjeta, $cvv, '$fecha_exp')";
 
 				$result = $db_trans -> prepare($query);
@@ -77,8 +75,6 @@
 				$revision = pg_query($con, $revisar);
 
 				$row = pg_fetch_row($revision);
-
-				$active = $row['active'];
 
 				$count = pg_num_rows($revision);
 			}

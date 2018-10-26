@@ -57,6 +57,26 @@
 			<div class="row">
 				<p> Perfil de: <?php echo "$nombre $apellido"?> </p>
 			</div>
+			<div class="row">
+				<div class="col">
+						<form action="abonos.php" method="post">
+							<button type="submit" class="btn btn-primary">Abonar</button>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div id="profile">
+    <form action="../consultas/buscar_tienda.php" method="GET">
+        Búsqueda de tiendas: <input name="nombre" id="search" type="text" placeholder="Nombre de la tienda">
+        <input id="submit" type="submit" value="Buscar">
+    </form>
+		</div>
+		<div id="profile">
+	<form action="../consultas/buscar_producto_servicio.php" method="GET">
+			Búsqueda de tiendas: <input name="query" id="search" type="text" placeholder="Nombre del producto o servicio">
+			<input id="submit" type="submit" value="Buscar">
+	</form>
+	</div>
 
 			<div id="profile">
     <form action="../consultas/buscar_tienda.php" method="GET">
