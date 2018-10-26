@@ -59,37 +59,35 @@
 			</div>
 			<div class="row">
 				<div class="col">
-						<form action="abonos.php" method="post">
-							<button type="submit" class="btn btn-primary">Abonar</button>
-						</form>
-					</div>
+					<form action="abonos.php" method="post">
+						<button type="submit" class="btn btn-primary">Abonar</button>
+					</form>
 				</div>
 			</div>
-			<div id="profile">
-    <form action="../consultas/buscar_tienda.php" method="GET">
-        Búsqueda de tiendas: <input name="nombre" id="search" type="text" placeholder="Nombre de la tienda">
-        <input id="submit" type="submit" value="Buscar">
-    </form>
-		</div>
-		<div id="profile">
-	<form action="../consultas/buscar_producto_servicio.php" method="GET">
-			Búsqueda de tiendas: <input name="query" id="search" type="text" placeholder="Nombre del producto o servicio">
-			<input id="submit" type="submit" value="Buscar">
-	</form>
-	</div>
 
-			<div id="profile">
-    <form action="../consultas/buscar_tienda.php" method="GET">
-        Búsqueda de tiendas: <input name="nombre" id="search" type="text" placeholder="Nombre de la tienda">
-        <input id="submit" type="submit" value="Buscar">
-    </form>
-		</div>
-		<div id="profile">
-	<form action="../consultas/buscar_producto_servicio.php" method="GET">
-			Búsqueda de tiendas: <input name="query" id="search" type="text" placeholder="Nombre del producto o servicio">
-			<input id="submit" type="submit" value="Buscar">
-	</form>
-	</div>
+			<div class="row" id="profile">
+			    <form action="../consultas/buscar_tienda.php" method="GET">
+			    	<div class="col">
+			    		<div class="form-group">
+					        <p>Búsqueda de tiendas:</p>
+					        <input class="form-control" name="nombre" id="search" type="text" placeholder="Nombre de la tienda">
+					        <button class="btn btn-primary" id="submit" type="submit">Buscar</button>
+					    </div>
+					</div>
+			    </form>
+			</div>
+			<div class="row" id="profile">
+				<form action="../consultas/buscar_producto_servicio.php" method="GET">
+					<div class="col">
+						<div class="form-group">
+							<p>Búsqueda de productos o servicios:</p>
+							<input class="form-control" name="query" id="search" type="text" placeholder="Nombre del producto o servicio">
+							<button class="btn btn-primary" id="submit" type="submit">Buscar</button>
+						</div>
+					</div>
+				</form>
+			</div>
+
 
 		</div>
 	</body>
