@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+<?php include '../login/session.php';
+ini_set('display_errors', 0); ?>
+
 <html>
 	<head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -19,50 +21,45 @@
 	</head>
 
 	<body>
-		<?php include '../partials/nav.php'; ?>
+		<?php 
+
+		include '../partials/nav.php';	
+		include '../config/psql-config.php';
+
+		?>
 		<div class="container">
 			<div class="row">
 				<h3>Nombres de producto o servicio</h3>
 
 				<?php
-					include_once "psql-config.php";
-					try {
-						$db = new PDO("pgsql:dbname=".DATABASE_TIENDA.";host=".HOST.";port=".PORT_TIENDA.";user=".USER_TIENDA.";password=".PASSWORD_TIENDA);
-					}
-					catch(PDOException $e) {
-					echo $e->getMessage();
-					}
 
 					echo "</div>";
 
 
 					echo "<div class='row'>";
-          $nombre_tienda = $_GET['query'];
-					$query = "SELECT P.nombre, P.id_producto,P.descripcion
-          FROM productos AS P
-          WHERE P.nombre LIKE '%$nombre_tienda%'
-					UNION
-					SELECT S.nombre, S.id_servicio,S.descripcion
-          FROM servicios AS S
-          WHERE S.nombre LIKE '%$nombre_tienda%'
-          ;";
-					$result = $db -> prepare($query);
+                    $nombre_tienda = $_GET['query'];
+					$query = "SELECT P.nombre, P.id_producto,P.descripcion FROM productos AS P WHERE P.nombre LIKE '%$nombre_tienda%'";
+					$result = $db_tienda -> prepare($query);
 					$result -> execute();
 
-					$seguros = $result -> fetchAll();
+					$tiendas = $result -> fetchAll();
+
+					$query2 = "SELECT S.nombre, S.id_servicio,S.descripcion FROM servicios AS S WHERE S.nombre LIKE '%$nombre_tienda%'";
+					$result2 = $db_tienda -> prepare($query2);
+					$result2 -> execute();
+
+					$tiendas_s = $result2 -> fetchAll();
 
 					echo "<table class='table'<thead><tr><th scope='col'>Nombre</th><th scope='col'>Descripcion</th><th scope='col'>Tiendas</th></tr>";
-					foreach ($seguros as $seguro) {
-						echo "<tbody><tr><td>$seguro[0]</td><td>$seguro[2]</td>><td><a href='tiendas_que_venden_product.php?store_id=".$seguro[1]."'>Detalle de tienda</a></td>";
+					foreach ($tiendas as $tienda) {
+						echo "<tbody><tr><td>$tienda[0]</td><td>$tienda[2]</td>><td><a href='tiendas_que_venden_product.php?id_prod=".$tienda[1]."'>Detalle de tienda</a></td>";
+					};
+					foreach ($tiendas_s as $tienda) {
+						echo "<tbody><tr><td>$tienda[0]</td><td>$tienda[2]</td>><td><a href='tiendas_que_venden_product.php?id_serv=".$tienda[1]."'>Detalle de tienda</a></td>";
 					};
 					echo "</tbody>";
 					echo "</table>";
-
-
 					echo "</div>";
-
-
-
 				?>
 
 			<div class="row">
