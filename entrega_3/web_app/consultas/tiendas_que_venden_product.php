@@ -1,5 +1,3 @@
-<?php include '../login/session.php';
-ini_set('display_errors', 0); ?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -43,6 +41,8 @@ ini_set('display_errors', 0); ?>
 					$query = "SELECT T.nombre,T.id_tienda
           FROM tiendas T,productos P,rtiendaproducto RT
 					WHERE P.id_producto = '$nombre_tienda' and P.id_producto = RT.id_producto and T.id_tienda = RT.id_tienda
+					
+
           ;";
 					$result = $db -> prepare($query);
 					$result -> execute();
