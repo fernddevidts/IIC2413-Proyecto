@@ -24,71 +24,79 @@ ini_set('display_errors', 0); ?>
 		<?php include '../partials/nav.php'; ?>
 		<div class="container">
 			<div class="row">
-				
-
-				<?php
-					include_once "psql-config.php";
-					try {
-						$db = new PDO("pgsql:dbname=".DATABASE_TIENDA.";host=".HOST.";port=".PORT_TIENDA.";user=".USER_TIENDA.";password=".PASSWORD_TIENDA);
-					}
-					catch(PDOException $e) {
-					echo $e->getMessage();
-					}
 
 
-					echo "</div>";
+			<?php
+			include_once "psql-config.php";
+			try {
+				$db = new PDO("pgsql:dbname=".DATABASE_TIENDA.";host=".HOST.";port=".PORT_TIENDA.";user=".USER_TIENDA.";password=".PASSWORD_TIENDA);
+			}
+			catch(PDOException $e) {
+				echo $e->getMessage();
+			}
 
 
+			echo "</div>";
+
+            $id_tienda = $_REQUEST['tienda'];
+            $id_tienda_s = $_REQUEST['tienda_s'];
+
+            if(!empty($id_tienda)) {
+                $name_id = 'id_prod';
+          	    $nombre_query = "SELECT nombre FROM tiendas WHERE id_tienda = $id_tienda";
+
+                $nombre = $db -> prepare($nombre_query);
+                $nombre -> execute();
+
+                $nombre = $nombre -> fetchAll();
+                $nombre = $nombre[0][0];
+
+                $query = "SELECT P.nombre, P.descripcion, P.precio, P.id_producto FROM rtiendaproducto as T, productos as P WHERE T.id_tienda = '$id_tienda' and P.id_producto = T.id_producto";
+            }
+
+            elseif(!empty($id_tienda_s)) {
+            	$name_id = 'id_serv';
+          	    $nombre_query = "SELECT nombre FROM tiendasdeservicios WHERE id_tienda_s = $id_tienda_s";
+
+                $nombre = $db -> prepare($nombre_query);
+                $nombre -> execute();
+
+                $nombre = $nombre -> fetchAll();
+                $nombre = $nombre[0][0];
+
+                $query = "SELECT P.nombre, P.descripcion, P.precio, P.id_servicio FROM rtiendaservicio as T, servicios as P WHERE T.id_tienda_s = '$id_tienda_s' and P.id_servicio = T.id_servicio";
+            }
+
+          
+            echo "<div class='row'><h3>$nombre</h3></div>";
+          
+			$result = $db -> prepare($query);
+			$result -> execute();
+
+			$items = $result -> fetchAll();
+			echo "<div class='row'>";
+
+			echo "<table class='table'<thead><tr><th scope='col'>Nombre</th><th scope='col'>Descripcion</th><th scope='col'>Precio</th><th scope='col'>Link</th></tr>";
+			echo "<form action='../ventas/comprar.php' method='post'>";
+			foreach ($items as $item) {
+				echo "<tbody><tr><td>$item[0]</td><td>$item[1]</td><td>$item[2]</td><td><button class='btn btn-secondary' type='submit' value='$item[3]' name='$name_id'/>  Comprar</td></tr>";
+			}
 					
-          $id_tienda = $_REQUEST['tienda'];
-          $nombre_query = "SELECT nombre FROM tiendas WHERE id_tienda = $id_tienda";
+			echo "</tbody>";
+			echo "</form>";
+			echo "</table>";
+			echo "</div>";
+            ?>
 
-          $nombre = $db -> prepare($nombre_query);
-          $nombre -> execute();
+            <div class="row">
+                <form action="../profile/profile.php" method="post">
+                    <button type="submit" class="btn btn-primary">Volver</button>
+                </form>
+            </div>
+        </div>
+    </body>
 
-          $nombre = $nombre -> fetchAll();
-          $nombre = $nombre[0][0];
-
-          echo "<div class='row'><h3>$nombre</h3></div>";
-
-
-          $query = "SELECT P.nombre, P.descripcion, P.precio
-          FROM rtiendaproducto as T, productos as P
-          WHERE T.id_tienda = '$id_tienda' and P.id_producto = T.id_producto
-          UNION
-          SELECT P.nombre, P.descripcion, P.precio
-          FROM rtiendaservicio as T, servicios as P
-          WHERE T.id_tienda_s = '$id_tienda' and P.id_servicio = T.id_servicio
-          ;";
-					$result = $db -> prepare($query);
-					$result -> execute();
-
-					$seguros = $result -> fetchAll();
-					echo "<div class='row'>";
-
-					echo "<table class='table'<thead><tr><th scope='col'>Nombre</th><th scope='col'>Descripcion</th><th scope='col'>Precio</th><th scope='col'>Link</th></tr>";
-					foreach ($seguros as $seguro) {
-						echo "<tbody><tr><td>$seguro[0]</td><td>$seguro[1]</td><td>$seguro[2]</td><td><a href='tiendaquevendeproductos.php?tienda=".$seguro[1]."'><button class='btn btn-secondary' type='submit' name='id_prod'/>Comprar</a></td></tr>";
-					};
-					echo "</tbody>";
-					echo "</table>";
-
-
-
-					echo "</div>";
-          ?>
-
-          <div class="row">
-          <form action="../profile/profile.php" method="post">
-            <button type="submit" class="btn btn-primary">Volver</button>
-          </form>
-          </div>
-          </div>
-
-          </body>
-
-          <div id="footer">
-          <?php include '../partials/footer.php'; ?>
-          </div>
-
-          </html>
+    <div id="footer">
+        <?php include '../partials/footer.php'; ?>
+    </div>
+</html>

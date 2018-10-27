@@ -29,7 +29,7 @@
 
 		<div class="container">
 			<div class="row justify-content-center top-buffer">
-				<h2>NebCoin Bank</h2>
+				<h2>NebCoin Bank & Store</h2>
 			</div>
 			<div class="row justify-content-center">
 				<img src="imgs/hexagons.png" width="50%" height="25%">

@@ -27,9 +27,16 @@
 		include '../partials/nav.php';
 		include '../config/psql-config.php';
 		$id = $_SESSION['id'];
+
+		$query = "SELECT CS.id_compraservicio, CS.id_tienda_s, CS.fecha_de_compra, string_agg(S.nombre::text, '<br>') as servicios FROM compraservicio CS, rcompraservicio RCS, servicios S WHERE CS.id_compraservicio = RCS.id_compraservicio AND CS.id_usuario = $id AND RCS.id_servicio = S.id_servicio GROUP BY CS.id_compraservicio, CS.id_tienda_s, CS.fecha_de_compra";
+        $result = $db_tienda -> prepare($query);
+		$result -> execute();
+
+
 		$query2 = "SELECT CP.id_compra, CP.id_tienda, CP.fecha, string_agg(PD.nombre::text, '<br>') as productos FROM compraproducto CP, rcompraproducto RCP, productos PD WHERE CP.id_compra = RCP.id_compra AND CP.id_usuario = $id AND RCP.id_producto = PD.id_producto GROUP BY CP.id_compra, CP.id_tienda, CP.fecha";
 		$result2 = $db_tienda -> prepare($query2);
 		$result2 -> execute();
+
 		?>
 
 		<div class="container">
@@ -48,6 +55,16 @@
                         while ($row1 = $result1 -> fetch()) {
                             if ($row2[1] == $row1[1] && $row2[2] == $row1[3]) {
                                 echo "<tbody><tr><td>$row2[0]</td><td>$row2[3]</td><td>$row1[2]</td><td>$row1[4]</td></tr>";
+                            }
+                        }
+                    }
+                    while ($row = $result -> fetch()) {
+				    	$query3 = "SELECT id_pago, id_usuario2, monto, fecha_transaccion, string_agg(informacion_cuotas::text, '<br>') AS cuotas FROM (SELECT PG.id_pago, PG.id_usuario2, PG.monto, PG.fecha_transaccion, concat_ws(', ', C.id_cuota, C.monto, C.fecha_expiracion, C.pagado) AS informacion_cuotas FROM pagos PG, cuotas C WHERE PG.id_pago = C.id_pago) AS C1 GROUP BY id_pago, id_usuario2, monto, fecha_transaccion";
+				    	$result3 = $db_trans -> prepare($query3);
+		                $result3 -> execute();
+                        while ($row3 = $result3 -> fetch()) {
+                            if ($row[1] == $row3[1] && $row[2] == $row3[3]) {
+                                echo "<tbody><tr><td>$row[0]</td><td>$row[3]</td><td>$row3[2]</td><td>$row3[4]</td></tr>";
                             }
                         }
                     }

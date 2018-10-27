@@ -49,9 +49,6 @@
 
 			$fecha_exp = $year_exp."-".$month_exp."-".$day_exp;
 
-
-			echo "<p>fecha!! $fecha_exp</p>";
-
 			if(isset($_POST["agregar"])) {
 				header('location: seguros.php');
 

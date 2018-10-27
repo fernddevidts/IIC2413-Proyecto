@@ -1,4 +1,4 @@
-<?php include '../login/session.php';
+<?php 
 ini_set('display_errors', 0); ?>
 <html>
 	<head>
@@ -57,13 +57,8 @@ ini_set('display_errors', 0); ?>
 				    echo "</table>";
 					echo "</div>";
 				?>
-			</div>		
+			</div>	
 
-			<div class="row">
-				<form action="servicios.php" method="post">
-					<button type="submit" class="btn btn-primary">Volver</button>
-				</form>
-			</div>
 			<?php 
             if(isset($_SESSION['id'])) { ?>
             <div class="row">
@@ -72,7 +67,14 @@ ini_set('display_errors', 0); ?>
 					<input type="hidden" name="id_serv" value="<?php echo $id_serv; ?>"/>
 				</form>
 			</div>
-		    <?php } ?>
+		    <?php } ?>	
+
+			<div class="row">
+				<form action="servicios.php" method="post">
+					<button type="submit" class="btn btn-primary">Volver</button>
+				</form>
+			</div>
+			
 		</div>
 	</body>
 </html>

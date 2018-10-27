@@ -1,8 +1,4 @@
-<?php
-   include('session.php');
-?>
-
-
+<!DOCTYPE html>
 <html>
 	<head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -14,50 +10,33 @@
 	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 
 
-	<script type="text/javascript" src="../valor_eth.js"></script>
 
 
     <!-- Stylesheet -->
-    <link href="../index.css" rel="stylesheet">
+    <link href="login_form.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,600|Lato:400,900" rel="stylesheet">
 
 
 
-    <title>NebCoin Bank</title>
+    <title>Login</title>
 	</head>
 
-	<body onload=UpdateEthPrice()>
-		<?php include '../partials/nav.php'; ?>
+	<body>
+		<?php include 'partials/nav.php'; ?>
 
 		<div class="container">
-			<div class="row justify-content-center top-buffer">
-				<h3>¡Bienvenido <?php echo $user_check; ?>!</h3>
-			</div>
-			<div class="row justify-content-center top-buffer">
-				<h2>NebCoin Bank & Store</h2>
-			</div>
-			<div class="row justify-content-center">
-				<img src="../imgs/hexagons.png" width="570px" height="323px">
-			</div>
-			<div class="row justify-content-center top-buffer">
-				<h3>Some Stats</h3>
-			</div>
-			<div class="row justify-content-center">
-				<p>Valor ETH: </p>
-				<p id="valor_eth"></p>
-			</div>
-			<div class="row justify-content-center">
-				<p>Valor NebCoin: </p>
-				<p id="valor_nc"></p>
-			</div>
+			<div class="row">
+				<form action="login/login.php" method="post">
+					<div class="col">
+						<div class="form-group">
+							<label for="login">Username</label>
+							<input type="text" name="username" class="form-control" id="inputUsername">
+							<label for="login">Password</label>
+							<input type="text" name="password" class="form-control" id="inputPassword">
+						</div>
 
-
+						<button type="submit" class="btn btn-primary">Login</button>
+					</div>
+					</form>
+			</div>
 		</div>
-
-	</body>
-
-	<div id="footer">
-		<?php include '../partials/footer.php'; ?>
-	</div>
-
-</html>

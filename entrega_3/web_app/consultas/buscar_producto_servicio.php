@@ -1,7 +1,3 @@
-<?php
-include '../login/session.php';
-ini_set('display_errors', 0);
-?>
 <!DOCTYPE html>
 <html>
 	<head>

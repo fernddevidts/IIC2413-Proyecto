@@ -1,6 +1,5 @@
 <?php
-   include '../login/session.php';
-   ini_set('display_errors', 0);
+   include '../../login/session.php';
 ?>
 
 <html>
@@ -15,7 +14,7 @@
 
 
 	    <!-- Stylesheet -->
-	    <link href="profile.css" rel="stylesheet">
+	    <link href="../profile.css" rel="stylesheet">
 	    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,600|Lato:400,900" rel="stylesheet">
 
 
@@ -25,8 +24,9 @@
 	<body>
 		<?php 
 			
-		// ini_set('display_errors', 0);
-		include '../partials/nav.php';
+		ini_set('display_errors', 0);
+		include '../../partials/nav.php';
+		include '../../config/psql-config.php';
 		?>
 
 		<div class="container">
@@ -34,27 +34,14 @@
 				<?php 
 					session_start();
 					$id = $_SESSION['id'];
-					if(isset($_POST["remove"])) {
-					$con = pg_connect("host=".HOST." dbname=".DATABASE_TRANS." user=".USER_TRANS." password=".PASSWORD_TRANS);
-
-					$id_borrar = $_POST["id"];
-					$query_borrar = "DELETE FROM tarjetas WHERE id_tarjeta=$id_borrar;";
-					$result_borrar = $db_trans -> prepare($query_borrar);
-					$result_borrar -> execute();
-					$revision = pg_query($con, $query_borrar);
-
-					$row = pg_fetch_row($revision);
-
-					$active = $row['active'];
-
-					$count = pg_num_rows($revision);
-					}
 
 					$query = "SELECT T.id_usuario, T.id_tarjeta, T.fecha_expiracion FROM tarjetas T WHERE T.id_usuario = $id";
 
 					$result = $db_trans -> prepare($query);
 					$result -> execute();
 					$tarjetas = $result -> fetchAll();
+
+
 				?>
 			</div>
 			<div class="row">
@@ -62,29 +49,47 @@
 				<?php
 					echo "<table class='table'><thead><tr><th scope='col'>ID Tarjeta</th><th scope='col'>Fecha Expiracion</th><th scope='col'></th></tr>";
 					foreach ($tarjetas as $tarjeta) {
-						echo "<tbody><form method='post' action=''><tr><td name='id'>$tarjeta[1]</td><td>$tarjeta[2]</td>";
-						echo "<td><input type='hidden' name='id' value='$tarjeta[1]'></input></td>";
-						echo "<td><button class='btn btn-secondary' id='$tarjeta[1]' type='submit' name='remove'>Remove</button></td></tr></form>";
+						echo "<tbody method='post'><tr id='$tarjeta[0]'><td name='remove'>$tarjeta[0]</td><td>$tarjeta[1]</td>";
+						echo "<td><button type='submit'>Remove</button></td></tr>";
 					}
 		
 					echo "</tbody>";
 					echo "</table>";
 					echo "</div>";
+
+					// echo "<table class='table'><thead><tr><th scope='col'>ID Tarjeta</th><th scope='col'>Fecha Expiracion</th><th scope='col'></th></tr>";
+					// echo "<tbody><form method='post' action=''><tr><td id='id' name='id'>1</td><td>123</td>";
+					// echo "<input type='hidden' name='id' value='1'></input>";
+					// echo "<td><button id='1' type='submit' name='remove'>Remove</button></td></tr></form>";
+					
+		
+					// echo "</tbody>";
+					// echo "</table>";
+					// echo "</div>";
+					// if (isset($_POST["remove"]))
+					// {
+					// 	$id = $_POST['id'];
+					//   echo "$id es tu id";
+					// } 
+					// else 
+					// {
+					//   $user = null;
+					//   echo "no username supplied";
+					// }
 				 ?>
 			</div>
 
-			<div class="container">
-				<div class="row">
-					<div class="col">
-						<form action="profile.php" method="post">
-							<button type="submit" class="btn btn-primary">Volver</button>
-						</form>
-					</div>
-					<div class="col">
-						<form action="agregar_tarjeta.php" method="post">
-							<button type="submit" class="btn btn-primary">Agregar Tarjeta</button>
-						</form>
-					</div>
+			<div class="row">
+				<div class="col">
+					<form action="../profile.php" method="post">
+						<button type="submit" class="btn btn-primary">Volver</button>
+					</form>
+				</div>
+				<div class="col">
+					<form action="agregar_tarjeta.php" method="post">
+						<button type="submit" class="btn btn-primary">Agregar Tarjeta</button>
+					</form>
 				</div>
 			</div>
+		</div>
 	</body>

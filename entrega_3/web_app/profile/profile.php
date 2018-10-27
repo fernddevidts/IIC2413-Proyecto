@@ -69,7 +69,6 @@
 					</form>
 				</div>
 			</div>
-
 			<div class="row" id="profile">
 			    <form action="../consultas/buscar_tienda.php" method="GET">
 			    	<div class="col">
@@ -92,8 +91,6 @@
 					</div>
 				</form>
 			</div>
-
-
 		</div>
 	</body>
 </html>

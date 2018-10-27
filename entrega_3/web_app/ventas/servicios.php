@@ -1,4 +1,4 @@
-<?php include '../login/session.php';
+<?php 
 ini_set('display_errors', 0); ?>
 <html>
 	<head>
@@ -60,21 +60,32 @@ ini_set('display_errors', 0); ?>
 					    //echo "<form action='prod_individual.php'><tbody><tr><td><button>$producto[0]</button></td></tr></form> ";
 				    }
 				    echo "</tbody>";
-				    echo '</form>';
-				    echo "</div>";
+				    echo '</form>';				    
 				    echo "</table>";
+				    echo "</div>";
 				    //echo "</tbody>";
 				    //echo "</table>";
 					//echo "</div>";
 				?>
 			</div>
-			
-
-			<div class="row">
+			<?php 
+			if(isset($_SESSION['id'])) { ?>	
+            <div class="row">
 				<form action="../profile/profile.php" method="post">
 					<button type="submit" class="btn btn-primary">Volver</button>
 				</form>
 			</div>
+			<?php } ?>
+
+			<?php
+			if(!isset($_SESSION['id'])) { ?>	
+			<div class="row">
+				<form action="../index.php" method="post">
+					<button type="submit" class="btn btn-primary">Volver</button>
+				</form>
+			</div>
+		    <?php } ?>
+
 		</div>
 	</body>
 </html>
