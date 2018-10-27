@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+<?php include '../login/session.php';
+ini_set('display_errors', 0); ?>
+
+
 <html>
 	<head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -19,40 +22,48 @@
 	</head>
 
 	<body>
-		<?php include '../partials/nav.php'; ?>
+		<?php 
+		include '../partials/nav.php';
+		include '../config/psql-config.php';
+
+		?>
 		<div class="container">
 			<div class="row">
 				<h3>Nombres de tienda</h3>
 
 				<?php
-					include_once "psql-config.php";
-					try {
-						$db = new PDO("pgsql:dbname=".DATABASE_TIENDA.";host=".HOST.";port=".PORT_TIENDA.";user=".USER_TIENDA.";password=".PASSWORD_TIENDA);
-					}
-					catch(PDOException $e) {
-					echo $e->getMessage();
-					}
 
 					echo "</div>";
-
-
 					echo "<div class='row'>";
-          $nombre_tienda = $_REQUEST['store_id'];
-					$query = "SELECT T.nombre,T.id_tienda
-          FROM tiendas T,productos P,rtiendaproducto RT
-					WHERE P.id_producto = '$nombre_tienda' and P.id_producto = RT.id_producto and T.id_tienda = RT.id_tienda
+
+					
 					
 
-          ;";
-					$result = $db -> prepare($query);
-					$result -> execute();
+					if(!empty($_REQUEST['id_prod'])) {
+						$id_prod = $_REQUEST['id_prod'];
 
-					$seguros = $result -> fetchAll();
+						$query = "SELECT T.nombre, T.id_tienda FROM tiendas T,productos P,rtiendaproducto RT WHERE P.id_producto = '$id_prod' and P.id_producto = RT.id_producto and T.id_tienda = RT.id_tienda";
+					    $result = $db_tienda -> prepare($query);
+					    $result -> execute();
+					    $tiendas = $result -> fetchAll();
+
+		            }
+
+		            elseif( (!empty($_REQUEST['id_serv'])) || ($_REQUEST['id_serv'] == 0)) {
+		            	$id_serv = $_REQUEST['id_serv'];
+		            	$query = "SELECT T.nombre, T.id_tienda_s FROM tiendasdeservicios T, servicios S,rtiendaservicio RT WHERE S.id_servicio = '$id_serv' and S.id_servicio = RT.id_servicio and T.id_tienda_s = RT.id_tienda_s";
+					    $result = $db_tienda -> prepare($query);
+					    $result -> execute();
+					    $tiendas = $result -> fetchAll();
+
+		            }
+
 
 					echo "<table class='table'<thead><tr><th scope='col'>Nombre</th><th scope='col'>Id</th></tr>";
-					foreach ($seguros as $seguro) {
-						echo "<tbody><tr><td>$seguro[0]</td><td>$seguro[1]</td></tr>";
-					};
+					foreach ($tiendas as $tienda) {
+						echo "<tbody><tr><td>$tienda[0]</td><td>$tienda[1]</td></tr>";
+					}
+
 					echo "</tbody>";
 					echo "</table>";
 
