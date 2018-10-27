@@ -1,4 +1,4 @@
-<?php 
+<?php include '../login/session.php';
 ini_set('display_errors', 0); ?>
 <html>
 	<head>
@@ -29,63 +29,42 @@ ini_set('display_errors', 0); ?>
 		include '../config/psql-config.php';
 		$id = $_SESSION['id'];
 
-		$query = "SELECT SV.id_servicio, SV.nombre FROM servicios SV";
+		$n_cuotas = $_POST['cuotas'];
+		$id_tienda = $_POST['tienda'];
+		$id_item = $_POST['item'];
+		$n_unidades = $_POST['unidades'];
 
-		$result = $db_tienda -> prepare($query);
+		$query = "SELECT CURRENT_TIME"
+		$result = prepare($query);
 		$result -> execute();
-		$servicios= $result -> fetchAll();
-
-
+		$items = $result -> fetchAll();
+		foreach ($items as $date) {
+					    echo $date->format('Y-m-d');
+				    }
 		?>
 
 		<div class="container">
 			<div class="row">
-				<h3>Servicios</h3>
+				<h3>¡Éxito!</h3>
 			</div>
 			<div class="row">
 				<?php 
-					
 
-					// echo "<h3>Monto restante para transacción ID: $transaccion</h3>";
-
-	
-					//echo "<div class='row'>";
-				    //echo "<table class='table'<thead><tr><th scope='col'>Producto</th></tr>";
                     echo "<div class='row'>";
-				    echo "<table class='table'<thead><tr><th scope='col'>Servicios</th></tr>";
-
-				    echo '<form method="POST" action="serv_individual.php">';
-				    foreach ($servicios as $servicio) {
-				    	echo "<tbody><tr><td><button class='btn btn-secondary' type='submit' value='$servicio[0]' name='id_serv'/>  $servicio[1]</td></tr>";
-					    //echo "<form action='prod_individual.php'><tbody><tr><td><button>$producto[0]</button></td></tr></form> ";
-				    }
-				    echo "</tbody>";
-				    echo '</form>';				    
-				    echo "</table>";
+                    
+                    echo 'Su compra ha sido realizada con éxito.';	
+                    	    
 				    echo "</div>";
-				    //echo "</tbody>";
-				    //echo "</table>";
-					//echo "</div>";
+
 				?>
 			</div>
-			<?php 
-			if(isset($_SESSION['id'])) { ?>	
-            <div class="row">
+			
+
+			<div class="row">
 				<form action="../profile/profile.php" method="post">
 					<button type="submit" class="btn btn-primary">Volver</button>
 				</form>
 			</div>
-			<?php } ?>
-
-			<?php
-			if(!isset($_SESSION['id'])) { ?>	
-			<div class="row">
-				<form action="../index.php" method="post">
-					<button type="submit" class="btn btn-primary">Volver</button>
-				</form>
-			</div>
-		    <?php } ?>
-
 		</div>
 	</body>
 </html>

@@ -33,6 +33,12 @@
         <a class="nav-link" id="home-pill" href="/~grupo6/entrega_3/web_app/login/welcome.php" role="tab" onclick="selected()">Home</a>
         </li>
         <li class="nav-item">
+        <a class="nav-link" id="home-pill" href="/~grupo6/entrega_3/web_app/ventas/productos.php" role="tab" onclick="selected()">Productos</a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link" id="home-pill" href="/~grupo6/entrega_3/web_app/ventas/servicios.php" role="tab" onclick="selected()">Servicios</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link" id="profile-pill" href="/~grupo6/entrega_3/web_app/profile/profile.php" role="tab" onclick="selected()">Profile</a>
         </li>
         <li class="nav-item">
@@ -40,7 +46,13 @@
         </li>
       <?php } else { ?>
         <li class="nav-item">
-        <a class="nav-link" id="home-pill" href="/~grupo6/entrega_3/web_app/index.php" role="tab" onclick="selected()">Home</a>
+          <a class="nav-link" id="home-pill" href="/~grupo6/entrega_3/web_app/ventas/productos.php" role="tab" onclick="selected()">Productos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="home-pill" href="/~grupo6/entrega_3/web_app/ventas/servicios.php" role="tab" onclick="selected()">Servicios</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="home-pill" href="/~grupo6/entrega_3/web_app/index.php" role="tab" onclick="selected()">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" id="login-pill" href="/~grupo6/entrega_3/web_app/login/login.php" role="tab" onclick="selected()">Login</a>

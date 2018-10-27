@@ -30,10 +30,11 @@ ini_set('display_errors', 0); ?>
 		$id = $_SESSION['id'];
 
 		if(!empty($_POST['id_prod'])) {
-            $id_prod = $_POST['id_prod']; // get input   		    
+            $id_item = $_POST['id_prod']; // get input   
+            $tipo_item = 'producto';		    
 
-		    $query = "SELECT T2.id_producto, T2.nombre FROM productos P, (SELECT RTP.id_producto, T.nombre FROM rtiendaproducto RTP, tiendas T WHERE RTP.id_producto = $id_prod AND RTP.id_tienda = T.id_tienda) AS T2 WHERE T2.id_producto = P.id_producto";
-		    $query2 = "SELECT P.nombre FROM productos P WHERE P.id_producto = $id_prod";
+		    $query = "SELECT T2.id_producto, T2.id_tienda, T2.nombre FROM productos P, (SELECT RTP.id_producto, T.id_tienda, T.nombre FROM rtiendaproducto RTP, tiendas T WHERE RTP.id_producto = $id_item AND RTP.id_tienda = T.id_tienda) AS T2 WHERE T2.id_producto = P.id_producto";
+		    $query2 = "SELECT P.nombre FROM productos P WHERE P.id_producto = $id_item";
 
 		    $result = $db_tienda -> prepare($query);
 		    $result -> execute();
@@ -44,13 +45,15 @@ ini_set('display_errors', 0); ?>
 		    while ($row2 = $result2 -> fetch()) {
 		    	$nombre = $row2[0];
 		    }
+
 		}
 
-		if(!empty($_POST['id_serv'])) {
-            $id_serv = $_POST['id_serv']; // get input   		    
+		elseif( (!empty($_POST['id_serv'])) || ($_POST['id_serv'] == 0)) {
+            $id_item = $_POST['id_serv']; // get input   
+            $tipo_item = 'servicio';		    
 
-		    $query = "SELECT T2.id_servicio, T2.nombre FROM servicios SV, (SELECT RTS.id_servicio, T.nombre FROM rtiendaservicio RTS, tiendasdeservicios T WHERE RTS.id_servicio = $id_serv AND RTS.id_tienda_s = T.id_tienda_s) AS T2 WHERE T2.id_servicio = SV.id_servicio";
-		    $query2 = "SELECT SV.nombre FROM servicios SV WHERE SV.id_servicio = $id_serv";
+		    $query = "SELECT T2.id_servicio, T2.id_tienda_s, T2.nombre FROM servicios SV, (SELECT RTS.id_servicio, T.id_tienda_s, T.nombre FROM rtiendaservicio RTS, tiendasdeservicios T WHERE RTS.id_servicio = $id_item AND RTS.id_tienda_s = T.id_tienda_s) AS T2 WHERE T2.id_servicio = SV.id_servicio";
+		    $query2 = "SELECT SV.nombre FROM servicios SV WHERE SV.id_servicio = $id_item";
 
 		    $result = $db_tienda -> prepare($query);
 		    $result -> execute();
@@ -61,6 +64,7 @@ ini_set('display_errors', 0); ?>
 		    while ($row2 = $result2 -> fetch()) {
 		    	$nombre = $row2[0];
 		    }
+
 		}
 
 		?>
@@ -73,15 +77,19 @@ ini_set('display_errors', 0); ?>
 				<?php 
 					
 	
-				    echo '<form id="my-form" method="post" action="exit.php">';
+				    echo '<form id="my-form" action="exit.php" method="post">';
 
 				    echo "<div class='row'>";
-				    echo '¿Cuántas unidades del producto desea?';
+				    echo "<input type='hidden' name='item' value='$id_item'/>";
+				    echo "<input type='hidden' name='tipo_item' value='$tipo_item'/>";
+
+				    echo '¿En cuántas cuotas desea realizar el pago?';
+				    //echo '<input type="hidden" name="item" value="$id_item"/>';
 				    echo "</div>";
 
-                    echo "<div class='row'>";
-				    echo '<select name="unidades" size="1">';
-				    foreach (range(1, 10) as $numero) {
+				    echo "<div class='row'>";
+				    echo '<select name="cuotas" size="1">';
+				    foreach (range(1, 6) as $numero) {
 				    	echo "<option value='$numero'>$numero</option> <br>";
 				    }
 				    echo '</select>';
@@ -94,38 +102,53 @@ ini_set('display_errors', 0); ?>
                     echo "<div class='row'>";
 				    echo '<select name="tienda" size="1">';
 				    foreach ($items as $item) {
-					    echo "<option value='$item[0]'>$item[1]</option> <br>";
+					    echo "<option value='$item[1]'>$item[2]</option> <br>";
 				    }
 				    echo '</select>';
 				    echo "</div>";
 
-				    echo "<div class='row'>";
-				    echo '¿En cuántas cuotas desea realizar el pago?';
-				    echo "</div>";
-
-				    echo "<div class='row'>";
-				    echo '<select name="cuotas" size="1">';
-				    foreach (range(1, 6) as $numero) {
-				    	echo "<option value='$numero'>$numero</option> <br>";
-				    }
-				    echo '</select>';
-				    echo "</div>";
 				    
+
+				    if ($tipo_item == 'producto') {
+
+				    	echo "<div class='row'>";
+				        echo '¿Cuántas unidades del producto desea?';			    
+				        echo "</div>";
+
+				        echo "<div class='row'>";
+				        echo '<select name="unidades" size="1">';
+				        foreach (range(1, 10) as $numero) {
+				    	    echo "<option value='$numero'>$numero</option> <br>";
+				        }
+				        echo '</select>';
+				        echo "</div>";
+    			    }
+
+				    echo "<div class='row'>";
+				    echo '<button type="submit" class="btn btn-primary">Comprar</button>';			    	    
+				    echo "</div>";			    
 				    echo '</form>';
 				?>
 			</div>		
 
-			<div class="row">
-				<form action="../profile/profile.php" method="post">
+			<?php 
+			if($tipo_item == 'producto') { ?>	
+            <div class="row">
+				<form action="productos.php" method="post">
 					<button type="submit" class="btn btn-primary">Volver</button>
 				</form>
 			</div>
-            <div class="row">
-				<form action="exit.php" method="post">
-					<button type="submit" class="btn btn-primary">Comprar</button>
+			<?php } ?>
+
+			<?php
+			if($tipo_item == 'servicio') { ?>	
+			<div class="row">
+				<form action="servicios.php" method="post">
+					<button type="submit" class="btn btn-primary">Volver</button>
 				</form>
 			</div>
-		</div>
+		    <?php } ?>
 
+		</div>
 	</body>
 </html>
