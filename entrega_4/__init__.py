@@ -1,6 +1,6 @@
 from bson.objectid import ObjectId
 from flask import Flask, jsonify, abort, request
-from pymongo import MongoClient
+from pymongo import MongoClient, TEXT
 # import json
 import sys
 
@@ -51,6 +51,7 @@ def sender(user):
     else:
         return jsonify(output), 200
 
+# Recibir id de 2 usuarios y mostrar los mensajes intercambiados entre ellos
 @app.route('/<int:user1>/conversation/<int:user2>', methods=['GET'])
 def conversation(user1, user2):
     mongodb = client[MONGODATABASE]
@@ -62,6 +63,76 @@ def conversation(user1, user2):
         return jsonify(), 404
     else:
         return jsonify(output), 200
+
+# Busqueda de texto en todos los mensajes
+# Frase especifica
+@app.route('/sentence/<string:sentences>', methods=['GET'])
+def sentence(sentences):
+    sentence_search = ""
+    sentences_list = sentences.split("-")
+    for sentence in sentences_list:
+        sentence_split = sentence.split("_")
+        sentence_mongo = '\"'
+        for word in sentence_split:
+            sentence_mongo = sentence_mongo + " " + word
+        sentence_mongo += '\"'
+        sentence_search += sentence_mongo + " "
+
+    mongodb = client[MONGODATABASE]
+    mensajes = mongodb.mensajes
+    mensajes.create_index([('message', TEXT)])
+    output = []
+    for m in mensajes.find({'$text': {'$search': sentence_search}},{'_id' : 0}):
+        output.append(m)
+    if len(output) == 0:
+        return jsonify(), 404
+    else:
+        return jsonify(output), 200
+
+# Una o mas palabras que puede contener
+@app.route('/words/<string:words>', methods=['GET'])
+def words(words):
+    words_search = ""
+    words= words.split("_")
+    for word in words:
+        words_search += word + " "
+
+    mongodb = client[MONGODATABASE]
+    mensajes = mongodb.mensajes
+    mensajes.create_index([('message', TEXT)])
+    output = []
+    for m in mensajes.find({'$text': {'$search': words_search}}, {'_id': 0}):
+        output.append(m)
+    if len(output) == 0:
+        return jsonify(), 404
+    else:
+        return jsonify(output), 200
+
+
+# palabras que no esten en el mensaje
+@app.route('/yes_words/<string:yes_words>/not_words/<string:not_words>', methods=['GET'])
+def not_words(yes_words, not_words):
+    not_words_search = ""
+    yes_words_search = ""
+    words_search = ""
+    not_words = not_words.split("_")
+    yes_words = yes_words.split("_")
+    for word in yes_words:
+        yes_words_search += word + " "
+    for word in not_words:
+        not_words_search += "-" + word + " "
+    words_search = yes_words_search + " " + not_words_search
+    mongodb = client[MONGODATABASE]
+    mensajes = mongodb.mensajes
+    mensajes.create_index([('message', TEXT)])
+    output = []
+    for m in mensajes.find({'$text': {'$search': words_search}}, {'_id': 0}):
+        output.append(m)
+    if len(output) == 0:
+        return jsonify(), 404
+    else:
+        return jsonify(output), 200
+
 
 
 # La función recibe una json con los parametros de la insercion,
