@@ -66,8 +66,8 @@ def conversation(user1, user2):
 
 # Busqueda de texto en todos los mensajes
 # Frase especifica
-@app.route('/sentence/<string:sentences>', methods=['GET'])
-def sentence(sentences):
+@app.route('/all_msgs/sentence/<string:sentences>', methods=['GET'])
+def all_msgs_sentence(sentences):
     sentence_search = ""
     sentences_list = sentences.split("-")
     for sentence in sentences_list:
@@ -90,8 +90,8 @@ def sentence(sentences):
         return jsonify(output), 200
 
 # Una o mas palabras que puede contener
-@app.route('/words/<string:words>', methods=['GET'])
-def words(words):
+@app.route('/all_msgs/words/<string:words>', methods=['GET'])
+def all_msgs_words(words):
     words_search = ""
     words= words.split("_")
     for word in words:
@@ -110,8 +110,8 @@ def words(words):
 
 
 # palabras que no esten en el mensaje
-@app.route('/yes_words/<string:yes_words>/not_words/<string:not_words>', methods=['GET'])
-def not_words(yes_words, not_words):
+@app.route('/all_msgs/yes_words/<string:yes_words>/not_words/<string:not_words>', methods=['GET'])
+def all_msgs_not_words(yes_words, not_words):
     not_words_search = ""
     yes_words_search = ""
     words_search = ""
