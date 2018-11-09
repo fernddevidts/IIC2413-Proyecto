@@ -1,18 +1,15 @@
 from bson.objectid import ObjectId
 from flask import Flask, jsonify, abort, request
 from pymongo import MongoClient
-import json
+# import json
 import sys
 
-# Se recomienda descargar el json de requests para postman,
-# e importarlo en postman para probar las funciones.
 
-
-class JSONEncoder(json.JSONEncoder):
-    def default(self, o):
-        if isinstance(o, ObjectId):
-            return str(o)
-        return json.JSONEncoder.default(self, o)
+# class JSONEncoder(json.JSONEncoder):
+#     def default(self, o):
+#         if isinstance(o, ObjectId):
+#             return str(o)
+#         return json.JSONEncoder.default(self, o)
 
 
 app = Flask(__name__)
@@ -24,25 +21,17 @@ MONGOPORT = 27017
 client = MongoClient(MONGOSERVER, MONGOPORT)
 
 
-# Decorador defiene la ruta.
-@app.route('/')
-def hello_world():
-    # Funcion retorna una json en base de su request
-    # Se recomienda usar jsonify de Flask para manejar la creacion de json
-    # Para hacer un print, necesitan hacerlo de la siguiente manera:
-    print(123, file=sys.stdout)
-    return jsonify({"status": "ok"})
-
 # Recibir id mensaje y retornar info mensaje
 @app.route('/message_info/<string:message_id>', methods=['GET'])
 def message_info(message_id):
     mongodb = client[MONGODATABASE]
     mensajes = mongodb.mensajes
-    output = mensajes.find_one({'_id' : ObjectId(message_id)})
+    output = mensajes.find_one({'_id' : ObjectId(message_id)}, {'_id':0})
     if len(output) == 0:
         return jsonify(), 404
     else:
-        return JSONEncoder().encode(output), 200
+        return jsonify(output), 200
+        # return JSONEncoder().encode(output), 200
 
 
 # Recibir id usuario y retornar info usuario y sus mensajes enviados
@@ -59,6 +48,18 @@ def sender(user):
     if len(output) == 0:
         return jsonify(), 404
     # Retorna los mensajes
+    else:
+        return jsonify(output), 200
+
+@app.route('/<int:user1>/conversation/<int:user2>', methods=['GET'])
+def conversation(user1, user2):
+    mongodb = client[MONGODATABASE]
+    mensajes = mongodb.mensajes
+    output = []
+    for m in mensajes.find({"sender":user1, "receptant":user2}, {'_id':0}):
+        output.append(m)
+    if len(output) == 0:
+        return jsonify(), 404
     else:
         return jsonify(output), 200
 
