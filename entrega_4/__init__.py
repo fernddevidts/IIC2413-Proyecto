@@ -1,9 +1,19 @@
+from bson.objectid import ObjectId
 from flask import Flask, jsonify, abort, request
 from pymongo import MongoClient
+import json
 import sys
 
 # Se recomienda descargar el json de requests para postman,
 # e importarlo en postman para probar las funciones.
+
+
+class JSONEncoder(json.JSONEncoder):
+    def default(self, o):
+        if isinstance(o, ObjectId):
+            return str(o)
+        return json.JSONEncoder.default(self, o)
+
 
 app = Flask(__name__)
 # MONGODATABASE corresponde al nombre de su base de datos
@@ -27,12 +37,12 @@ def hello_world():
 @app.route('/message_info/<string:message_id>', methods=['GET'])
 def message_info(message_id):
     mongodb = client[MONGODATABASE]
-    collection = mongodb.mensajes
-    output = collection.find({"_id" : ObjectId(message_id)})
+    mensajes = mongodb.mensajes
+    output = mensajes.find_one({'_id' : ObjectId(message_id)})
     if len(output) == 0:
         return jsonify(), 404
     else:
-        return jsonify(output), 200
+        return JSONEncoder().encode(output), 200
 
 
 # Recibir id usuario y retornar info usuario y sus mensajes enviados
