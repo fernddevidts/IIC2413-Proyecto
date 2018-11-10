@@ -6,6 +6,7 @@ import sys
 # e importarlo en postman para probar las funciones.
 
 app = Flask(__name__)
+app.config['JSON_AS_ASCII'] = False
 # MONGODATABASE corresponde al nombre de su base de datos
 MONGODATABASE = "Grupo6"
 MONGOSERVER = "localhost"
@@ -45,6 +46,25 @@ def sender(user):
     for u in usuarios.find({"id_usuario": user}, {"_id": 0, "clave": 0}):
         output.append(u)
     for s in mensajes.find({"sender": user}, {"_id": 0}):
+        output.append(s)
+    if len(output) == 0:
+        return jsonify(), 404
+    # Retorna los mensajes
+    else:
+        return jsonify(output), 200
+
+# Recibir 2 id usuario y retorna mensajes intercambiados
+@app.route('/exchange/<int:user1>/<int:user2>', methods=['GET'])
+def exchange(user1, user2):
+    mongodb = client[MONGODATABASE]
+    mensajes = mongodb.mensajes
+    usuarios = mongodb.usuarios
+    output = []
+    for s in mensajes.find( {
+    "$or" : [
+        { "$and" : [ { "sender" : user1 }, { "receptant" : user2 } ] },
+    { "$and" : [ {"sender": user2 }, { "receptant" : user1 }]}
+    ]}, {"_id": 0}):
         output.append(s)
     if len(output) == 0:
         return jsonify(), 404
