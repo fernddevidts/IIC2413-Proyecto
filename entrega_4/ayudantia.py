@@ -17,7 +17,7 @@ client = MongoClient(MONGOSERVER, MONGOPORT)
 @app.route('/')
 def hello_world():
     # Funcion retorna una json en base de su request
-    # Se recomienda usar jsonify de Flask para manejar la creacion de json
+    # Se recomienda usar jsonify de Flask para manejar la creacion de fjson
     # Para hacer un print, necesitan hacerlo de la siguiente manera:
     print(123, file=sys.stdout)
     return jsonify({"status": "ok"})

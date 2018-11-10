@@ -13,6 +13,7 @@ import sys
 
 
 app = Flask(__name__)
+app.config['JSON_AS_ASCII'] = False
 # MONGODATABASE corresponde al nombre de su base de datos
 MONGODATABASE = "Grupo6"
 MONGOSERVER = "localhost"
@@ -51,18 +52,27 @@ def sender(user):
     else:
         return jsonify(output), 200
 
-# Recibir id de 2 usuarios y mostrar los mensajes intercambiados entre ellos
-@app.route('/<int:user1>/conversation/<int:user2>', methods=['GET'])
-def conversation(user1, user2):
+
+# Recibir 2 id usuario y retorna mensajes intercambiados
+@app.route('/exchange/<int:user1>/<int:user2>', methods=['GET'])
+def exchange(user1, user2):
     mongodb = client[MONGODATABASE]
     mensajes = mongodb.mensajes
+    usuarios = mongodb.usuarios
     output = []
-    for m in mensajes.find({"sender":user1, "receptant":user2}, {'_id':0}):
-        output.append(m)
+    for s in mensajes.find( {
+    "$or" : [
+        { "$and" : [ { "sender" : user1 }, { "receptant" : user2 } ] },
+    { "$and" : [ {"sender": user2 }, { "receptant" : user1 }]}
+    ]}, {"_id": 0}):
+        output.append(s)
     if len(output) == 0:
         return jsonify(), 404
+    # Retorna los mensajes
     else:
         return jsonify(output), 200
+
+
 
 # Busqueda de texto en todos los mensajes
 # Frase especifica
