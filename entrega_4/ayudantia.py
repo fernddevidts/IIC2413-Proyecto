@@ -1,6 +1,8 @@
 from flask import Flask, jsonify, abort, request
 from pymongo import MongoClient
+from datetime import date
 import sys
+from ip2geotools.databases.noncommercial import Freegeoip
 
 # Se recomienda descargar el json de requests para postman, 
 # e importarlo en postman para probar las funciones.
@@ -55,17 +57,21 @@ def add_message():
     data = request.get_json()
     # Se inserta un nuevo item a la colección de mongo con los
     #  parámetros definidos en el json
+    date_actual = date.today().strftime("%Y-%m-%d")
+
+
     inserted_message = collection.insert_one({
         'message': data["message"],
         'sender': data["sender"],
         'receptant': data["receptant"],
-        'date':data["date"],
+        'date': date_actual,
     })
     # insert_one retorna None si no pudo insertar
     if inserted_message is None:
         return jsonify(), 404
     # Retorna el id del elemento insertado
     else:
+        print(date_actual)
         return jsonify({"id": str(inserted_message.inserted_id)}), 200
 
 

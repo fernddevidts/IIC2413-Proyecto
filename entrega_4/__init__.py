@@ -1,3 +1,4 @@
+import datetime
 from bson.objectid import ObjectId
 from flask import Flask, jsonify, abort, request
 from pymongo import MongoClient, TEXT
@@ -13,13 +14,14 @@ import sys
 
 
 app = Flask(__name__)
-app.config['JSON_AS_ASCII'] = False
-# MONGODATABASE corresponde al nombre de su base de datos
+
 MONGODATABASE = "Grupo6"
 MONGOSERVER = "localhost"
 MONGOPORT = 27017
+
 # instanciar el cliente de pymongo para realizar consultas a la base de datos
 client = MongoClient(MONGOSERVER, MONGOPORT)
+app.config['JSON_AS_ASCII'] = False
 
 
 # Recibir id mensaje y retornar info mensaje
@@ -27,8 +29,9 @@ client = MongoClient(MONGOSERVER, MONGOPORT)
 def message_info(message_id):
     mongodb = client[MONGODATABASE]
     mensajes = mongodb.mensajes
-    output = mensajes.find_one({'_id' : ObjectId(message_id)}, {'_id':0})
-    if len(output) == 0:
+    output = mensajes.find_one({"_id" : ObjectId(message_id)}, {"_id" : 0})
+    if not output:
+        print(message_id)
         return jsonify(), 404
     else:
         return jsonify(output), 200
@@ -54,8 +57,8 @@ def sender(user):
 
 
 # Recibir 2 id usuario y retorna mensajes intercambiados
-@app.route('/exchange/<int:user1>/<int:user2>', methods=['GET'])
-def exchange(user1, user2):
+@app.route('/conversation/<int:user1>/<int:user2>', methods=['GET'])
+def conversation(user1, user2):
     mongodb = client[MONGODATABASE]
     mensajes = mongodb.mensajes
     usuarios = mongodb.usuarios
@@ -66,7 +69,7 @@ def exchange(user1, user2):
     { "$and" : [ {"sender": user2 }, { "receptant" : user1 }]}
     ]}, {"_id": 0}):
         output.append(s)
-    if len(output) == 0:
+    if not output:
         return jsonify(), 404
     # Retorna los mensajes
     else:
@@ -150,31 +153,36 @@ def all_msgs_not_words(yes_words, not_words):
 @app.route('/add_message/', methods=['POST'])
 def add_message():
     mongodb = client[MONGODATABASE]
-    collection = mongodb.ayudantia
-    # Guarda el json en el variable data
+    mensajes = mongodb.mensajes
+
     data = request.get_json()
-    # Se inserta un nuevo item a la colección de mongo con los
-    #  parámetros definidos en el json
-    inserted_message = collection.insert_one({
+    date_actual = datetime.date.today().strftime("%Y-%m-%d")
+    lat = -33.447487
+    long = -70.673676
+
+    inserted_message = mensajes.insert_one({
         'message': data["message"],
         'sender': data["sender"],
         'receptant': data["receptant"],
-        'date': data["date"],
+        'lat': lat,
+        'long': long,
+        'date': date_actual,
     })
     # insert_one retorna None si no pudo insertar
     if inserted_message is None:
         return jsonify(), 404
     # Retorna el id del elemento insertado
     else:
-        return jsonify({"id": str(inserted_message.inserted_id)}), 200
+        return jsonify(), 200
 
 
-@app.route('/remove_message/<string:date>', methods=['DELETE'])
-def remove_message(date):
+@app.route('/remove_message/<string:message_id>', methods=['DELETE'])
+def remove_message(message_id):
     mongodb = client[MONGODATABASE]
-    messages = mongodb.ayudantia
-    result = messages.delete_one({
-        'date': date,
+    mensajes = mongodb.mensajes
+
+    result = mensajes.delete_one({
+        '_id': ObjectId(message_id),
     })
 
     if result.deleted_count == 0:
