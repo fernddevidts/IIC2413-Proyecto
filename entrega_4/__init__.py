@@ -1,16 +1,7 @@
 import datetime
 from bson.objectid import ObjectId
-from flask import Flask, jsonify, abort, request
+from flask import Flask, jsonify, request
 from pymongo import MongoClient, TEXT
-# import json
-import sys
-
-
-# class JSONEncoder(json.JSONEncoder):
-#     def default(self, o):
-#         if isinstance(o, ObjectId):
-#             return str(o)
-#         return json.JSONEncoder.default(self, o)
 
 
 app = Flask(__name__)
@@ -21,7 +12,15 @@ MONGOPORT = 27017
 
 # instanciar el cliente de pymongo para realizar consultas a la base de datos
 client = MongoClient(MONGOSERVER, MONGOPORT)
+
+# permitir lectura de carácteres no ascii
 app.config['JSON_AS_ASCII'] = False
+
+
+# Para iniciar la ruta
+@app.route('/')
+def hello_world():
+    return jsonify({"status": "ok"})
 
 
 # Recibir id mensaje y retornar info mensaje
@@ -29,7 +28,7 @@ app.config['JSON_AS_ASCII'] = False
 def message_info(message_id):
     mongodb = client[MONGODATABASE]
     mensajes = mongodb.mensajes
-    output = mensajes.find_one({"_id" : ObjectId(message_id)}, {"_id" : 0})
+    output = mensajes.find_one({"_id": ObjectId(message_id)}, {"_id": 0})
     if not output:
         print(message_id)
         return jsonify(), 404
@@ -61,20 +60,15 @@ def sender(user):
 def conversation(user1, user2):
     mongodb = client[MONGODATABASE]
     mensajes = mongodb.mensajes
-    usuarios = mongodb.usuarios
     output = []
-    for s in mensajes.find( {
-    "$or" : [
-        { "$and" : [ { "sender" : user1 }, { "receptant" : user2 } ] },
-    { "$and" : [ {"sender": user2 }, { "receptant" : user1 }]}
-    ]}, {"_id": 0}):
+    for s in mensajes.find({"$or": [{"$and": [{"sender": user1}, {"receptant": user2}]},
+                                    {"$and": [{"sender": user2}, {"receptant": user1}]}]}, {"_id": 0}):
         output.append(s)
     if not output:
         return jsonify(), 404
     # Retorna los mensajes
     else:
         return jsonify(output), 200
-
 
 
 # Busqueda de texto en todos los mensajes
@@ -95,18 +89,19 @@ def all_msgs_sentence(sentences):
     mensajes = mongodb.mensajes
     mensajes.create_index([('message', TEXT)])
     output = []
-    for m in mensajes.find({'$text': {'$search': sentence_search}},{'_id' : 0}):
+    for m in mensajes.find({'$text': {'$search': sentence_search}}, {'_id': 0}):
         output.append(m)
     if len(output) == 0:
         return jsonify(), 404
     else:
         return jsonify(output), 200
 
+
 # Una o mas palabras que puede contener
 @app.route('/all_msgs/words/<string:words>', methods=['GET'])
 def all_msgs_words(words):
     words_search = ""
-    words= words.split("_")
+    words = words.split("_")
     for word in words:
         words_search += word + " "
 
@@ -122,12 +117,11 @@ def all_msgs_words(words):
         return jsonify(output), 200
 
 
-# palabras que no esten en el mensaje
+# Palabras que no esten en el mensaje
 @app.route('/all_msgs/yes_words/<string:yes_words>/not_words/<string:not_words>', methods=['GET'])
 def all_msgs_not_words(yes_words, not_words):
     not_words_search = ""
     yes_words_search = ""
-    words_search = ""
     not_words = not_words.split("_")
     yes_words = yes_words.split("_")
     for word in yes_words:
@@ -147,8 +141,77 @@ def all_msgs_not_words(yes_words, not_words):
         return jsonify(output), 200
 
 
+# Mensajes de 1 usuario
+# Frase especifica
+@app.route('/sender/<int:user>/sentence/<string:sentences>', methods=['GET'])
+def sender_sentence(user, sentences):
+    sentence_search = ""
+    sentences_list = sentences.split("-")
+    for sentence in sentences_list:
+        sentence_split = sentence.split("_")
+        sentence_mongo = '\"'
+        for word in sentence_split:
+            sentence_mongo = sentence_mongo + " " + word
+        sentence_mongo += '\"'
+        sentence_search += sentence_mongo + " "
 
-# La función recibe una json con los parametros de la insercion,
+    mongodb = client[MONGODATABASE]
+    mensajes = mongodb.mensajes
+    mensajes.create_index([('message', TEXT)])
+    output = []
+    for m in mensajes.find({'sender': user, '$text': {'$search': sentence_search}}, {'_id': 0}):
+        output.append(m)
+    if len(output) == 0:
+        return jsonify(), 404
+    else:
+        return jsonify(output), 200
+
+
+# Una o mas palabras que puede contener
+@app.route('/sender/<int:user>/words/<string:words>', methods=['GET'])
+def sender_words(user, words):
+    words_search = ""
+    words = words.split("_")
+    for word in words:
+        words_search += word + " "
+
+    mongodb = client[MONGODATABASE]
+    mensajes = mongodb.mensajes
+    mensajes.create_index([('message', TEXT)])
+    output = []
+    for m in mensajes.find({'sender': user, '$text': {'$search': words_search}}, {'_id': 0}):
+        output.append(m)
+    if len(output) == 0:
+        return jsonify(), 404
+    else:
+        return jsonify(output), 200
+
+
+# Palabras que no esten en el mensaje
+@app.route('/sender/<int:user>/yes_words/<string:yes_words>/not_words/<string:not_words>', methods=['GET'])
+def sender_not_words(user, yes_words, not_words):
+    not_words_search = ""
+    yes_words_search = ""
+    not_words = not_words.split("_")
+    yes_words = yes_words.split("_")
+    for word in yes_words:
+        yes_words_search += word + " "
+    for word in not_words:
+        not_words_search += "-" + word + " "
+    words_search = yes_words_search + " " + not_words_search
+    mongodb = client[MONGODATABASE]
+    mensajes = mongodb.mensajes
+    mensajes.create_index([('message', TEXT)])
+    output = []
+    for m in mensajes.find({'sender': user, '$text': {'$search': words_search}}, {'_id': 0}):
+        output.append(m)
+    if len(output) == 0:
+        return jsonify(), 404
+    else:
+        return jsonify(output), 200
+
+
+# La función recibe una json con los parametros de la insercion (mensaje, id sender, id receptant)
 # No es necesario agregar variables dentro del URL
 @app.route('/add_message/', methods=['POST'])
 def add_message():
@@ -176,6 +239,7 @@ def add_message():
         return jsonify(), 200
 
 
+# Borrar mensaje por id
 @app.route('/remove_message/<string:message_id>', methods=['DELETE'])
 def remove_message(message_id):
     mongodb = client[MONGODATABASE]
@@ -192,5 +256,4 @@ def remove_message(message_id):
 
 
 if __name__ == '__main__':
-    # Pueden definir su puerto para correr la aplicación
     app.run(port=5000)
