@@ -5,7 +5,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse-2">
-    <?php 
+    <?php
       if(isset($_SESSION['id'])) { ?>
         <a class="navbar-brand" href="/~grupo6/entrega_3/web_app/login/welcome.php">
         	<img src="/~grupo6/entrega_3/web_app/imgs/logo_chico.png" height="40">
@@ -27,11 +27,19 @@
 <!--       <li class="nav-item">
         <a class="nav-link" id="consultas-pill" href="/~grupo6/entrega_3/web_app/consultas.php" role="tab" onclick="selected()">Consultas</a>
       </li> -->
-      <?php 
+      <?php
       if(isset($_SESSION['id'])) { ?>
         <li class="nav-item">
         <a class="nav-link" id="home-pill" href="/~grupo6/entrega_3/web_app/login/welcome.php" role="tab" onclick="selected()">Home</a>
         </li>
+        <li class="nav-item">
+        <a class="nav-link" id="home-pill" href="/~grupo6/entrega_3/web_app/consultas/Estadisticas.php" role="tab" onclick="selected()">Estadisticas</a>
+        </li>
+
+        <li class="nav-item">
+        <a class="nav-link" id="home-pill" href="/~grupo6/entrega_3/web_app/consultas/Inbox.php" role="tab" onclick="selected()">Inbox</a>
+        </li>
+
         <li class="nav-item">
         <a class="nav-link" id="home-pill" href="/~grupo6/entrega_3/web_app/ventas/productos.php" role="tab" onclick="selected()">Productos</a>
         </li>
@@ -62,5 +70,5 @@
     </ul>
   </div>
 
-  
+
 </nav>
